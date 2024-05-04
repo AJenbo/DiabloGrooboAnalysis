@@ -56,7 +56,8 @@ All times referenced below are shown in m:ss format and were taken from the file
 
 The title screen in the video indicates _Diablo_ version 1.09 was used but the run notes indicate an earlier version was used. At 0:05, the _Diablo_ title screen shows a copyright date of 1996-2001:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_9c29d8e1d7639253.png) 
+![](Attachments/DiabloTitleScreen.png)
+	 
 _Figure 1: Diablo v1.09 title screen showing 1996-2001 copyright date_
 
 Figure 2 shows the following patch release details:
@@ -85,7 +86,7 @@ The copyright date displayed on the splash screen is embedded within the applica
 
 The main menu version is inconsistent with the title screen. At 0:12, the _Diablo_ main menu screen appears showing a version of “Diablo v1.00”:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_92efe8c7477cde1c.png)
+![](Attachments/DiabloMenuScreen.png)
 _Figure 3 - Diablo v1.00 main menu version_
 
 The version shown on the main menu is also embedded in the application. As described in [[#Inconsistent Main Menu Version]], _Diablo_ 1.00 would have displayed a title screen with a copyright date of 1996, indicating a version difference between the title screen and the main menu screen.
@@ -95,7 +96,7 @@ This is the first indication that additional video segments, or splices, were us
 ## Inconsistent Character Menu Music
 The character menu version is inconsistent with the main menu screen. At 0:13, the _Diablo_ character select screen appears:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_53e75982a295fbf.png)
+![](Attachments/DiabloCharacterScreen.png)
 _Figure 4 - Character select screen where music is muted_
 
 The character select screen has no music playing. _Diablo_ 1.05 and later do not play music on the character select screen as a result of changes made to the menu screen. This indicates this portion of the run was performed on a later version of the game and there was a video splice between the main menu and the character select menu.
@@ -135,19 +136,19 @@ Save files are encrypted, increasing the difficulty of modifying the dungeon see
 
 The contents of inventory change unexpectedly throughout the run, indicating multiple splices and playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_29a480d157e4d37b.png)
+![](Attachments/dlvl4Ring.png)
 
 _Figure 6 - Ring of Vulture acquired on dlvl 4_
 
 However, at 1:30 when the inventory is opened, the ring is not present:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_4bbe043bb07346c2.png)
+![](Attachments/dlvl9RingMissing.png)
 
 _Figure 7 - Ring of Vulture missing from inventory_
 
 At 1:55, the ring is present in inventory again:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_9478abb101465260.png)
+![](Attachments/TownRingPresentAgain.png)
 
 _Figure 8 - Ring of Vulture present in inventory_
 
@@ -167,26 +168,26 @@ Based on what’s shown in the video we can determine that the following quests 
 
 At 0:43 we can see the wounded townsman, which shows that The Butcher is available:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_ac5e345a37c2a37f.png) _Figure 9 - The wounded townsman visible near the entrance to the dungeon_
+![](Attachments/ButcherAvailable.png) _Figure 9 - The wounded townsman visible near the entrance to the dungeon_
 
 This quest forms part of a group (with the other’s being Ogden’s Sign and Gharbad the Weak). At 1:06 we can see that Ogden’s Sign is not active on level 4 which implies that Gharbad the Weak is present somewhere on level 4:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_f8abea954f449915.png) _Figure 10 - Without the Ogden's Sign quest active the player can walk straight to the stairs down on level 4_
+![](Attachments/dlvl4OgdenMissing.png) _Figure 10 - Without the Ogden's Sign quest active the player can walk straight to the stairs down on level 4_
 
 Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have the Ogden’s Sign quest active and would not be able to proceed past level 4 as shown. This makes it more likely that the video was formed by splicing videos from multiple runs together.
 
 When Groobo returns to town to identify the staff that dropped on level 9 we can see that the town well is clean (see **Figure 12**), meaning the Poison Water Supply quest is not available. However the game seed that leads to the version of level 2 shown in the video has the Poison Water Supply quest available, meaning these levels cannot exist in the same game even if the dungeon seeds were forced. This shows that multiple different runs were spliced together to make the video.
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_fdf1e6041a15cc14.png)
+![](Attachments/dlvl2Layout.png)
 _Figure 11 - Dungeon level 2 level layout_
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_e35f6ef5cf45983d.png) _Figure 12 - The return trip to town showing a clean well_
+![](Attachments/CleanWell.png) _Figure 12 - The return trip to town showing a clean well_
 
 The team was also able to identify that the dungeon seeds that lead to levels 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of level 5 shown in the video has a quest called The Magic Rock marked not available, if this is marked as available then the objects present in the level change. Levels 7 and 8 are the only two levels that come from the same playthrough, this game has the Halls of the Blind quest unavailable. Both these quests are part of the same quest group, having two quests in the same group unavailable in a single playthrough is not normally possible.
 
 At 1:44 there are no monsters in sight around the stairs down on level 13 (see **Figure 13**), showing that the Warlord of Blood quest is not available. 4 of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown. This is another indicator that the video was spliced together from separate playthroughs.
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_5b4e2d8741155b88.png) _Figure 13 - No monsters near the stairs down on level 13 due to the Warlord of Blood quest being marked unavailable_
+![](Attachments/dlvl13MonstersMissing.png) _Figure 13 - No monsters near the stairs down on level 13 due to the Warlord of Blood quest being marked unavailable_
 
 The dungeon seed for level 16 also has an impact on levels 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for level 16 with the seed identified for level 12 and running through the initial creation of level 12 again the position of objects changes from what’s visible in the video. This is another indicator that the video uses splices from different playthroughs.
 
@@ -196,11 +197,11 @@ A dungeon level that can only exist with an invalid date is used. When level 9 w
 
 At 1:27, dlvl 9 appears:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_9715650f4a1dc567.png)
+![](Attachments/dlvl9Stairs.png)
 
 _Figure 14 - Dungeon level 9 with nearby stairs and visible Lava Lord_
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_c91edbff6c456c8e.png)
+![](Attachments/dlvl9Layout.png)
 
 _Figure 15 - Dungeon level layout identified with map generation tools_
 
@@ -221,31 +222,31 @@ While the team identified several potential methods for manipulating the game to
 
 Portions of gameplay are missing in multiple locations and encoding issues additionally cause missing or duplicate frames. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking “down” (toward the bottom of the screen) and then turning to walk “up” (toward the top of the screen):
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_3e0e7e359f201ec1.png)
+![](Attachments/dlvl9DemoFrame1.png)
 
 _Figure 16 - First frame of demonstration down to up animation_
 
 In the first frame shown in _Figure 16_, the character is still moving down and has not yet faced away. The second frame shows the beginning of the animation:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_4a04076a52e7786b.png)
+![](Attachments/dlvl9DemoFrame2.png)
 
 _Figure 17 - Second frame of demonstration down to up animation_
 
 The second frame shows the character facing away with their right leg slightly behind their left leg. The third frame moves the character further:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_40c396f03f4858ee.png)
+![](Attachments/dlvl9DemoFrame3.png)
 
 _Figure 18 - Third frame of demonstration down to up animation_
 
 In the third frame, the character’s right leg is in front of their left leg after taking a step. Together, these screenshots demonstrate three frames are necessary to move from the starting position to the final position and level orientation. In comparison, Groobo’s run shows the following frames:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_e38dcfa5be2fe56c.png)
+![](Attachments/dlvl9VideoFrame1.png)
 
 _Figure 19 - First frame of down to up animation in run_
 
 This first frame from the run shows an identical character placement on-screen compared to the first frame of the demonstration. The second frame from the run shows the character facing away:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_2757744265095e40.png)
+![](Attachments/dlvl9VideoFrame2.png)
 
 _Figure 20 - Second frame of down to up animation in run_
 
@@ -253,7 +254,7 @@ The second frame from the run shows the character’s right leg in front of thei
 
 More significantly, gameplay is entirely missing at other points in the run. At 2:58, the red portal is already visible when entering level 15, indicating roughly 5 frames of missing gameplay:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_a64de46a30bf88b9.png)
+![](Attachments/dlvl15RedPortalMissingFrames.png)
 
 _Figure 21 - Red portal visible in lower-left_
 
@@ -267,7 +268,7 @@ These various portions of missing video indicate video splices were used which r
 
 The item ‘Naj’s Puzzler’ is dropped by an enemy in dlvl 9 but is not present in the dungeon seed. At 1:32, the first Lava Lord is killed and drops ‘Naj’s Puzzler’:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_228239a5a9725b07.png)
+![](Attachments/dlvl9PuzzlerPresent.png)
 
 _Figure 22 - Naj’s Puzzler item dropped by Lava Lord_
 
@@ -277,13 +278,13 @@ _Figure 22 - Naj’s Puzzler item dropped by Lava Lord_
 
 Items are duplicated in ways that are unlikely in version 1.00 as shown on the main menu screen. At 2:09 and again at 2:11, ‘Naj’s Puzzler’ is duplicated while walking:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_7a99911480a5122b.png)
+![](Attachments/WalkingDuplication.png)
 
 _Figure 23 - Item duplication glitch execution_
 
 The duplicated item is visible in the shop view at 2:32:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_3f6b37ea48fec0e7.png)
+![](Attachments/DuplicateInShop.png)
 
 _Figure 24 - Duplicated item present in shop inventory_
 
@@ -293,13 +294,13 @@ In the 1.00 release, network packets are processed in a tight loop with no timin
 
 The music skips at an improbable time in a way that implies the video was spliced. Starting at 2:31, Adria’s shop appears on screen:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_6dddc97123e1fcad.png)
+![](Attachments/MusicSkip.png)
 
 _Figure 25 - Shop screen where music audibly skips_
 
 During this segment, the music skips audibly. The music does not skip at the shop under normal circumstances. Reviewing the audio in this section using a spectrogram view in Audacity demonstrates the sudden change in the background music:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_8aa5c92416d01006.png)
+![](Attachments/MusicSpectrogram.png)
 
 _Figure 26 - Spectrogram view of music skip_
 
@@ -309,13 +310,13 @@ In the spectrogram view, the vertical lines at regular intervals on the left are
 
 The inventory of shops changes in ways that are not possible in version 1.00 as shown on the menu screen. At 2:35, the shop shows different items after re-entering:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_d88aa88a43a053cc.png)
+![](Attachments/InitialInventory.png)
 
 _Figure 27 - Initial shop inventory, page 2_
 
 At 2:36, the shop shows different items after re-entering:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_f93509a78e57f0cc.png)
+![](Attachments/ChangedInventory.png)
 
 _Figure 28 - Changed shop inventory, page 2_
 
@@ -325,7 +326,7 @@ The store inventory does not change when the game is loaded in 1.00. When the sh
 
 A negative health glitch is used which is not possible in version 1.09 as shown on the title screen. At 3:15 and again at 3:33, the ring is applied to trigger the glitch:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_2d9f5efad9acf20f.png)
+![](Attachments/NegativeHealth.png)
 
 _Figure 29 - Negative health caused by applying ring_
 
@@ -415,11 +416,11 @@ Objects, monsters, and items are only generated on the first visit to a level be
 
 The process for identifying a level involves first combining several stills from the video to get as bets a view of the given level as possible:
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_ad117f74e728a063.png)
+![](Attachments/CombinedStills.png)
 
 After that the tiles are visually identified and placed in the same pattern as seen.
 
-![](AnalysisDiabloV5HTML/Attachments/Analysis_of_Groobos_2009_Diablo_WR_speedrun_v5_DRAFT_compressed_rexport_html_455778010d42e1de.png)
+![](Attachments/TilePattern.png)
 
 This tile pattern is then exported from the level editor and fed to the Diablo map generator which will then match each generated level with the given pattern. Usually this is enough to identify a level uniquly. To then locate the specific game seed objet and monster posistions are then mapped out and and additional search is done to locate the game seed where everything lines up.
 
