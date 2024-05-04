@@ -431,14 +431,14 @@ This tile pattern is then exported from the level editor and fed to the Diablo m
 
 [^3]: No game generates monsters in a starting position that would lead to the gameplay shown in the video, and none of the games that generate the dungeon layout shown have the item drop anywhere in the level, let alone from the first monster.
 
- [^4]: This value has additional restrictions from the compiler used to build the retail versions of Diablo, see [[#Choosing the Initial RNG Seed]].
+[^4]: This value has additional restrictions from the compiler used to build the retail versions of Diablo, see [[#Choosing the Initial RNG Seed]].
 
- [^5]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds the number of distinct combinations of these values is far smaller than might be expected, see [[#Generating the Set of Dungeon Seeds]].
+[^5]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds the number of distinct combinations of these values is far smaller than might be expected, see [[#Generating the Set of Dungeon Seeds]].
 
- [^6]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
+[^6]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
 
- [^7]: They actually ended up generating all levels, even for impossible dungeon seeds and quest combinations.
+[^7]: They actually ended up generating all levels, even for impossible dungeon seeds and quest combinations.
 
- [^8]: Diablo uses the Borland C++ constants with a 232 modulus, the generator function is `int32_t state = 22695477 * state + 1`.
+[^8]: Diablo uses the Borland C++ constants with a 232 modulus, the generator function is `int32_t state = 22695477 * state + 1`.
 
- [^9]: Plus an extra value; because the absolute value of -231 cannot be represented as a signed 32 bit integer, the Diablo application ends up using this value as-is.
+[^9]: Plus an extra value; because the absolute value of -231 cannot be represented as a signed 32 bit integer, the Diablo application ends up using this value as-is.
