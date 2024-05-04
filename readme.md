@@ -427,9 +427,9 @@ This tile pattern is then exported from the level editor and fed to the Diablo m
 
 [^1]: Refer to **Appendix A:** for specifics on how dungeon layouts and objects/monsters/items are generated.
 
-[^2]: No game generates monsters in a starting position that would lead to the gameplay shown in the video, and none of the games that generate the dungeon layout shown have the item drop anywhere in the level, let alone from the first monster.
+[^2]: To save space, Diablo save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once you visit a dungeon level, it always recreates the dungeon layout itself based on the dungeon seed. These values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with  are additional restrictions on what date/times are valid when starting a new game (what we call the Game Seed). The particular type of psuedo-random number generator used in Diablo the possibilities for these 16 dungeon seeds are fairly limited.
 
-[^3]: To save space, Diablo save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once you visit a dungeon level, it always recreates the dungeon layout itself based on the dungeon seed. These values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with  are additional restrictions on what date/times are valid when starting a new game (what we call the Game Seed). The particular type of psuedo-random number generator used in Diablo the possibilities for these 16 dungeon seeds are fairly limited.
+[^3]: No game generates monsters in a starting position that would lead to the gameplay shown in the video, and none of the games that generate the dungeon layout shown have the item drop anywhere in the level, let alone from the first monster.
 
  [^4]: This value has additional restrictions from the compiler used to build the retail versions of Diablo, see [[#Choosing the Initial RNG Seed]].
 
