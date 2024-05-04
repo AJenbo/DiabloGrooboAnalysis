@@ -21,7 +21,7 @@ The speedrun includes the following disqualifying elements:
 [[#Inconsistent Character Menu Music]]
 [[#Invalid Dungeon Level Sequence]]
 [[#Inconsistent Inventory]]
-[[#Impossible Level Combinations]]
+[[#Impossible Dungeon Level Combinations]]
 [[#Inaccessible Dungeon Level]]
 [[#Inconsistent Item Drop]]
 [[#Improbable Item Duplication]]
@@ -153,11 +153,11 @@ _Figure 8 - Ring of Vulture present in inventory_
 
 The ring was initially collected, disappeared, and reappeared which indicates more than one playthrough was used in the run or the run was manipulated in some other way.
 
-## Impossible Level Combinations
+## Impossible Dungeon Level Combinations
 
-By mapping what was visible of each level the team was able to use the Diablo map generaton tools identify the exact conditions that would lead to the game generating the specific levels.
+By mapping what was visible of each level the team was able to use the _Diablo_ map generation tools to identify the exact conditions that would lead to the game generating the specific levels.
 
-The team used the _Diablo_ map generation tools to search for all levels seen in the run and was able to identify 14/16 levels. Only level 7 and 8 turned out to be from the same game, meaning that rather then perfecting individual parts of a single runs the segments are from from at least 13 different playthorughs, taking parts from each game where the RNG happens to be particularly favorable for that specific segment. The identified games would all have been started between the 22rd of December 2008 and 1st of January 2009. Since it is possible to identify the active quests for the identified levels there are several continuity issues that can now be identified from this.
+The team used the _Diablo_ map generation tools to search for all levels seen in the run and was able to identify 14 out of 16 levels. Only levels 7 and 8 turned out to be from the same game, meaning that rather than perfecting individual parts of a single run the segments had been combined from footage of at least 13 different playthroughs, taking parts from each game where the RNG happens to be particularly favorable for that specific segment. The identified games would all have been started between the 22nd of December, 2008 and the 1st of January, 2009. Since it is possible to identify the active quests for the identified levels there are several continuity issues that can now be identified from this.
 
 ## Impossible Quest Combinations
 
