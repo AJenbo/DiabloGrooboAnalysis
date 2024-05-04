@@ -57,7 +57,6 @@ All times referenced below are shown in m:ss format and were taken from the file
 The title screen in the video indicates _Diablo_ version 1.09 was used but the run notes indicate an earlier version was used. At 0:05, the _Diablo_ title screen shows a copyright date of 1996-2001:
 
 ![](Attachments/DiabloTitleScreen.png)
-	 
 _Figure 1: Diablo v1.09 title screen showing 1996-2001 copyright date_
 
 Figure 2 shows the following patch release details:
@@ -76,6 +75,7 @@ Figure 2 shows the following patch release details:
 | 1.07      | 08/25/98       | 1998-09-24   | 1.0.0.0         | 98, 5, 6, 1     | 1998-09-17       |
 | 1.08      | 05/23/2000     | 2000-06-16   | 2000.2.2.1      | 1, 0, 8, 1      | 2000-05-23       |
 | 1.09      | 05/11/2001     | 2001-06-23   | 2001.5.11.1     | 1, 0, 9, 1      | 2001-05-11       |
+
 _Figure 2 - Table of patch versions and release dates_
 
 The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 has a copyright date of 1996, version 1.08 has a copyright date of 1996-2000, and 1.09 has a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
@@ -128,6 +128,7 @@ Through the search process the team was able to identify the exact dungeon seed 
 | 14            | 2144005606     | 1229976755 | 2008-12-22 20:12:35 |
 | 15            | 1342549707     | 1230053637 | 2008-12-23 17:33:57 |
 | 16            | 118068228      | 1230830247 | 2009-01-01 17:17:27 |
+
 _Figure 5: Dungeon seeds and game seeds present in Groobo's run_
 
 Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after the fact. However, various methods of hooking into the game code are known to exist which could have been used to set a combination of dungeon seeds that wouldn’t normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level]].
@@ -137,19 +138,16 @@ Save files are encrypted, increasing the difficulty of modifying the dungeon see
 The contents of inventory change unexpectedly throughout the run, indicating multiple splices and playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
 
 ![](Attachments/dlvl4Ring.png)
-
 _Figure 6 - Ring of Vulture acquired on dlvl 4_
 
 However, at 1:30 when the inventory is opened, the ring is not present:
 
 ![](Attachments/dlvl9RingMissing.png)
-
 _Figure 7 - Ring of Vulture missing from inventory_
 
 At 1:55, the ring is present in inventory again:
 
 ![](Attachments/TownRingPresentAgain.png)
-
 _Figure 8 - Ring of Vulture present in inventory_
 
 The ring was initially collected, disappeared, and reappeared which indicates more than one playthrough was used in the run or the run was manipulated in some other way.
@@ -168,11 +166,13 @@ Based on what’s shown in the video we can determine that the following quests 
 
 At 0:43 we can see the wounded townsman, which shows that The Butcher is available:
 
-![](Attachments/ButcherAvailable.png) _Figure 9 - The wounded townsman visible near the entrance to the dungeon_
+![](Attachments/ButcherAvailable.png)
+_Figure 9 - The wounded townsman visible near the entrance to the dungeon_
 
 This quest forms part of a group (with the other’s being Ogden’s Sign and Gharbad the Weak). At 1:06 we can see that Ogden’s Sign is not active on level 4 which implies that Gharbad the Weak is present somewhere on level 4:
 
-![](Attachments/dlvl4OgdenMissing.png) _Figure 10 - Without the Ogden's Sign quest active the player can walk straight to the stairs down on level 4_
+![](Attachments/dlvl4OgdenMissing.png) 
+_Figure 10 - Without the Ogden's Sign quest active the player can walk straight to the stairs down on level 4_
 
 Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have the Ogden’s Sign quest active and would not be able to proceed past level 4 as shown. This makes it more likely that the video was formed by splicing videos from multiple runs together.
 
@@ -181,13 +181,15 @@ When Groobo returns to town to identify the staff that dropped on level 9 we can
 ![](Attachments/dlvl2Layout.png)
 _Figure 11 - Dungeon level 2 level layout_
 
-![](Attachments/CleanWell.png) _Figure 12 - The return trip to town showing a clean well_
+![](Attachments/CleanWell.png) 
+_Figure 12 - The return trip to town showing a clean well_
 
 The team was also able to identify that the dungeon seeds that lead to levels 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of level 5 shown in the video has a quest called The Magic Rock marked not available, if this is marked as available then the objects present in the level change. Levels 7 and 8 are the only two levels that come from the same playthrough, this game has the Halls of the Blind quest unavailable. Both these quests are part of the same quest group, having two quests in the same group unavailable in a single playthrough is not normally possible.
 
 At 1:44 there are no monsters in sight around the stairs down on level 13 (see **Figure 13**), showing that the Warlord of Blood quest is not available. 4 of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown. This is another indicator that the video was spliced together from separate playthroughs.
 
-![](Attachments/dlvl13MonstersMissing.png) _Figure 13 - No monsters near the stairs down on level 13 due to the Warlord of Blood quest being marked unavailable_
+![](Attachments/dlvl13MonstersMissing.png)
+_Figure 13 - No monsters near the stairs down on level 13 due to the Warlord of Blood quest being marked unavailable_
 
 The dungeon seed for level 16 also has an impact on levels 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for level 16 with the seed identified for level 12 and running through the initial creation of level 12 again the position of objects changes from what’s visible in the video. This is another indicator that the video uses splices from different playthroughs.
 
@@ -198,11 +200,9 @@ A dungeon level that can only exist with an invalid date is used. When level 9 w
 At 1:27, dlvl 9 appears:
 
 ![](Attachments/dlvl9Stairs.png)
-
 _Figure 14 - Dungeon level 9 with nearby stairs and visible Lava Lord_
 
 ![](Attachments/dlvl9Layout.png)
-
 _Figure 15 - Dungeon level layout identified with map generation tools_
 
 The team used the Diablo map generation tools to conduct additional searches for all games where the level would have appeared to see if there could be one where things better matched what was shown. For the monster positions, only two invalid game seeds produced the same starting positions as in the run:
@@ -223,31 +223,26 @@ While the team identified several potential methods for manipulating the game to
 Portions of gameplay are missing in multiple locations and encoding issues additionally cause missing or duplicate frames. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking “down” (toward the bottom of the screen) and then turning to walk “up” (toward the top of the screen):
 
 ![](Attachments/dlvl9DemoFrame1.png)
-
 _Figure 16 - First frame of demonstration down to up animation_
 
 In the first frame shown in _Figure 16_, the character is still moving down and has not yet faced away. The second frame shows the beginning of the animation:
 
 ![](Attachments/dlvl9DemoFrame2.png)
-
 _Figure 17 - Second frame of demonstration down to up animation_
 
 The second frame shows the character facing away with their right leg slightly behind their left leg. The third frame moves the character further:
 
 ![](Attachments/dlvl9DemoFrame3.png)
-
 _Figure 18 - Third frame of demonstration down to up animation_
 
 In the third frame, the character’s right leg is in front of their left leg after taking a step. Together, these screenshots demonstrate three frames are necessary to move from the starting position to the final position and level orientation. In comparison, Groobo’s run shows the following frames:
 
 ![](Attachments/dlvl9VideoFrame1.png)
-
 _Figure 19 - First frame of down to up animation in run_
 
 This first frame from the run shows an identical character placement on-screen compared to the first frame of the demonstration. The second frame from the run shows the character facing away:
 
 ![](Attachments/dlvl9VideoFrame2.png)
-
 _Figure 20 - Second frame of down to up animation in run_
 
 The second frame from the run shows the character’s right leg in front of their left. The frame that should be present showing the character’s right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. Some frames appear to have been omitted or duplicated during the encoding process, complicating analysis.
@@ -255,7 +250,6 @@ The second frame from the run shows the character’s right leg in front of thei
 More significantly, gameplay is entirely missing at other points in the run. At 2:58, the red portal is already visible when entering level 15, indicating roughly 5 frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
-
 _Figure 21 - Red portal visible in lower-left_
 
 The same issue is also present at 3:28 where the teleport spell appears to have progressed a few frames when returning from the cutscene.
@@ -269,7 +263,6 @@ These various portions of missing video indicate video splices were used which r
 The item ‘Naj’s Puzzler’ is dropped by an enemy in dlvl 9 but is not present in the dungeon seed. At 1:32, the first Lava Lord is killed and drops ‘Naj’s Puzzler’:
 
 ![](Attachments/dlvl9PuzzlerPresent.png)
-
 _Figure 22 - Naj’s Puzzler item dropped by Lava Lord_
 
 ‘Naj’s Puzzler’ is not present in the game seeds outlined in [[#5.6.Inaccessible_dungeon_level|outline|Inaccessible dungeon level]]. This indicates the dungeon seed was artificially manipulated.
@@ -279,13 +272,11 @@ _Figure 22 - Naj’s Puzzler item dropped by Lava Lord_
 Items are duplicated in ways that are unlikely in version 1.00 as shown on the main menu screen. At 2:09 and again at 2:11, ‘Naj’s Puzzler’ is duplicated while walking:
 
 ![](Attachments/WalkingDuplication.png)
-
 _Figure 23 - Item duplication glitch execution_
 
 The duplicated item is visible in the shop view at 2:32:
 
 ![](Attachments/DuplicateInShop.png)
-
 _Figure 24 - Duplicated item present in shop inventory_
 
 In the 1.00 release, network packets are processed in a tight loop with no timing mechanism. This significantly increases the difficulty of executing the item duplication glitch, which relies on frame perfect input. Item duplication is significantly more viable in versions 1.02 and later, processing network packets in the main loop at a more consistent 20 FPS. The use of the item duplication glitch indicates the run was either performed on a later version or other tools were used to facilitate executing the glitch.
@@ -295,13 +286,11 @@ In the 1.00 release, network packets are processed in a tight loop with no timin
 The music skips at an improbable time in a way that implies the video was spliced. Starting at 2:31, Adria’s shop appears on screen:
 
 ![](Attachments/MusicSkip.png)
-
 _Figure 25 - Shop screen where music audibly skips_
 
 During this segment, the music skips audibly. The music does not skip at the shop under normal circumstances. Reviewing the audio in this section using a spectrogram view in Audacity demonstrates the sudden change in the background music:
 
 ![](Attachments/MusicSpectrogram.png)
-
 _Figure 26 - Spectrogram view of music skip_
 
 In the spectrogram view, the vertical lines at regular intervals on the left are the sound of the player’s footsteps. The significant change to a more solid line directly before 2:31.60 is the point where the background music changes abruptly. The further change directly before 2:31.70 is the beginning of the word “I” spoken by the shopkeeper. The audible music skip immediately before the shopkeeper speaks implies video splicing was used at this location.
@@ -311,13 +300,11 @@ In the spectrogram view, the vertical lines at regular intervals on the left are
 The inventory of shops changes in ways that are not possible in version 1.00 as shown on the menu screen. At 2:35, the shop shows different items after re-entering:
 
 ![](Attachments/InitialInventory.png)
-
 _Figure 27 - Initial shop inventory, page 2_
 
 At 2:36, the shop shows different items after re-entering:
 
 ![](Attachments/ChangedInventory.png)
-
 _Figure 28 - Changed shop inventory, page 2_
 
 The store inventory does not change when the game is loaded in 1.00. When the shop is re-entered after loading in version 1.03 or later, the inventory will change. The use of this glitch indicates a later version of the game was used. The existence of changed items also indicates a video splice. [[#Inconsistent Music Playback]] also suggests video splicing was employed around the shop.
@@ -327,7 +314,6 @@ The store inventory does not change when the game is loaded in 1.00. When the sh
 A negative health glitch is used which is not possible in version 1.09 as shown on the title screen. At 3:15 and again at 3:33, the ring is applied to trigger the glitch:
 
 ![](Attachments/NegativeHealth.png)
-
 _Figure 29 - Negative health caused by applying ring_
 
 The ring imparts negative health which causes the player to become invulnerable due to a Mana Shield bug. However, the negative health glitch was patched out prior to version 1.09. Specifically, the release notes for version 1.07 state “Fixed the Mana Shield bugs that could make a player invulnerable and/or invisible to other players.”, indicating the bug was only present in versions 1.05 and earlier. The use of the glitch indicates an earlier version of the game was used.
