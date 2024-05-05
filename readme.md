@@ -400,7 +400,7 @@ Objects, monsters, and items are only generated on the first visit to a level be
 
 ## Level Identification Process
 
-The process for identifying a level involves first combining several stills from the video to get as bets a view of the given level as possible:
+The process for identifying a level involves first combining several stills from the video to get as best a view of the given level as possible:
 
 ![](Attachments/CombinedStills.png)
 
@@ -408,7 +408,7 @@ After that the tiles are visually identified and placed in the same pattern as s
 
 ![](Attachments/TilePattern.png)
 
-This tile pattern is then exported from the level editor and fed to the Diablo map generator which will then match each generated level with the given pattern. Usually this is enough to identify a level uniquly. To then locate the specific game seed objet and monster posistions are then mapped out and and additional search is done to locate the game seed where everything lines up.
+This tile pattern is then exported from the level editor and fed to the Diablo map generator which will then match each generated level with the given pattern. Usually this is enough to identify a level uniquely. To then locate the specific game seed object and monster positions are then mapped out and an additional search is done to locate the game seed where everything lines up.
 
 # Footnotes
 
