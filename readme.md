@@ -380,15 +380,15 @@ uint yearsSince1900 = year - 1900;
 
 _Figure 30 - Game seed date handling code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 30_ and explicitly limits the date range between 1970[^6] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 231 possible combinations of levels and not 232*16 as implied by Groobo/some commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 30_ and explicitly limits the date range between 1970[^6] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels and not 2<sup>32*16</sup> as implied by Groobo/some commentators.
 
 At the time of writing in 2024 it is feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^7] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo’s submission.
 
 ## Generating the Set of Dungeon Seeds
 
-Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^8] used by the Diablo application end up defining a sequence of numbers with period 232. The RNG returns values between 0 and 232-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 232 RNG calls.
+Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^8] used by the Diablo application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
 
-Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 231 using the C standard library function abs() (yielding a 31 bit seed[^9]). The end result is a 16-value wide “window” of the sequence of numbers immediately after the initial RNG state.
+Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function abs() (yielding a 31 bit seed[^9]). The end result is a 16-value wide “window” of the sequence of numbers immediately after the initial RNG state.
 
 Because the dungeon seeds use all but one bit of the RNG state it’s possible to reverse the transformation and determine two possibilities of what the RNG state was given a single dungeon seed. With two dungeon seeds you can determine whether they can occur in the same game and if so exactly what the other dungeon seeds are and what the initial RNG seed (starting time) would have been for that game.
 
@@ -426,6 +426,6 @@ This tile pattern is then exported from the level editor and fed to the Diablo m
 
 [^7]: They actually ended up generating all levels, even for impossible dungeon seeds and quest combinations.
 
-[^8]: Diablo uses the Borland C++ constants with a 232 modulus, the generator function is `int32_t state = 22695477 * state + 1`.
+[^8]: Diablo uses the Borland C++ constants with a 2<sup>32</sup> modulus, the generator function is `int32_t state = 22695477 * state + 1`.
 
-[^9]: Plus an extra value; because the absolute value of -231 cannot be represented as a signed 32 bit integer, the Diablo application ends up using this value as-is.
+[^9]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, the Diablo application ends up using this value as-is.
