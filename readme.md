@@ -307,7 +307,7 @@ At 2:36, the shop shows different items after re-entering:
 ![](Attachments/ChangedInventory.png)
 _Figure 28 - Changed shop inventory, page 2_
 
-The store inventory does not change when the game is loaded in 1.00. When the shop is re-entered after loading in version 1.03 or later, the inventory will change. The use of this glitch indicates a later version of the game was used. The existence of changed items also indicates a video splice. [[#Inconsistent Music Playback]] also suggests video splicing was employed around the shop.
+Changing the store inventory as shown requires additional gameplay actions which are not present in the video. This indicates video splicing was used during these segments. To change the shop inventory in Diablo versions 1.00-1.02 the player needs to walk into the dungeon then return to town. When using version 1.03 or later the player can change the shop inventory by using the pause menu to reload the game from the latest save (saving first to keep bought items). The way the background music skips (described further in [[#Inconsistent Music Playback]]) also indicates which version of the game was used to record these segments. Because the section of the background music playing is near the start of the loop this suggests Diablo version 1.03 or later was used here to allow saving and reloading to change the shop.
 
 ## Inconsistent Glitch Use
 
