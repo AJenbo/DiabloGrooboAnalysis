@@ -21,7 +21,7 @@ The speedrun includes the following disqualifying elements:
 [[#Inconsistent Character Menu Music]]
 [[#Invalid Dungeon Level Sequence]]
 [[#Inconsistent Inventory]]
-[[#Impossible Dungeon Level Combinations]]
+[[#Impossible Quest Combinations]]
 [[#Inaccessible Dungeon Level]]
 [[#Inconsistent Item Drop]]
 [[#Improbable Item Duplication]]
@@ -40,17 +40,17 @@ This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown,
 
 _Diablo_ was released by Blizzard Entertainment in January, 1997. On January 16, 2009, Maciej ‘Groobo’ Maselewski (“Groobo”) completed an ‘any% segmented’ category Real-Time Attack (RTA) speedrunning attempt consisting of 27 segments with a completion time of 3 minutes and 12 seconds, listed as a ‘Sorcerer run’ to differentiate the character class used in the run. The run was submitted by the author to [Speed Demos Archive](https://speeddemosarchive.com/Diablo.html) (SDA) and [Guinness World Records](https://www.guinnessworldrecords.com/world-records/110580-fastest-completion-of-an-rpg-videogame). SDA [reviewed the run](https://forum.speeddemosarchive.com/post/diablo__february_8th_2009.html) and published the submission after completing the verification process. SDA did not identify any concerns, with the discussion primarily focusing on video quality aspects.
 
-_Diablo_ Speedruns declined following Groobo’s run due to the difficulty replicating or beating the reported time. The _Diablo_ speedrunning community did not initially question the validity of the run, although some speedrunners such as Funkmastermp eventually expressed doubt about the probability of certain aspects of the run after not encountering similar results despite many years of attempts.
+_Diablo_ speedrun attempts declined following Groobo’s run due to the difficulty replicating or beating the time Groobo reported. The _Diablo_ speedrunning community did not initially question the validity of the run, although some speedrunners such as Funkmastermp eventually expressed doubt about the probability of certain aspects of the run after not encountering similar results despite many years of attempts.
 
-In January 2024, Funkmastermp approached dwangoAC (of the TASbot community) to create a Tool-Assisted Speedrun (TAS) of _Diablo_. Initial investigations by dwangoAC on Twitch proved a TAS of _Diablo_ was viable by combining the PCem emulator with the libTAS rerecording framework. dwangoAC and Funkmastermp consulted the DevilutionX community to clarify the level generation code behaviors in different versions of _Diablo_. A cross-community team formed to discuss strategies and Groobo’s speedrun was used as a basis of the route for the TAS. The team observed inconsistencies that raised concerns about the viability of Groobo’s speedrun and led to a more detailed analysis.
+In January 2024, Funkmastermp approached dwangoAC (of the TASbot and TASVideos communities) to create a Tool-Assisted Speedrun (TAS) of _Diablo_. Initial investigations by dwangoAC on Twitch proved a TAS of _Diablo_ was viable by combining the PCem emulator with the libTAS rerecording framework. dwangoAC and Funkmastermp consulted the DevilutionX community to clarify the level generation code behaviors in different versions of _Diablo_. A cross-community team formed to discuss strategies and Groobo’s speedrun was used as a basis of the route for the TAS. The team observed inconsistencies that raised concerns about the viability of Groobo’s speedrun and led to a more detailed analysis.
 
-The team reached out to an SDA spokesperson to determine if any additional documentation existed about the speedrun. Records from that timeframe were limited and provided no additional historical notes from SDA staff member mikwuyama who performed the verification. The team additionally attempted to contact Groobo via multiple means but received no reply. Without any additional information, the team shifted focus to assessing the viability of the speedrun based on [Groobo’s submitted run video](https://speeddemosarchive.com/demo.pl?Diablo_Sorcerer_312). The team studied the video and cross-referenced the results by consulting the code in the [Devilution decompilation project](https://github.com/diasurgical/devilution).
+The team reached out to an SDA spokesperson to determine if any additional documentation existed about the speedrun. Records from that timeframe were limited and provided no additional historical notes from SDA staff member mikwuyama who performed the verification. The team additionally attempted to contact Groobo via multiple means but received no reply. Lacking additional information, the team shifted focus to assessing the viability of the speedrun based on [Groobo’s submitted run video](https://speeddemosarchive.com/demo.pl?Diablo_Sorcerer_312). The team studied the video and cross-referenced the results by consulting the code in the [Devilution decompilation project](https://github.com/diasurgical/devilution).
 
 # Analysis
 
 The team isolated several significant inconsistencies while reviewing the run video frame-by-frame.
 
-All times referenced below are shown in m:ss format and were taken from the file `Diablo_Sorcerer_312_HQ.mp4` (hosted at [http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4](http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4)).
+All times referenced below are shown in m:ss format and were taken from the video file `Diablo_Sorcerer_312_HQ.mp4` (hosted at [http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4](http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4)).
 
 ## Inconsistent Title Screen Version
 
@@ -78,7 +78,7 @@ Figure 2 shows the following patch release details:
 
 _Figure 2 - Table of patch versions and release dates_
 
-The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 has a copyright date of 1996, version 1.08 has a copyright date of 1996-2000, and 1.09 has a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
+The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 display a copyright date of 1996, version 1.08 displays a copyright date of 1996-2000, and 1.09 displays a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
 
  However, Groobo’s description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses “…the negative health glitch (note that this was fixed with the 1.07 patch).” Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent glitch use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game by using multiple playthroughs.
  
@@ -106,9 +106,9 @@ Starting at 0:48 in dungeon level 1 (dlvl 1) through 1:33 in dlvl 9, each dungeo
 
 As Groobo notes in his earlier [17:38 submission](https://archive.org/details/Diablo_Sorcerer_1738) on October 12th, 2006, “...The maps, mosters, drops, chests etc are generated while you create your character, and stay the same every time you play with the same \[character\]…”\[sic\].[^1] _Diablo_ save files include the seed information used to generate dungeon levels; specifically, the initial game seed based on the game launch time is used to generate 16 dungeon seeds, one for each dungeon level, which are stored in the save file.[^2] Because dungeon seeds form part of the save file for a given game, “luck manipulation” of dungeon layouts is not possible. The only way to change the layout for a level is to start a new game or directly modify the game code or save file.
 
-Over the course of several weeks and scan iterations, the team reviewed every possible game seed, including invalid seeds occurring after 2038, using `diablo-mapgen --scanner stairs --start 0 --count 4294967295` (with additional scripting to split the search among multiple processor cores). No set of levels matched the results displayed in the run in either the valid or invalid date ranges. This indicates the run was created by using levels from multiple, incongruent playthroughs of the game beyond what would be ordinary for a segmented speedrun or the run contained directly manipulated dungeon seeds.
+Over the course of several weeks and scan iterations, the team reviewed every possible game seed, including invalid seeds occurring after the year 2038, using `diablo-mapgen --scanner stairs --start 0 --count 4294967295` (with additional scripting to split the search among multiple processor cores). No set of levels matched the results displayed in the run in either the valid or invalid date ranges. This indicates the run was created by using levels from multiple, incongruent playthroughs of the game beyond what would ordinarily be allowed for a segmented speedrun or the run contained directly manipulated dungeon seeds.
 
-Through the search process the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. **Figure 5** shows the dungeon seed for each level that could be identified, what time each playthrough was started, and what quests were active in each playthrough. No exact match could be found for levels 3 and 4 which indicates Groobo may have used a modified client or external tools to influence object and monster spawns.
+Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. **Figure 5** shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for levels 3 and 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns.
 
 | Dungeon Level | Dungeon Seed   | Game Seed  | Game Time           |
 | ------------- | -------------- | ---------- | ------------------- |
@@ -131,45 +131,39 @@ Through the search process the team was able to identify the exact dungeon seed 
 
 _Figure 5: Dungeon seeds and game seeds present in Groobo's run_
 
-Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after the fact. However, various methods of hooking into the game code are known to exist which could have been used to set a combination of dungeon seeds that wouldn’t normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level]].
+The identified games were started between December 22, 2008 and January 1, 2009. Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
+
+Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist which could have been used to set a combination of dungeon seeds that wouldn’t normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level]].
 
 ## Inconsistent Inventory
 
 The contents of inventory change unexpectedly throughout the run, indicating multiple splices and playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
 
 ![](Attachments/dlvl4Ring.png)
-_Figure 6 - Ring of Vulture acquired on dlvl 4_
+_Figure 6 - Ring of the Vulture acquired on dlvl 4_
 
 However, at 1:30 when the inventory is opened, the ring is not present:
 
 ![](Attachments/dlvl9RingMissing.png)
-_Figure 7 - Ring of Vulture missing from inventory_
+_Figure 7 - Ring of the Vulture missing from inventory_
 
 At 1:55, the ring is present in inventory again:
 
 ![](Attachments/TownRingPresentAgain.png)
-_Figure 8 - Ring of Vulture present in inventory_
+_Figure 8 - Ring of the Vulture present in inventory_
 
 The ring was initially collected, disappeared, and reappeared which indicates more than one playthrough was used in the run or the run was manipulated in some other way.
 
-## Impossible Dungeon Level Combinations
-
-By mapping what was visible of each level the team was able to use the _Diablo_ map generation tools to identify the exact conditions that would lead to the game generating the specific levels.
-
-The team used the _Diablo_ map generation tools to search for all levels seen in the run and was able to identify 14 out of 16 levels. Only levels 7 and 8 turned out to be from the same game, meaning that rather than perfecting individual parts of a single run the segments had been combined from footage of at least 13 different playthroughs, taking parts from each game where the RNG happens to be particularly favorable for that specific segment. The identified games would all have been started between the 22nd of December, 2008 and the 1st of January, 2009. Since it is possible to identify the active quests for the identified levels there are several continuity issues that can now be identified from this.
-
 ## Impossible Quest Combinations
 
-To encourage replaying Diablo each playthrough will have certain quests randomly made unavailable. Two important quests for speedrunning are “Ogden’s Sign” and “Warlord of Blood”, both of these quests block progress to the next level. Ogden’s Sign prevents the player from walking to the stairs down on level 4 until they complete a quest, Warlord of Blood prevents the player from using the stairs down on level 13 until the player sits through a cutscene. While those two quests have the most visible impact on dungeon generation, all randomly selected quests influence level generation in some way.
+*Diablo* randomly sets which quests are available in each playthrough to enhance replayability. Two quests that impact speedrunning are “Ogden’s Sign” which blocks progress until a quest is completed and “Warlord of Blood” which triggers a cutscene. All randomly included quests influence level generation but “Ogden’s Sign” and “Warlord of Blood” have the most visible impact on dungeon generation.
 
-Based on what’s shown in the video we can determine that the following quests are active in Groobo’s run:
-
-At 0:43 we can see the wounded townsman, which shows that The Butcher is available:
+The team was able to identify markers of several quests by reviewing Groobo's run. The wounded townsman is visible at 0:43, which indicates the quest "The Butcher" is available:
 
 ![](Attachments/ButcherAvailable.png)
 _Figure 9 - The wounded townsman visible near the entrance to the dungeon_
 
-This quest forms part of a group (with the other’s being Ogden’s Sign and Gharbad the Weak). At 1:06 we can see that Ogden’s Sign is not active on level 4 which implies that Gharbad the Weak is present somewhere on level 4:
+"The Butcher" forms part of a trio of quests alongside "Ogden’s Sign" and "Gharbad the Weak". At 1:06 we can see that Ogden’s Sign is not active on level 4 which implies that Gharbad the Weak is present somewhere on level 4:
 
 ![](Attachments/dlvl4OgdenMissing.png) 
 _Figure 10 - Without the Ogden's Sign quest active the player can walk straight to the stairs down on level 4_
@@ -412,7 +406,7 @@ This tile pattern is then exported from the level editor and fed to the Diablo m
 
 # Footnotes
 
-[^1]: Refer to **Appendix A:** for specifics on how dungeon layouts and objects/monsters/items are generated.
+[^1]: Refer to [[#Appendix A Diablo Level Generation]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 
 [^2]: To save space, Diablo save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once you visit a dungeon level, it always recreates the dungeon layout itself based on the dungeon seed. These values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with  are additional restrictions on what date/times are valid when starting a new game (what we call the Game Seed). The particular type of psuedo-random number generator used in Diablo the possibilities for these 16 dungeon seeds are fairly limited.
 
