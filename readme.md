@@ -102,13 +102,13 @@ _Figure 4 - Character select screen where music is muted_
 The character select screen has no music playing. _Diablo_ 1.05 and later do not play music on the character select screen as a result of changes made to the menu screen. This indicates this portion of the run was performed on a later version of the game and there was a video splice between the main menu and the character select menu.
 
 ## Invalid Dungeon Level Sequence
-Starting at 0:48 in dungeon level 1 (dlvl 1) through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 steps for dlvl 1-4, 5 steps for dlvl 5-8, and 3 steps for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
+Starting at 0:48 in dungeon level (hereafter dlvl) 1 through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 steps for dlvl 1-4, 5 steps for dlvl 5-8, and 3 steps for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
 
 As Groobo notes in his earlier [17:38 submission](https://archive.org/details/Diablo_Sorcerer_1738) on October 12th, 2006, “...The maps, mosters, drops, chests etc are generated while you create your character, and stay the same every time you play with the same \[character\]…”\[sic\].[^1] _Diablo_ save files include the seed information used to generate dungeon levels; specifically, the initial game seed based on the game launch time is used to generate 16 dungeon seeds, one for each dungeon level, which are stored in the save file.[^2] Because dungeon seeds form part of the save file for a given game, “luck manipulation” of dungeon layouts is not possible. The only way to change the layout for a level is to start a new game or directly modify the game code or save file.
 
 Over the course of several weeks and scan iterations, the team reviewed every possible game seed, including invalid seeds occurring after the year 2038, using `diablo-mapgen --scanner stairs --start 0 --count 4294967295` (with additional scripting to split the search among multiple processor cores). No set of levels matched the results displayed in the run in either the valid or invalid date ranges. This indicates the run was created by using levels from multiple, incongruent playthroughs of the game beyond what would ordinarily be allowed for a segmented speedrun or the run contained directly manipulated dungeon seeds.
 
-Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. **Figure 5** shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for levels 3 and 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns.
+Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. **Figure 5** shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns.
 
 | Dungeon Level | Dungeon Seed   | Game Seed  | Game Time           |
 | ------------- | -------------- | ---------- | ------------------- |
@@ -156,40 +156,45 @@ The ring was initially collected, disappeared, and reappeared which indicates mo
 
 ## Impossible Quest Combinations
 
-*Diablo* randomly sets which quests are available in each playthrough to enhance replayability. Two quests that impact speedrunning are “Ogden’s Sign” which blocks progress until a quest is completed and “Warlord of Blood” which triggers a cutscene. All randomly included quests influence level generation but “Ogden’s Sign” and “Warlord of Blood” have the most visible impact on dungeon generation.
+*Diablo* randomly sets which quests are available in each playthrough to enhance replayability. 
+Two quests that impact speedrunning are “Ogden’s Sign” which blocks progress until a quest is completed and “Warlord of Blood” which triggers a cutscene. All randomly included quests influence level generation and the quests “Ogden’s Sign” and “Warlord of Blood” have a visible impact.
 
-The team was able to identify markers of several quests by reviewing Groobo's run. The wounded townsman is visible at 0:43, which indicates the quest "The Butcher" is available:
+The team was able to identify markers of several quests by reviewing Groobo's run. The quest "The Butcher" is available based on the presence of the wounded townsman  0:43:
 
 ![](Attachments/ButcherAvailable.png)
 _Figure 9 - The wounded townsman visible near the entrance to the dungeon_
 
-"The Butcher" forms part of a trio of quests alongside "Ogden’s Sign" and "Gharbad the Weak". At 1:06 we can see that Ogden’s Sign is not active on level 4 which implies that Gharbad the Weak is present somewhere on level 4:
+At 1:06, the player can walk straight to the stairs down on dlvl 4, which indicates the quest "Ogden’s Sign" is not active:
 
 ![](Attachments/dlvl4OgdenMissing.png) 
-_Figure 10 - Without the Ogden's Sign quest active the player can walk straight to the stairs down on level 4_
+_Figure 10 - Ogden's Sign quest_
 
-Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have the Ogden’s Sign quest active and would not be able to proceed past level 4 as shown. This makes it more likely that the video was formed by splicing videos from multiple runs together.
+"The Butcher", "Ogden’s Sign", and "Gharbad the Weak" are part of a group of quests, of which only two of the three quests will always be available.[^10] Therefore, the quests "The Butcher" and "Gharbad the Weak" were active during Groobo's run but "Ogden's Sign" was not. Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have "Ogden’s Sign" active and would not be able to proceed past dlvl 4 as shown. This indicates the video was formed by splicing multiple runs together.
 
-When Groobo returns to town to identify the staff that dropped on level 9 we can see that the town well is clean (see **Figure 12**), meaning the Poison Water Supply quest is not available. However the game seed that leads to the version of level 2 shown in the video has the Poison Water Supply quest available, meaning these levels cannot exist in the same game even if the dungeon seeds were forced. This shows that multiple different runs were spliced together to make the video.
-
-![](Attachments/dlvl2Layout.png)
-_Figure 11 - Dungeon level 2 level layout_
+When Groobo returns to town to identify the staff that dropped on dlvl 9, the town well is clean which indicates the "Poison Water Supply" quest is not available:
 
 ![](Attachments/CleanWell.png) 
-_Figure 12 - The return trip to town showing a clean well_
+_Figure 11 - The return trip to town showing a clean well_
 
-The team was also able to identify that the dungeon seeds that lead to levels 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of level 5 shown in the video has a quest called The Magic Rock marked not available, if this is marked as available then the objects present in the level change. Levels 7 and 8 are the only two levels that come from the same playthrough, this game has the Halls of the Blind quest unavailable. Both these quests are part of the same quest group, having two quests in the same group unavailable in a single playthrough is not normally possible.
+However, the game seed that leads to the version of dlvl 2 shown in the video has the "Poison Water Supply" quest available:
 
-At 1:44 there are no monsters in sight around the stairs down on level 13 (see **Figure 13**), showing that the Warlord of Blood quest is not available. 4 of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown. This is another indicator that the video was spliced together from separate playthroughs.
+![](Attachments/dlvl2Layout.png)
+_Figure 12 - Dungeon level 2 level layout_ 
+
+These levels cannot exist in the same game even if the dungeon seeds were forced. This indicates multiple runs were spliced together to make the video.
+
+The team was also able to identify that the dungeon seeds that lead to dlvl 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of dlvl 5 shown in the video has a quest called The Magic Rock marked not available, if this is marked as available then the objects present in the level change. Dlvl 7 and dlvl 8 are the only two levels that come from the same playthrough, this game has the Halls of the Blind quest unavailable. Both these quests are part of the same quest group, having two quests in the same group unavailable in a single playthrough is not normally possible.
+
+At 1:44 there are no monsters in sight around the stairs down on dlvl 13 (see **Figure 13**), showing that the Warlord of Blood quest is not available. 4 of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown. This is another indicator that the video was spliced together from separate playthroughs.
 
 ![](Attachments/dlvl13MonstersMissing.png)
 _Figure 13 - No monsters near the stairs down on level 13 due to the Warlord of Blood quest being marked unavailable_
 
-The dungeon seed for level 16 also has an impact on levels 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for level 16 with the seed identified for level 12 and running through the initial creation of level 12 again the position of objects changes from what’s visible in the video. This is another indicator that the video uses splices from different playthroughs.
+The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again the position of objects changes from what’s visible in the video. This is another indicator that the video uses splices from different playthroughs.
 
 ## Inaccessible Dungeon Level
 
-A dungeon level that can only exist with an invalid date is used. When level 9 was identified, it showed inconsistencies in the video compared to what should have appeared in the game. During the run, the two Lava Lords are standing just to the right of the level entrance, but normally they would not have this starting position. Upon killing the first Lava Lord, it drops Naj’s Puzzler, an item that gives the player the ability to teleport and thus makes the rest of the run significantly easier. However, this item would not have been dropped in this situation.
+A dungeon level that can only exist with an invalid date is used. When dlvl 9 was identified, it showed inconsistencies in the video compared to what should have appeared in the game. During the run, the two Lava Lords are standing just to the right of the level entrance, but normally they would not have this starting position. Upon killing the first Lava Lord, it drops Naj’s Puzzler, an item that gives the player the ability to teleport and thus makes the rest of the run significantly easier. However, this item would not have been dropped in this situation.
 
 At 1:27, dlvl 9 appears:
 
@@ -241,7 +246,7 @@ _Figure 20 - Second frame of down to up animation in run_
 
 The second frame from the run shows the character’s right leg in front of their left. The frame that should be present showing the character’s right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. Some frames appear to have been omitted or duplicated during the encoding process, complicating analysis.
 
-More significantly, gameplay is entirely missing at other points in the run. At 2:58, the red portal is already visible when entering level 15, indicating roughly 5 frames of missing gameplay:
+More significantly, gameplay is entirely missing at other points in the run. At 2:58, the red portal is already visible when entering dlvl 15, indicating roughly 5 frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
 _Figure 21 - Red portal visible in lower-left_
@@ -423,3 +428,14 @@ This tile pattern is then exported from the level editor and fed to the Diablo m
 [^8]: Diablo uses the Borland C++ constants with a 2<sup>32</sup> modulus, the generator function is `int32_t state = 22695477 * state + 1`.
 
 [^9]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, the Diablo application ends up using this value as-is.
+
+[^10]: Quests are [logically included in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with a [certain number of quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough (with [special handling for the first group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153)) as shown in this chart from [Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html):
+
+| Quests in each group                            | Number Chosen |
+| ----------------------------------------------- | ------------- |
+| The Curse of King Leoric, Poisoned Water Supply | 1             |
+| The Butcher, Gharbad the Weak, Ogden’s Sign     | 2             |
+| The Magic Rock, Valor, Halls of the Blind       | 2             |
+| Zhar the Mad, The Black Mushroom, Anvil of Fury | 2             |
+| Warlord of Blood, Lachdanan                     | 1             |
+ 
