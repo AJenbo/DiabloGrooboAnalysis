@@ -169,7 +169,7 @@ _Figure 10 - Ogden's Sign quest_
 
 "The Butcher", "Ogden’s Sign", and "Gharbad the Weak" are part of a group of quests, of which only two of the three quests will always be available.[^4] Therefore, the quests "The Butcher" and "Gharbad the Weak" were active during Groobo's run but "Ogden's Sign" was not. Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have "Ogden’s Sign" active and would not be able to proceed past dlvl 4 as shown. This indicates the video was formed by splicing multiple runs together.
 
-When Groobo returns to town to identify the staff that dropped on dlvl 9, the town well is clean which indicates the "Poison Water Supply" quest is not available:
+Additionally, when Groobo returns to town to identify the staff that dropped on dlvl 9 the town well is clean, which indicates the "Poison Water Supply" quest is not available:
 
 ![](Attachments/CleanWell.png) 
 _Figure 11 - The return trip to town showing a clean well_
@@ -179,9 +179,9 @@ However, the game seed that leads to the version of dlvl 2 shown in the video ha
 ![](Attachments/dlvl2Layout.png)
 _Figure 12 - Dungeon level 2 level layout_ 
 
-These levels cannot exist in the same game even if the dungeon seeds were forced. This indicates multiple runs were spliced together to make the video.
+These levels cannot exist in the same game even if the dungeon seeds were forced. This indicates multiple runs were spliced together using video editing methods.
 
-The team was also able to identify that the dungeon seeds that lead to dlvl 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of dlvl 5 shown in the video has a quest called The Magic Rock marked not available, if this is marked as available then the objects present in the level change. Dlvl 7 and dlvl 8 are the only two levels that come from the same playthrough, this game has the Halls of the Blind quest unavailable. Both these quests are part of the same quest group, having two quests in the same group unavailable in a single playthrough is not normally possible.
+The team was also able to identify that the dungeon seeds that lead to dlvl 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of dlvl 5 shown in the video has a quest called "The Magic Rock" marked not available; if this is marked as available then the objects present in the level change. Dlvl 7 and dlvl 8 are the only two levels that come from the same playthrough, this game has the Halls of the Blind quest unavailable. Both these quests are part of the same quest group, having two quests in the same group unavailable in a single playthrough is not normally possible.
 
 At 1:44 there are no monsters in sight around the stairs down on dlvl 13 (see **Figure 13**), showing that the Warlord of Blood quest is not available. 4 of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown. This is another indicator that the video was spliced together from separate playthroughs.
 
