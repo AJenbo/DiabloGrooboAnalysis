@@ -81,7 +81,7 @@ _Figure 2 - Table of patch versions and release dates_
 The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 display a copyright date of 1996, version 1.08 displays a copyright date of 1996-2000, and 1.09 displays a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
 
  However, Groobo's description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses "…the negative health glitch (note that this was fixed with the 1.07 patch)." Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent glitch use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game.
- 
+
 ## Inconsistent Main Menu Version
 
 The main menu version is inconsistent with the title screen. At 0:12, the _Diablo_ main menu screen appears showing a version of "Diablo v1.00":
@@ -154,7 +154,7 @@ The ring was initially collected, disappeared, and reappeared which indicates mo
 
 ## Impossible Quest Combinations
 
-*Diablo* randomly sets which quests are available in each playthrough to enhance replayability. 
+*Diablo* randomly sets which quests are available in each playthrough to enhance replayability.
 Two quests that impact speedrunning are "Ogden's Sign" which blocks progress until a quest is completed and "Warlord of Blood" which triggers a scripted sequence. All randomly included quests influence level generation and the quests "Ogden's Sign" and "Warlord of Blood" have a clear visible impact.
 
 The team was able to identify markers of several quests by reviewing Groobo's run. The quest "The Butcher" is available based on the presence of the wounded townsman  0:43:
@@ -164,20 +164,20 @@ _Figure 9 - The wounded townsman visible near the entrance to the dungeon_
 
 At 1:06, the player can walk straight to the stairs down on dlvl 4, which indicates the quest "Ogden's Sign" is not active:
 
-![](Attachments/dlvl4OgdenMissing.png) 
+![](Attachments/dlvl4OgdenMissing.png)
 _Figure 10 - Level 4 without Ogden's Sign quest_
 
 "The Butcher", "Ogden's Sign", and "Gharbad the Weak" are part of a group of quests, of which only two of the three quests will always be available.[^4] Therefore, the quests "The Butcher" and "Gharbad the Weak" were active during Groobo's run but "Ogden's Sign" was not. Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have "Ogden's Sign" active and would not be able to proceed past dlvl 4 as shown. This indicates the video was formed by splicing multiple runs together.
 
 Additionally, when Groobo returns to town to identify the staff that dropped on dlvl 9 the town well is clean, which indicates the "Poison Water Supply" quest is not available:
 
-![](Attachments/CleanWell.png) 
+![](Attachments/CleanWell.png)
 _Figure 11 - The return trip to town showing a clean well_
 
 However, the game seed that leads to the version of dlvl 2 shown in the video has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room, as shown in Figure 12:
 
 ![](Attachments/dlvl2Layout.png)
-_Figure 12 - Dungeon level 2 level layout_ 
+_Figure 12 - Dungeon level 2 level layout_
 
 These levels cannot exist in the same game even if the dungeon seeds were forced. This indicates multiple runs were spliced together using video editing methods.
 
@@ -215,7 +215,7 @@ The team was able to find several candidates for dlvl 3 and 4 with a similar gen
 
 While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, they were unable to determine which method was most likely due to the diverse nature of possible ways to manipulate the game, and there seemingly being no way to do so from within the game itself.
 
-## **Missing Gameplay**
+## Missing Gameplay
 
 Portions of gameplay are missing in multiple locations, although the encoder used may have introduced missing or duplicate frames, complicating analysis. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking "down" (toward the bottom of the screen) and then turning to walk "up" (toward the top of the screen):
 
@@ -244,14 +244,14 @@ _Figure 20 - Second frame of down to up animation in run_
 
 The second frame from the run shows the character's right leg in front of their left. The frame that should be present showing the character's right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. The team observed similar frames which appear to have been omitted or duplicated during the encoding process throughout the video, complicating frame-by-frame analysis.
 
-However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. At 2:58, the red portal is already visible when entering dlvl 15, indicating roughly 5 frames of missing gameplay:
+This issue is more pronounced after level loading. For example, at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
 _Figure 21 - Red portal visible in lower-left_
 
 The same issue is also present at 3:28 where the teleport spell appears to have progressed a few frames when returning from the cutscene.
 
-As described in [[#Inconsistent Shop Inventory Rerolling]], exiting the shop menu does not cause the shop inventory to change, which indicates the gameplay needed to generate a new shop was omitted.
+More significantly, gameplay is entirely missing at other points in the run. This issue becomes evident during interactions with vendors, where simply reentering the shop inventory would not normally trigger item rerolls. This indicates that the required gameplay to generate a new shop seed was omitted, described in [[#Inconsistent Shop Inventory Rerolling]].
 
 These various portions of missing video indicate video splices were used which removed portions of gameplay instead of just removing portions of loading screens. The removed gameplay shortened the calculated run length using the timing method described in [[#Runtime Discrepancies]] and served to further misrepresent the length of the run.
 
@@ -363,10 +363,10 @@ The team reverse-engineered the _Diablo_ executable and determined exactly how t
 To set the initial state when starting a new game the Diablo application uses a C standard library function `time()`. The value returned by this function varies on different platforms. From the decompilation effort, the team was able to determine the implementation used by Diablo returns the number of seconds since Jan 1, 1970 at 00:00:00 as a 32 bit signed integer value. They were also able to isolate the date handling portion of the game seed generation code and determine how it handled the [year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem), which is shown in the following code snippet:
 
 ```c
-//The versions of Visual Studio used to compile Diablo implement time() by calling __loctotime_t()  
-__loctotime_t(int year, int month, int day, ...) {  
-uint yearsSince1900 = year - 1900;  
-**if** (((int)yearsSince1900 < 70) || (138 < (int)yearsSince1900)) {  
+//The versions of Visual Studio used to compile Diablo implement time() by calling __loctotime_t()
+__loctotime_t(int year, int month, int day, ...) {
+uint yearsSince1900 = year - 1900;
+**if** (((int)yearsSince1900 < 70) || (138 < (int)yearsSince1900)) {
 **return** -1;
 ```
 
