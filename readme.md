@@ -100,7 +100,7 @@ _Figure 4 - Character select screen where no music is playing_
 The character select screen has no music playing. *Diablo* 1.05 and later lack music when on the character select screen. This indicates that this portion of the run was performed on a later version of the game, indicating the presence of a video splice between the main menu and the character select menu.
 
 ## Invalid Dungeon Level Sequence
-Starting at 0:48 in dungeon level (hereafter dlvl) 1 through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 steps for dlvl 1-4, 5 steps for dlvl 5-8, and 3 steps for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
+Starting at 0:48 in dungeon level (hereafter dlvl) 1 through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 tiles for dlvl 1-4, 5 tiles for dlvl 5-8, and 3 tiles for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
 
 As Groobo notes in his earlier [17:38 submission](https://archive.org/details/Diablo_Sorcerer_1738) on October 12th, 2006, “...The maps, mosters, drops, chests etc are generated while you create your character, and stay the same every time you play with the same \[character\]…”\[sic\].[^1] _Diablo_ save files include the seed information used to generate dungeon levels; specifically, the initial game seed based on the game launch time is used to generate 16 dungeon seeds, one for each dungeon level, which are stored in the save file.[^2] Because dungeon seeds form part of the save file for a given game, “luck manipulation” of dungeon layouts is not possible. The only way to change the layout for a level is to start a new game or directly modify the game code or save file.
 
@@ -108,7 +108,7 @@ Over the course of several weeks and scan iterations, the team reviewed every po
 
 Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. **Figure 5** shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns.
 
-| Dungeon Level | Dungeon Seed   | Game Seed  | Game Time           |
+| Dungeon Level | Dungeon Seed   | Game Seed  | Game Start Time     |
 | ------------- | -------------- | ---------- | ------------------- |
 | 1             | 1342003104     | 1230144506 | 2008-12-24 18:48:26 |
 | 2             | 755133500      | 1229972777 | 2008-12-22 19:06:17 |
@@ -135,7 +135,7 @@ Save files are encrypted, increasing the difficulty of modifying the dungeon see
 
 ## Inconsistent Inventory
 
-The contents of inventory change unexpectedly throughout the run, indicating multiple splices and playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
+The contents of the inventory change unexpectedly throughout the run, indicating that splices from multiple playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
 
 ![](Attachments/dlvl4Ring.png)
 _Figure 6 - Ring of the Vulture acquired on dlvl 4_
@@ -155,7 +155,7 @@ The ring was initially collected, disappeared, and reappeared which indicates mo
 ## Impossible Quest Combinations
 
 *Diablo* randomly sets which quests are available in each playthrough to enhance replayability. 
-Two quests that impact speedrunning are “Ogden’s Sign” which blocks progress until a quest is completed and “Warlord of Blood” which triggers a cutscene. All randomly included quests influence level generation and the quests “Ogden’s Sign” and “Warlord of Blood” have a visible impact.
+Two quests that impact speedrunning are “Ogden’s Sign” which blocks progress until a quest is completed and “Warlord of Blood” which triggers a scripted sequence. All randomly included quests influence level generation and the quests “Ogden’s Sign” and “Warlord of Blood” have a clear visible impact.
 
 The team was able to identify markers of several quests by reviewing Groobo's run. The quest "The Butcher" is available based on the presence of the wounded townsman  0:43:
 
@@ -165,7 +165,7 @@ _Figure 9 - The wounded townsman visible near the entrance to the dungeon_
 At 1:06, the player can walk straight to the stairs down on dlvl 4, which indicates the quest "Ogden’s Sign" is not active:
 
 ![](Attachments/dlvl4OgdenMissing.png) 
-_Figure 10 - Ogden's Sign quest_
+_Figure 10 - Level 4 without Ogden's Sign quest_
 
 "The Butcher", "Ogden’s Sign", and "Gharbad the Weak" are part of a group of quests, of which only two of the three quests will always be available.[^4] Therefore, the quests "The Butcher" and "Gharbad the Weak" were active during Groobo's run but "Ogden's Sign" was not. Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have "Ogden’s Sign" active and would not be able to proceed past dlvl 4 as shown. This indicates the video was formed by splicing multiple runs together.
 
