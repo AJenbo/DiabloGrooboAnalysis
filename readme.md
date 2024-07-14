@@ -192,7 +192,7 @@ The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the 
 
 ## Inaccessible Dungeon Level
 
-A dungeon level that can only exist with an invalid date is used. When dlvl 9 was identified, it showed inconsistencies in the video compared to what should have appeared in the game. During the run, the two Lava Lords are standing just to the right of the level entrance, but normally they would not have this starting position. Upon killing the first Lava Lord, it drops Naj’s Puzzler, an item that gives the player the ability to teleport and thus makes the rest of the run significantly easier. However, this item would not have been dropped in this situation.
+A dungeon level that can only exist with an invalid date is used. When dlvl 9 was identified, it showed inconsistencies in the video compared to what should have appeared in the game. During the run, two Lava Lords are standing just to the right of the level entrance, but normally they would not have this starting position. Upon killing the first Lava Lord, it drops Naj’s Puzzler, an item that gives the player the ability to teleport and makes the rest of the run significantly easier. However, this item would not have been dropped in this situation.
 
 At 1:27, dlvl 9 appears:
 
@@ -202,14 +202,14 @@ _Figure 14 - Dungeon level 9 with nearby stairs and visible Lava Lord_
 ![](Attachments/dlvl9Layout.png)
 _Figure 15 - Dungeon level layout identified with map generation tools_
 
-The team used the Diablo map generation tools to conduct additional searches for all games where the level would have appeared to see if there could be one where things better matched what was shown. For the monster positions, only two invalid game seeds produced the same starting positions as in the run:
+The team used the Diablo map generation tools to conduct additional searches across all valid and invalid games to identify any levels matching what was shown. Only two invalid game seeds produced the starting monster positions seen in the run:
 
-- Game seed `2728353700` corresponds to June, 16 2056 at 04:01:40
-- Game seed `3284159136` corresponds to January 26, 2074 at 2:25:36
+- Game seed `2728353700` corresponding to June, 16 2056 at 04:01:40
+- Game seed `3284159136` corresponding to January 26, 2074 at 2:25:36
 
 Both game seed dates are after the year 2038 and cannot be reached without modifications.
 
-Although dlvl 9 is the first level where Naj’s Puzzler can drop, there were no games with this level layout where this item would drop without some form of game manipulation.
+Although dlvl 9 is the first level where Naj’s Puzzler can drop, there were no games with this level layout where the item would drop without some form of game manipulation.
 
 The team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
@@ -217,7 +217,7 @@ While the team identified several potential methods for manipulating the game to
 
 ## **Missing Gameplay**
 
-Portions of gameplay are missing in multiple locations and encoding issues additionally cause missing or duplicate frames. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking “down” (toward the bottom of the screen) and then turning to walk “up” (toward the top of the screen):
+Portions of gameplay are missing in multiple locations, although the encoder used may have introduced missing or duplicate frames, complicating analysis. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking “down” (toward the bottom of the screen) and then turning to walk “up” (toward the top of the screen):
 
 ![](Attachments/dlvl9DemoFrame1.png)
 _Figure 16 - First frame of demonstration down to up animation_
@@ -242,16 +242,16 @@ This first frame from the run shows an identical character placement on-screen c
 ![](Attachments/dlvl9VideoFrame2.png)
 _Figure 20 - Second frame of down to up animation in run_
 
-The second frame from the run shows the character’s right leg in front of their left. The frame that should be present showing the character’s right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. Some frames appear to have been omitted or duplicated during the encoding process, complicating analysis.
+The second frame from the run shows the character’s right leg in front of their left. The frame that should be present showing the character’s right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. The team observed similar frames which appear to have been omitted or duplicated during the encoding process throughout the video, complicating frame-by-frame analysis.
 
-More significantly, gameplay is entirely missing at other points in the run. At 2:58, the red portal is already visible when entering dlvl 15, indicating roughly 5 frames of missing gameplay:
+However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. At 2:58, the red portal is already visible when entering dlvl 15, indicating roughly 5 frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
 _Figure 21 - Red portal visible in lower-left_
 
 The same issue is also present at 3:28 where the teleport spell appears to have progressed a few frames when returning from the cutscene.
 
-As described in [[#Inconsistent Shop Inventory Rerolling]], exiting the shop menu does not cause shop inventory to change, which indicates the gameplay needed to generate a new shop was omitted.
+As described in [[#Inconsistent Shop Inventory Rerolling]], exiting the shop menu does not cause the shop inventory to change, which indicates the gameplay needed to generate a new shop was omitted.
 
 These various portions of missing video indicate video splices were used which removed portions of gameplay instead of just removing portions of loading screens. The removed gameplay shortened the calculated run length using the timing method described in [[#Runtime Discrepancies]] and served to further misrepresent the length of the run.
 
@@ -262,7 +262,7 @@ The item ‘Naj’s Puzzler’ is dropped by an enemy in dlvl 9 but is not prese
 ![](Attachments/dlvl9PuzzlerPresent.png)
 _Figure 22 - Naj’s Puzzler item dropped by Lava Lord_
 
-‘Naj’s Puzzler’ is not present in the game seeds outlined in [[#5.6.Inaccessible_dungeon_level|outline|Inaccessible dungeon level]]. This indicates the dungeon seed was artificially manipulated.
+‘Naj’s Puzzler’ is not present in the game seeds outlined in [[#Inaccessible Dungeon Level]]. This indicates the dungeon seed was artificially manipulated.
 
 ## Improbable Item Duplication
 
@@ -276,7 +276,7 @@ The duplicated item is visible in the shop view at 2:32:
 ![](Attachments/DuplicateInShop.png)
 _Figure 24 - Duplicated item present in shop inventory_
 
-In the 1.00 release, network packets are processed in a tight loop with no timing mechanism. This significantly increases the difficulty of executing the item duplication glitch, which relies on frame perfect input. Item duplication is significantly more viable in versions 1.02 and later, processing network packets in the main loop at a more consistent 20 FPS. The use of the item duplication glitch indicates the run was either performed on a later version or other tools were used to facilitate executing the glitch.
+In the 1.00 release, network packets are processed in a tight loop with no timing mechanism. This significantly increases the difficulty of executing the item duplication glitch, which relies on frame perfect input. Item duplication is significantly more viable in versions 1.02 and later where network packets are processed in the main loop at a more consistent 20 FPS. The use of the item duplication glitch indicates the run was either performed on a later version or other tools were used to facilitate executing the glitch.
 
 ## Inconsistent Music Playback
 
@@ -294,7 +294,7 @@ In the spectrogram view, the vertical lines at regular intervals on the left are
 
 ## Inconsistent Shop Inventory Rerolling
 
-The inventory of shops changes in ways that are not possible in version 1.00 as shown on the menu screen. At 2:35, the shop shows different items after re-entering:
+The inventory of shops changes in ways that are not possible in version 1.00 as shown on the menu screen. At 2:35, the shop contains an initial set of items:
 
 ![](Attachments/InitialInventory.png)
 _Figure 27 - Initial shop inventory, page 2_
@@ -304,7 +304,7 @@ At 2:36, the shop shows different items after re-entering:
 ![](Attachments/ChangedInventory.png)
 _Figure 28 - Changed shop inventory, page 2_
 
-Changing the store inventory as shown requires additional gameplay actions which are not present in the video. This indicates video splicing was used during these segments. To change the shop inventory in Diablo versions 1.00-1.02 the player needs to walk into the dungeon then return to town. When using version 1.03 or later the player can change the shop inventory by using the pause menu to reload the game from the latest save (saving first to keep bought items). The way the background music skips (described further in [[#Inconsistent Music Playback]]) also indicates which version of the game was used to record these segments. Because the section of the background music playing is near the start of the loop this suggests Diablo version 1.03 or later was used here to allow saving and reloading to change the shop.
+Changing the store inventory as shown requires additional gameplay actions which are not present in the video. This indicates video splicing was used during these segments. Changing the shop inventory in *Diablo* versions 1.00-1.02 requires the player to walk into the dungeon then return to town. When using version 1.03 or later, the player can change the shop inventory by using the pause menu to reload the game from the latest save (saving first to keep bought items). Additionally, the background music skips near the start of the loop as described in [[#Inconsistent Music Playback]], which indicates version 1.03 or later was used here to allow saving and reloading to change the shop.
 
 ## Inconsistent Glitch Use
 
@@ -323,9 +323,9 @@ Despite the stated game time of 3 minutes and 12 seconds, the recording shows th
 
 The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, and using gameplay-removing video splices.
 
-Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but could not have been used for the entire run as demonstrated by the title screen. Many of the game behaviors present are mutually exclusive, indicating the run was spliced together from multiple playthroughs using at least two different versions of the game. Similarly, the game seed and dungeon seed cannot be generated in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing small portions of gameplay in ways that would impact the recorded completion time.
+Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but could not have been used for the entire run as demonstrated by the title screen. Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs using at least two different versions of the game. Similarly, the game seed and dungeon seed cannot be generated in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing small portions of gameplay in ways that would impact the recorded completion time.
 
-Overall, the team’s analysis reveals the run was not possible as Groobo described without disqualifying modifications. The run should be retracted from all leaderboards.
+Overall, the team’s analysis reveals the run was not possible as Groobo described without disqualifying modifications. The run should therefore be immediately retracted from all leaderboards.
 
 # Credits from the Authors
 
