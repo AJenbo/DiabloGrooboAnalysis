@@ -167,7 +167,7 @@ At 1:06, the player can walk straight to the stairs down on dlvl 4, which indica
 ![](Attachments/dlvl4OgdenMissing.png) 
 _Figure 10 - Ogden's Sign quest_
 
-"The Butcher", "Ogden’s Sign", and "Gharbad the Weak" are part of a group of quests, of which only two of the three quests will always be available.[^10] Therefore, the quests "The Butcher" and "Gharbad the Weak" were active during Groobo's run but "Ogden's Sign" was not. Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have "Ogden’s Sign" active and would not be able to proceed past dlvl 4 as shown. This indicates the video was formed by splicing multiple runs together.
+"The Butcher", "Ogden’s Sign", and "Gharbad the Weak" are part of a group of quests, of which only two of the three quests will always be available.[^4] Therefore, the quests "The Butcher" and "Gharbad the Weak" were active during Groobo's run but "Ogden's Sign" was not. Of the 13 levels the team was able to conclusively identify, 9 of them come from games which have "Ogden’s Sign" active and would not be able to proceed past dlvl 4 as shown. This indicates the video was formed by splicing multiple runs together.
 
 When Groobo returns to town to identify the staff that dropped on dlvl 9, the town well is clean which indicates the "Poison Water Supply" quest is not available:
 
@@ -353,8 +353,8 @@ Anders Jenbo, also known as AJenbo, is a seasoned software engineer with over tw
 The team reverse-engineered the _Diablo_ executable and determined exactly how the game generates levels for a single playthrough. At a high level the process is:
 
 1. The player chooses to start a new game (either by creating a new character or starting a new playthrough with an existing character).
-2. The current date/time (down to the second)[^4] is used to seed the psuedo-random number generator (RNG).
-3. 16 consecutive values [^5] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level.
+2. The current date/time (down to the second)[^5] is used to seed the psuedo-random number generator (RNG).
+3. 16 consecutive values [^6] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level.
 4. The 15th dungeon seed is used to randomly deactivate 5 quests.
 5. When the player visits a level for the first time:
     1. The Diablo application uses the relevant dungeon seed to set the RNG state and generates the dungeon layout (advancing the RNG an indeterminate number of times).
@@ -377,15 +377,15 @@ uint yearsSince1900 = year - 1900;
 
 _Figure 30 - Game seed date handling code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 30_ and explicitly limits the date range between 1970[^6] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels and not 2<sup>32*16</sup> as implied by Groobo/some commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 30_ and explicitly limits the date range between 1970[^7] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels and not 2<sup>32*16</sup> as implied by Groobo/some commentators.
 
-At the time of writing in 2024 it is feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^7] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo’s submission.
+At the time of writing in 2024 it is feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^8] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo’s submission.
 
 ## Generating the Set of Dungeon Seeds
 
-Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^8] used by the Diablo application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
+Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^9] used by the Diablo application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
 
-Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function abs() (yielding a 31 bit seed[^9]). The end result is a 16-value wide “window” of the sequence of numbers immediately after the initial RNG state.
+Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function abs() (yielding a 31 bit seed[^10]). The end result is a 16-value wide “window” of the sequence of numbers immediately after the initial RNG state.
 
 Because the dungeon seeds use all but one bit of the RNG state it’s possible to reverse the transformation and determine two possibilities of what the RNG state was given a single dungeon seed. With two dungeon seeds you can determine whether they can occur in the same game and if so exactly what the other dungeon seeds are and what the initial RNG seed (starting time) would have been for that game.
 
@@ -409,31 +409,22 @@ This tile pattern is then exported from the level editor and fed to the Diablo m
 
 # Footnotes
 
-[^1]: Refer to [[#Appendix A Diablo Level Generation]] for specifics on how dungeon layouts and objects/monsters/items are generated.
+[^1]: Refer to [[#Appendix A Diablo Level Generation|Appendix A]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 
-[^2]: To save space, Diablo save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once you visit a dungeon level, it always recreates the dungeon layout itself based on the dungeon seed. These values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with  are additional restrictions on what date/times are valid when starting a new game (what we call the Game Seed). The particular type of psuedo-random number generator used in Diablo the possibilities for these 16 dungeon seeds are fairly limited.
+[^2]: To save space, *Diablo* save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. These values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in *Diablo*, the possibilities for these 16 dungeon seeds are fairly limited.
 
 [^3]: No game generates monsters in a starting position that would lead to the gameplay shown in the video, and none of the games that generate the dungeon layout shown have the item drop anywhere in the level, let alone from the first monster.
 
-[^4]: This value has additional restrictions from the compiler used to build the retail versions of Diablo, see [[#Choosing the Initial RNG Seed]].
+[^4]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in a [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [is handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153)and selects one of the two quests to be active. The next three groups, including the group "The Butcher", "Gharbad the Weak", and "Ogden’s Sign", the group "The Magic Rock", "Valor", and "Halls of the Blind", and the group "Zhar the Mad", "The Black Mushroom", and "Anvil of Fury" each select two of the three quests to be active. Finally, the group "Warlord of Blood" and "Lachdanan" selects one quest to be active.
 
-[^5]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds the number of distinct combinations of these values is far smaller than might be expected, see [[#Generating the Set of Dungeon Seeds]].
+[^5]: The compiler used to build retail versions of *Diablo* further restricts the possible values as described in [[#Choosing the Initial RNG Seed]].
 
-[^6]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
+[^6]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds]].
 
-[^7]: They actually ended up generating all levels, even for impossible dungeon seeds and quest combinations.
+[^7]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
 
-[^8]: Diablo uses the Borland C++ constants with a 2<sup>32</sup> modulus, the generator function is `int32_t state = 22695477 * state + 1`.
+[^8]: They ultimately ended up generating all levels, even for impossible dungeon seeds and quest combinations.
 
-[^9]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, the Diablo application ends up using this value as-is.
+[^9]: *Diablo* uses the Borland C++ constants with a 2<sup>32</sup> modulus; the generator function is `int32_t state = 22695477 * state + 1`.
 
-[^10]: Quests are [logically included in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with a [certain number of quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough (with [special handling for the first group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153)) as shown in this chart from [Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html):
-
-| Quests in each group                            | Number Chosen |
-| ----------------------------------------------- | ------------- |
-| The Curse of King Leoric, Poisoned Water Supply | 1             |
-| The Butcher, Gharbad the Weak, Ogden’s Sign     | 2             |
-| The Magic Rock, Valor, Halls of the Blind       | 2             |
-| Zhar the Mad, The Black Mushroom, Anvil of Fury | 2             |
-| Warlord of Blood, Lachdanan                     | 1             |
- 
+[^10]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, *Diablo* ends up using this value as-is.
