@@ -6,10 +6,10 @@
 The current world record _Diablo_ speedrun by Groobo (in the ‘any% segmented’ category) contains significant irregularities which compromise the integrity of the run. This analysis details discoveries quantifying ways the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
 
 The speedrun includes the following disqualifying elements:
-- Mutually exclusive gameplay behaviors, indicating the run was spliced together from multiple playthroughs using at least two different versions of the game, including at least v1.00 and v1.09
-- Segments from multiple unrelated runs that cannot naturally coexist in a single playthrough
-- Levels which could only exist via external modifications to the game's mechanics
-- Graphical and audible artifacts suggesting video splicing, with some segments notably omitting portions which affect the recorded completion time
+- Mutually exclusive gameplay behaviors, indicating it was spliced from multiple playthroughs using at least versions 1.00 and 1.09 of the game
+- Segments from unrelated runs that cannot naturally coexist in a single playthrough
+- Levels that could only exist through external modifications to the game's mechanics.
+- Graphical and audio artifacts suggesting video splicing, with some segments notably omitting portions that affect the recorded completion time
 
 **Table of Contents**
 [[#Abstract]]
@@ -80,7 +80,7 @@ _Figure 2 - Table of patch versions and release dates_
 
 The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 display a copyright date of 1996, version 1.08 displays a copyright date of 1996-2000, and 1.09 displays a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
 
- However, Groobo’s description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses “…the negative health glitch (note that this was fixed with the 1.07 patch).” Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent glitch use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game by using multiple playthroughs.
+ However, Groobo’s description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses “…the negative health glitch (note that this was fixed with the 1.07 patch).” Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent glitch use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game.
  
 ## Inconsistent Main Menu Version
 
@@ -91,15 +91,15 @@ _Figure 3 - Diablo v1.00 main menu version_
 
 The version shown on the main menu is also embedded in the application. As described in [[#Inconsistent Main Menu Version]], _Diablo_ 1.00 would have displayed a title screen with a copyright date of 1996, indicating a version difference between the title screen and the main menu screen.
 
-This is the first indication that additional video segments, or splices, were used.
+This is the first visual indication that additional video segments, or splices, were used.
 
 ## Inconsistent Character Menu Music
 The character menu version is inconsistent with the main menu screen. At 0:13, the _Diablo_ character select screen appears:
 
 ![](Attachments/DiabloCharacterScreen.png)
-_Figure 4 - Character select screen where music is muted_
+_Figure 4 - Character select screen where no music is playing_
 
-The character select screen has no music playing. _Diablo_ 1.05 and later do not play music on the character select screen as a result of changes made to the menu screen. This indicates this portion of the run was performed on a later version of the game and there was a video splice between the main menu and the character select menu.
+The character select screen has no music playing. In Diablo 1.05 and later, music is absent on the character select screen due to changes made to the menu. This indicates that this portion of the run was performed on a later version of the game, suggesting a video splice between the main menu and the character select menu.
 
 ## Invalid Dungeon Level Sequence
 Starting at 0:48 in dungeon level (hereafter dlvl) 1 through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 steps for dlvl 1-4, 5 steps for dlvl 5-8, and 3 steps for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
