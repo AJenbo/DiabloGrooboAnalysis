@@ -192,7 +192,7 @@ The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the 
 
 ## Inaccessible Dungeon Level
 
-A dungeon level that can only exist with an invalid date is used. When dlvl 9 was identified, it showed inconsistencies in the video compared to what should have appeared in the game. During the run, two Lava Lords are standing just to the right of the level entrance, but normally they would not have this starting position. Upon killing the first Lava Lord, it drops Naj's Puzzler, an item that gives the player the ability to teleport and makes the rest of the run significantly easier. However, this item would not have been dropped in this situation.
+A dungeon level that can only exist with an invalid date is used. When dlvl 9 was identified, it showed inconsistencies in the video compared to what should have appeared in the game as described in [[#Inconsistent Item Drop]]. During the run, two Lava Lords are standing just to the right of the level entrance that would not normally have this starting position.
 
 At 1:27, dlvl 9 appears:
 
@@ -213,7 +213,7 @@ Although dlvl 9 is the first level where Naj's Puzzler can drop, there were no g
 
 The team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
-While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, they were unable to determine which method was most likely due to the diverse nature of possible ways to manipulate the game, and there seemingly being no way to do so from within the game itself.
+While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish specific which method was used. However, the team did not discover any legitimate methods to do so from within the game itself.
 
 ## Missing Gameplay
 
@@ -244,14 +244,14 @@ _Figure 20 - Second frame of down to up animation in run_
 
 The second frame from the run shows the character's right leg in front of their left. The frame that should be present showing the character's right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. The team observed similar frames which appear to have been omitted or duplicated during the encoding process throughout the video, complicating frame-by-frame analysis.
 
-This issue is more pronounced after level loading. For example, at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
+However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. For example, at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
 _Figure 21 - Red portal visible in lower-left_
 
 The same issue is also present at 3:28 where the teleport spell appears to have progressed a few frames when returning from the cutscene.
 
-More significantly, gameplay is entirely missing at other points in the run. This issue becomes evident during interactions with vendors, where simply reentering the shop inventory would not normally trigger item rerolls. This indicates that the required gameplay to generate a new shop seed was omitted, described in [[#Inconsistent Shop Inventory Rerolling]].
+Gameplay is entirely missing at other points in the run. This issue becomes evident during interactions with vendors, where simply reentering the shop inventory would not trigger item rerolls. This indicates that the required gameplay to generate a new shop seed was omitted as described in [[#Inconsistent Shop Inventory Rerolling]].
 
 These various portions of missing video indicate video splices were used which removed portions of gameplay instead of just removing portions of loading screens. The removed gameplay shortened the calculated run length using the timing method described in [[#Runtime Discrepancies]] and served to further misrepresent the length of the run.
 
