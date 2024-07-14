@@ -6,10 +6,10 @@
 The current world record _Diablo_ speedrun by Groobo (in the ‘any% segmented’ category) contains significant irregularities which compromise the integrity of the run. This analysis details discoveries quantifying ways the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
 
 The speedrun includes the following disqualifying elements:
-- Mutually exclusive gameplay behaviors, indicating it was spliced from multiple playthroughs using at least versions 1.00 and 1.09 of the game
+- Mutually exclusive gameplay behaviors, indicating the run was spliced from multiple playthroughs using at least versions 1.00 and 1.09 of the game
 - Segments from unrelated runs that cannot naturally coexist in a single playthrough
-- Levels that could only exist through external modifications to the game's mechanics.
-- Graphical and audio artifacts suggesting video splicing, with some segments notably omitting portions that affect the recorded completion time
+- Levels which could only exist through external modifications to the game's mechanics
+- Graphical and audio artifacts suggesting video splicing, with some segments notably omitting portions which affect the recorded completion time
 
 **Table of Contents**
 [[#Abstract]]
@@ -89,9 +89,7 @@ The main menu version is inconsistent with the title screen. At 0:12, the _Diabl
 ![](Attachments/DiabloMenuScreen.png)
 _Figure 3 - Diablo v1.00 main menu version_
 
-The version shown on the main menu is also embedded in the application. As described in [[#Inconsistent Main Menu Version]], _Diablo_ 1.00 would have displayed a title screen with a copyright date of 1996, indicating a version difference between the title screen and the main menu screen.
-
-This is the first visual indication that additional video segments, or splices, were used.
+The version shown on the main menu is also embedded in the application. As described in [[#Inconsistent Main Menu Version]], _Diablo_ 1.00 would have displayed a title screen with a copyright date of 1996, indicating a version difference between the title screen and the main menu screen. This is the first visual indication that additional video segments, or splices, were used.
 
 ## Inconsistent Character Menu Music
 The character menu version is inconsistent with the main menu screen. At 0:13, the _Diablo_ character select screen appears:
@@ -99,7 +97,7 @@ The character menu version is inconsistent with the main menu screen. At 0:13, t
 ![](Attachments/DiabloCharacterScreen.png)
 _Figure 4 - Character select screen where no music is playing_
 
-The character select screen has no music playing. In Diablo 1.05 and later, music is absent on the character select screen due to changes made to the menu. This indicates that this portion of the run was performed on a later version of the game, suggesting a video splice between the main menu and the character select menu.
+The character select screen has no music playing. *Diablo* 1.05 and later lack music when on the character select screen. This indicates that this portion of the run was performed on a later version of the game, indicating the presence of a video splice between the main menu and the character select menu.
 
 ## Invalid Dungeon Level Sequence
 Starting at 0:48 in dungeon level (hereafter dlvl) 1 through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 steps for dlvl 1-4, 5 steps for dlvl 5-8, and 3 steps for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
