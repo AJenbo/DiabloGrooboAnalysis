@@ -135,7 +135,7 @@ Save files are encrypted, increasing the difficulty of modifying the dungeon see
 
 ## Inconsistent Inventory
 
-The contents of the inventory change unexpectedly throughout the run, indicating that splices from multiple playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
+The contents of inventory change unexpectedly throughout the run, indicating splices from multiple playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
 
 ![](Attachments/dlvl4Ring.png)
 _Figure 6 - Ring of the Vulture acquired on dlvl 4_
@@ -335,37 +335,32 @@ Allan Cecil (dwangoAC)is the founder and leader of the TASBot online community a
 
 Anders Jenbo, also known as AJenbo, is a seasoned software engineer with over two decades of experience. He specializes in developing and refining complex systems, with notable contributions to the Devilution/DevilutionX project, focusing on documenting and modernizing the Diablo 1 engine. His involvement includes working on the tools for generating and analyzing Diablo 1 dungeons, as well as using his knowledge of the game and its history to identify issues with the run.
 
+Additional authors:
 - Staphen
-    
 - ephphatha
-    
 - Funkmastermp
-    
 - kphoenix
-    
 - kevans
-    
 - other contributors
-    
 
 # Appendix A: Diablo Level Generation
 
-The team reverse-engineered the _Diablo_ executable and determined exactly how the game generates levels for a single playthrough. At a high level the process is:
+The team reverse-engineered the _Diablo_ executable and determined exactly how the game generates levels for a single playthrough. At a high level, the process involves the following elements:
 
-1. The player chooses to start a new game (either by creating a new character or starting a new playthrough with an existing character).
-2. The current date/time (down to the second)[^5] is used to seed the psuedo-random number generator (RNG).
-3. 16 consecutive values [^6] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level.
-4. The 15th dungeon seed is used to randomly deactivate 5 quests.
+1. The player chooses to start a new game (either by creating a new character or starting a new playthrough with an existing character)
+2. The current date/time (down to the second)[^5] is used to seed the psuedo-random number generator (RNG)
+3. 16 consecutive values [^6] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level
+4. The 15th dungeon seed is used to randomly deactivate 5 quests
 5. When the player visits a level for the first time:
-    1. The Diablo application uses the relevant dungeon seed to set the RNG state and generates the dungeon layout (advancing the RNG an indeterminate number of times).
-    2. The Diablo application uses the same dungeon seed to reset the RNG state and generates objects/monsters/items, then records their state in the save file (so that if the player picks up an item, kills a monster, etc. they don’t respawn when revisiting the level).
+    1. *Diablo* uses the relevant dungeon seed to set the RNG state and generates the dungeon layout (advancing the RNG an indeterminate number of times)
+    2. *Diablo* uses the same dungeon seed to reset the RNG state and generates objects/monsters/items, then records their state in the save file (so that if the player picks up an item, kills a monster, etc. they don’t respawn when revisiting the level)
 6. If the player revisits a level the process is slightly different:
-    1. The Diablo application uses the relevant dungeon seed to set the RNG state and generates the dungeon layout.
-    2. The Diablo application loads the most recent state of the objects/monsters/items from the last time the player was on this level.
+    1. *Diablo* uses the relevant dungeon seed to set the RNG state and generates the dungeon layout
+    2. *Diablo* loads the most recent state of the objects/monsters/items from the last time the player was on this level
 
 ## Choosing the Initial RNG Seed
 
-To set the initial state when starting a new game the Diablo application uses a C standard library function time(). The value returned by this function varies on different platforms, from the decompilation effort the team was able to determine the implementation used by Diablo returns the number of seconds since Jan 1, 1970 at 00:00:00 as a 32 bit signed integer value. They were also able to isolate the date handling portion of the game seed generation code and determine how it handled the [year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem), which is shown in the following code snippet:
+To set the initial state when starting a new game the Diablo application uses a C standard library function `time()`. The value returned by this function varies on different platforms. From the decompilation effort, the team was able to determine the implementation used by Diablo returns the number of seconds since Jan 1, 1970 at 00:00:00 as a 32 bit signed integer value. They were also able to isolate the date handling portion of the game seed generation code and determine how it handled the [year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem), which is shown in the following code snippet:
 
 ```c
 //The versions of Visual Studio used to compile Diablo implement time() by calling __loctotime_t()  
@@ -377,21 +372,21 @@ uint yearsSince1900 = year - 1900;
 
 _Figure 30 - Game seed date handling code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 30_ and explicitly limits the date range between 1970[^7] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels and not 2<sup>32*16</sup> as implied by Groobo/some commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 30_, which explicitly limits the date range between 1970[^7] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
 
-At the time of writing in 2024 it is feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^8] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo’s submission.
+It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^8] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo’s submission.
 
 ## Generating the Set of Dungeon Seeds
 
 Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^9] used by the Diablo application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
 
-Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function abs() (yielding a 31 bit seed[^10]). The end result is a 16-value wide “window” of the sequence of numbers immediately after the initial RNG state.
+Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function `abs()` (yielding a 31 bit seed[^10]). The end result is a 16-value wide “window” of the sequence of numbers immediately after the initial RNG state.
 
-Because the dungeon seeds use all but one bit of the RNG state it’s possible to reverse the transformation and determine two possibilities of what the RNG state was given a single dungeon seed. With two dungeon seeds you can determine whether they can occur in the same game and if so exactly what the other dungeon seeds are and what the initial RNG seed (starting time) would have been for that game.
+Because the dungeon seeds use all but one bit of the RNG state, it’s possible to reverse the transformation and determine two possibilities of what the RNG state was given a single dungeon seed. With two dungeon seeds you can determine whether they can occur in the same game and if so exactly what the other dungeon seeds are and what the initial RNG seed (starting time) would have been for that game.
 
 ## Generating a Level
 
-Because the dungeon layout for a given game does not change there’s no need to include the full 50KB state in the save file. Instead the 4 byte dungeon seed can be used to regenerate the level and because the RNG produces the same sequence of numbers all the randomly selected elements will be the same each time the player visits a level. Dungeon layouts are also influenced by what quests are available in the current playthrough, however this is also something that doesn’t change mid-playthrough.
+Because the dungeon layout for a given game does not change, there’s no need to include the full 50KB state in the save file. Instead, the 4-byte dungeon seed can be used to regenerate the level and because the RNG produces the same sequence of numbers all the randomly selected elements will be the same each time the player visits a level. Dungeon layouts are also influenced by what quests are available in the current playthrough, however this is also something that doesn’t change mid-playthrough.
 
 Objects, monsters, and items are only generated on the first visit to a level because the player can interact with these elements. If a player defeats a monster, opens a chest, breaks a barrel, or picks up/drops an item the application needs to persist the change for when the player leaves and returns to the level.
 
@@ -405,13 +400,13 @@ After that the tiles are visually identified and placed in the same pattern as s
 
 ![](Attachments/TilePattern.png)
 
-This tile pattern is then exported from the level editor and fed to the Diablo map generator which will then match each generated level with the given pattern. Usually this is enough to identify a level uniquely. To then locate the specific game seed object and monster positions are then mapped out and an additional search is done to locate the game seed where everything lines up.
+This tile pattern is then exported from the level editor and fed to the Diablo map generator which then matches each generated level with the given pattern. Usually this is enough to identify a level uniquely. To then locate the specific game seed, object and monster positions are mapped out and an additional search is done to locate the game seed where everything lines up.
 
 # Footnotes
 
 [^1]: Refer to [[#Appendix A Diablo Level Generation|Appendix A]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 
-[^2]: To save space, *Diablo* save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. These values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in *Diablo*, the possibilities for these 16 dungeon seeds are fairly limited.
+[^2]: To save space, *Diablo* save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in *Diablo*, the possibilities for these 16 dungeon seeds are fairly limited.
 
 [^3]: No game generates monsters in a starting position that would lead to the gameplay shown in the video, and none of the games that generate the dungeon layout shown have the item drop anywhere in the level, let alone from the first monster.
 
