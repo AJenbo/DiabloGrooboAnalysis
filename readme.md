@@ -67,20 +67,21 @@ Figure 2 shows the following patch release details:
 
 | **Patch** | **Patch date** | **Reported** | **Exe version** | **Exe product** | **Exe modified** |
 | --------- | -------------- | ------------ | --------------- | --------------- | ---------------- |
-| 1.00      | (no patch)     | (no patch)   | 1.0.0.0         | 96, 12, 26, 3   | 1996-12-26       |
-| 1.02      | 02/25/97       | 1997-02-27   | 1.0.0.0         | 97, 2, 7, 1     | 1997-02-26       |
-| 1.03      | 04/01/97       | 1997-01-04   | 1.0.0.0         | 97, 4, 1, 1     | 1997-04-01       |
-| 1.04      | 05/30/97       | 1997-06-16   | 1.0.0.0         | 97, 5, 23, 1    | 1997-06-02       |
-| 1.05      | 05/14/98       | 1998-06-10   | 1.0.0.0         | 98, 5, 6, 1     | 1998-06-05       |
-| 1.07      | 08/25/98       | 1998-09-24   | 1.0.0.0         | 98, 5, 6, 1     | 1998-09-17       |
-| 1.08      | 05/23/2000     | 2000-06-16   | 2000.2.2.1      | 1, 0, 8, 1      | 2000-05-23       |
-| 1.09      | 05/11/2001     | 2001-06-23   | 2001.5.11.1     | 1, 0, 9, 1      | 2001-05-11       |
+| 1.00      | (no patch)     | (no patch)   | 1.0.0.0         | 96,12,26,3      | 1996-12-26       |
+| 1.02      | 02/25/97       | 1997-02-27   | 1.0.0.0         | 97,2,7,1        | 1997-02-26       |
+| 1.03      | 04/01/97       | 1997-01-04   | 1.0.0.0         | 97,4,1,1        | 1997-04-01       |
+| 1.04      | 05/30/97       | 1997-06-16   | 1.0.0.0         | 97,5,23,1       | 1997-06-02       |
+| 1.05      | 05/14/98       | 1998-06-10   | 1.0.0.0         | 98,5,6,1        | 1998-06-05       |
+| 1.07      | 08/25/98       | 1998-09-24   | 1.0.0.0         | 98,5,6,1        | 1998-09-17       |
+| 1.08      | 05/23/2000     | 2000-06-16   | 2000.2.2.1      | 1,0,8,1         | 2000-05-23       |
+| 1.09      | 05/11/2001     | 2001-06-23   | 2001.5.11.1     | 1,0,9,1         | 2001-05-11       |
+|           |                |              |                 |                 |                  |
 
 _Figure 2 - Table of patch versions and release dates_
 
 The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 display a copyright date of 1996, version 1.08 displays a copyright date of 1996-2000, and 1.09 displays a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
 
- However, Groobo's description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses "…the negative health glitch (note that this was fixed with the 1.07 patch)." Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent glitch use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game.
+ However, Groobo's description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses "…the negative health glitch (note that this was fixed with the 1.07 patch)." Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent Glitch Use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game.
 
 ## Inconsistent Main Menu Version
 
@@ -108,24 +109,24 @@ Over the course of several weeks and scan iterations, the team reviewed every po
 
 Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. **Figure 5** shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns.
 
-| Dungeon Level | Dungeon Seed   | Game Seed  | Game Start Time     |
-| ------------- | -------------- | ---------- | ------------------- |
-| 1             | 1342003104     | 1230144506 | 2008-12-24 18:48:26 |
-| 2             | 755133500      | 1229972777 | 2008-12-22 19:06:17 |
-| 3             |                |            |                     |
-| 4             |                |            |                     |
-| 5             | 1293295771     | 1229975451 | 2008-12-22 19:50:51 |
-| 6             | 2062861350     | 1230145611 | 2008-12-24 19:06:51 |
-| 7             | 894816128      | 1230145480 | 2008-12-24 19:04:40 |
-| 8             | 1560480383     | 1230145480 | 2008-12-24 19:04:40 |
-| 9             | 764458097 [^3] | 1230001659 | 2008-12-23 03:07:39 |
-| 10            | 1375523899     | 1229973508 | 2008-12-22 19:18:28 |
-| 11            | 651290160      | 1229976092 | 2008-12-22 20:01:32 |
-| 12            | 2134483070     | 1230145177 | 2008-12-24 18:59:37 |
-| 13            | 723487375      | 1229976431 | 2008-12-22 20:07:11 |
-| 14            | 2144005606     | 1229976755 | 2008-12-22 20:12:35 |
-| 15            | 1342549707     | 1230053637 | 2008-12-23 17:33:57 |
-| 16            | 118068228      | 1230830247 | 2009-01-01 17:17:27 |
+| Dlvl | Dungeon Seed   | Game Seed  | Game Start Time     |
+| ---- | -------------- | ---------- | ------------------- |
+| 1    | 1342003104     | 1230144506 | 2008-12-24 18:48:26 |
+| 2    | 755133500      | 1229972777 | 2008-12-22 19:06:17 |
+| 3    |                |            |                     |
+| 4    |                |            |                     |
+| 5    | 1293295771     | 1229975451 | 2008-12-22 19:50:51 |
+| 6    | 2062861350     | 1230145611 | 2008-12-24 19:06:51 |
+| 7    | 894816128      | 1230145480 | 2008-12-24 19:04:40 |
+| 8    | 1560480383     | 1230145480 | 2008-12-24 19:04:40 |
+| 9    | 764458097 [^3] | 1230001659 | 2008-12-23 03:07:39 |
+| 10   | 1375523899     | 1229973508 | 2008-12-22 19:18:28 |
+| 11   | 651290160      | 1229976092 | 2008-12-22 20:01:32 |
+| 12   | 2134483070     | 1230145177 | 2008-12-24 18:59:37 |
+| 13   | 723487375      | 1229976431 | 2008-12-22 20:07:11 |
+| 14   | 2144005606     | 1229976755 | 2008-12-22 20:12:35 |
+| 15   | 1342549707     | 1230053637 | 2008-12-23 17:33:57 |
+| 16   | 118068228      | 1230830247 | 2009-01-01 17:17:27 |
 
 _Figure 5: Dungeon seeds and game seeds present in Groobo's run_
 
@@ -204,8 +205,8 @@ _Figure 15 - Dungeon level layout identified with map generation tools_
 
 The team used the Diablo map generation tools to conduct additional searches across all valid and invalid games to identify any levels matching what was shown. Only two invalid game seeds produced the starting monster positions seen in the run:
 
-- Game seed `2728353700` corresponding to June, 16 2056 at 04:01:40
-- Game seed `3284159136` corresponding to January 26, 2074 at 2:25:36
+- Game seed `2728353700` - June, 16 2056 at 04:01:40
+- Game seed `3284159136` - January 26, 2074 at 2:25:36
 
 Both game seed dates are after the year 2038 and cannot be reached without modifications.
 
@@ -410,7 +411,7 @@ This tile pattern is then exported from the level editor and fed to the Diablo m
 
 [^3]: No game generates monsters in a starting position that would lead to the gameplay shown in the video, and none of the games that generate the dungeon layout shown have the item drop anywhere in the level, let alone from the first monster.
 
-[^4]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in a [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [is handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153)and selects one of the two quests to be active. The next three groups, including the group "The Butcher", "Gharbad the Weak", and "Ogden's Sign", the group "The Magic Rock", "Valor", and "Halls of the Blind", and the group "Zhar the Mad", "The Black Mushroom", and "Anvil of Fury" each select two of the three quests to be active. Finally, the group "Warlord of Blood" and "Lachdanan" selects one quest to be active.
+[^4]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in a [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [is handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153) and selects one of the two quests to be active. The next three groups, including the group "The Butcher", "Gharbad the Weak", and "Ogden's Sign", the group "The Magic Rock", "Valor", and "Halls of the Blind", and the group "Zhar the Mad", "The Black Mushroom", and "Anvil of Fury" each select two of the three quests to be active. Finally, the group "Warlord of Blood" and "Lachdanan" selects one quest to be active.
 
 [^5]: The compiler used to build retail versions of *Diablo* further restricts the possible values as described in [[#Choosing the Initial RNG Seed]].
 
