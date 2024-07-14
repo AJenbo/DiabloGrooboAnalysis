@@ -213,7 +213,7 @@ Although dlvl 9 is the first level where Naj's Puzzler can drop, there were no g
 
 The team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
-While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish specific which method was used. However, the team did not discover any legitimate methods to do so from within the game itself.
+While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used. However, the team did not discover any legitimate methods to do so from within the game itself.
 
 ## Missing Gameplay
 
@@ -313,7 +313,7 @@ A negative health glitch is used which is not possible in version 1.09 as shown 
 ![](Attachments/NegativeHealth.png)
 _Figure 29 - Negative health caused by applying ring_
 
-The ring imparts negative health which causes the player to become invulnerable due to a Mana Shield bug. However, the negative health glitch was patched out prior to version 1.09. Specifically, the release notes for version 1.07 state "Fixed the Mana Shield bugs that could make a player invulnerable and/or invisible to other players.", indicating the bug was only present in versions 1.05 and earlier. The use of the glitch indicates an earlier version of the game was used.
+The ring imparts negative health which causes the player to become invulnerable due to a Mana Shield bug. However, the negative health glitch was patched out prior to version 1.09. Specifically, the release notes for version 1.07 state "Fixed the Mana Shield bugs that could make a player invulnerable and/or invisible to other players.", indicating the bug was only present in versions 1.05 and earlier. The use of the glitch indicates an earlier version of the game was used during these segments.
 
 ## Runtime Discrepancies
 
@@ -321,7 +321,7 @@ Despite the stated game time of 3 minutes and 12 seconds, the recording shows th
 
 ## Conclusion
 
-The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, and using gameplay-removing video splices.
+The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, combining footage from different runs, and using gameplay-removing video splices.
 
 Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but could not have been used for the entire run as demonstrated by the title screen. Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs using at least two different versions of the game. Similarly, the game seed and dungeon seed cannot be generated in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing small portions of gameplay in ways that would impact the recorded completion time.
 
