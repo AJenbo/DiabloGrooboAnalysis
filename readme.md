@@ -174,7 +174,7 @@ Additionally, when Groobo returns to town to identify the staff that dropped on 
 ![](Attachments/CleanWell.png) 
 _Figure 11 - The return trip to town showing a clean well_
 
-However, the game seed that leads to the version of dlvl 2 shown in the video has the "Poison Water Supply" quest available:
+However, the game seed that leads to the version of dlvl 2 shown in the video has the “Poison Water Supply” quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room, as shown in Figure 12:
 
 ![](Attachments/dlvl2Layout.png)
 _Figure 12 - Dungeon level 2 level layout_ 
