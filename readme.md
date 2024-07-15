@@ -1,3 +1,4 @@
+# Analysis of Groobo's Diablo WR Speedrun
 # Abstract
 
 The current world record _Diablo_ speedrun by Groobo (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis details discoveries quantifying ways the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
@@ -39,7 +40,7 @@ The speedrun includes the following disqualifying elements:
 
 # Authors
 
-This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown, based on analysis investigations and input from members of the DevilutionX, _Diablo_ speedrunning, TASBot, and TASVideos communities.
+This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown, based on analysis investigations and input from members of the DevilutionX, _Diablo_ speedrunning, TASBot, and TASVideos communities including Anders Jenbo (AJenbo), Stephen Wills (staphen), Andrew James (ephphatha), Eric Robinson (kphoenix), Funkmastermp, kevans, and other subject matter experts consulted during the investigation.
 
 # Background
 
