@@ -18,7 +18,7 @@ The speedrun includes the following disqualifying elements:
 	- [[#Inconsistent Main Menu Version|Inconsistent Main Menu Version]]
 	- [[#Inconsistent Character Menu Music|Inconsistent Character Menu Music]]
 	- [[#Invalid Dungeon Level Sequence|Invalid Dungeon Level Sequence]]
-	- [[#Inconsistent Inventory|Inconsistent Inventory|Inconsistent Inventory]]
+	- [[#Inconsistent Inventory|Inconsistent Inventory]]
 	- [[#Impossible Quest Combinations|Impossible Quest Combinations]]
 	- [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]]
 	- [[#Missing Gameplay|Missing Gameplay]]
@@ -409,7 +409,7 @@ This tile pattern is then exported from the level editor and fed to the _Diablo_
 
 # Footnotes
 
-[^1]: Refer to [[#Appendix A Diablo Level Generation|Appendix A Diablo Level Generation|Appendix A]] for specifics on how dungeon layouts and objects/monsters/items are generated.
+[^1]: Refer to [[#Appendix A Diablo Level Generation|Appendix A]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 
 [^2]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
 
