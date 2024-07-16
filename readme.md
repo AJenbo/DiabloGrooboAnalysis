@@ -36,6 +36,7 @@ The speedrun includes the following disqualifying elements:
 	- [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]]
 	- [[#Generating a Level|Generating a Level]]
 	- [[#Level Identification Process|Level Identification Process]]
+- [[#Appendix B Diablo Modification Tools|Appendix B: Diablo Modification Tools]]
 - [[#Footnotes|Footnotes]]
 
 # Authors
@@ -217,8 +218,7 @@ Although dlvl 9 is the first level where Naj's Puzzler can drop, there were no g
 
 The team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
-While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used. However, the team did not discover any legitimate methods to do so from within the game itself.
-
+While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used. However, the team did not discover any legitimate methods to do so from within the game itself. For additional details, see [[#Appendix B Diablo Modification Tools|Appendix B: Diablo Modification Tools]].
 ## Missing Gameplay
 
 Portions of gameplay are missing in multiple locations, although the encoder used may have introduced missing or duplicate frames, complicating analysis. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking "down" (toward the bottom of the screen) and then turning to walk "up" (toward the top of the screen):
@@ -329,7 +329,7 @@ Despite the stated game time of 3 minutes and 12 seconds, the recording shows th
 
 The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, combining gameplay from different runs, and using gameplay-removing video splices.
 
-Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but could not have been used for the entire run as demonstrated by the title screen. Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs using at least two different versions of the game. Similarly, the game seed and dungeon seed cannot be generated in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing small portions of gameplay in ways that would impact the recorded completion time.
+Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but could not have been used for the entire run given the conflicting versions displayed. Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs using at least two different versions of the game. Similarly, the game seed and dungeon seed cannot be generated in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing small portions of gameplay in ways that would impact the recorded completion time.
 
 Overall, the team's analysis reveals the run was not possible as Groobo described without disqualifying modifications. The run should therefore be immediately retracted from all leaderboards.
 
@@ -407,6 +407,46 @@ After that the tiles are visually identified and placed in the same pattern as s
 ![](Attachments/TilePattern.png)
 
 This tile pattern is then exported from the level editor and fed to the _Diablo_ map generator which then matches each generated level with the given pattern. Usually this is enough to identify a level uniquely. To then locate the specific game seed, object and monster positions are mapped out and an additional search is done to locate the game seed where everything lines up.
+
+# Appendix B: Diablo Modification Tools
+
+The team observed multiple instances of game behaviors in Groobo's run that were inconsistent with the normal behavior of the game. Although it is possible to modify the behavior of an application internally using Arbitrary Code Execution (ACE) exploits, such an exploit would typically be classified as a different speedrunning category and would need to be declared. Groobo did not indicate he used any ACE exploits in his submission notes. Therefore, the evidence appears to indicate Groobo used external tools to change the behavior of the game as described in [[#Inaccessible Dungeon Level]] and other findings.
+
+A number of tools designed to externally modify the behavior of _Diablo_ existed by 2009 when Groobo published his run. The team cannot conclusively determine which tools Groobo may or may not have used based on the evidence available. However, Groobo may have used some of these tools or employed similar techniques to modify the behavior of the game.
+
+Inclusion in this list does not indicate an endorsement by the team of the usefulness, safety, or continued availability of any particular tool and is included as an aid only. For safety, links are only provided to meta or reference sites that list tools for modifying the behavior of _Diablo_ rather than linking directly to tools themselves that might violate copyright or other regulations, may be harmful, or are otherwise located on domains that no longer host the original content.
+
+A notable set of tools were distributed by BoBaFeTT as archived on the Wayback Machine at https://web.archive.org/web/20091027101322/http://geocities.com/free_bobafett/contents.htm and include:
+- BoBaFeTT Trainer version 6.8, compatible with _Diablo_ version 1.09
+- BoBaFeTT MINI Trainer and source code, compatible with _Diablo_ version 1.08
+
+The site https://ultimatestuff.tripod.com/ultimatediablo/cheats.htm includes a list of several relevant tools along with brief descriptions:
+
+| **Name as shown on site**        | **Description as shown on site**          |
+| -------------------------------- | ----------------------------------------- |
+| BobaFett's Diablo Trainer        | Diablo Trainer with built in hacks.       |
+| Character Merger                 | Merges two characters together.           |
+| Diablo Hack                      | To use DAT files.                         |
+| Diablo Item Editor               | Edit your items.                          |
+| Diablo Retail Backup Utility     | Back up your retail characters.           |
+| Diablo Saver                     | Offers saving and restoring.              |
+| Diablo Shareware Backup Utility  | Back up your shareware characters.        |
+| Draven's Item Editor             | Another great item editor.                |
+| Draven's Recharger Gold          | Raise mana, life, and damage.             |
+| Enigma's Trainer                 | Best Trainer for shareware.               |
+| Golem Morpher                    | Modify your golem.                        |
+| Magik's Item Editor              | Magik's Latest Item Editor.               |
+| Mandrark's Item/Character Editor | Edit your characters and items.           |
+| Maunel's Diablo Trainer          | Diablo Trainer with built in hacks.       |
+| Name changer                     | Change your name.                         |
+| Optik's Diablo Trainer           | Trainer for Retail v1.05                  |
+| Raymond's Trainer                | Best Trainer for most versions of Diablo. |
+| Stu's Diablo Trainer             | Diablo Trainer for most versions.         |
+| Trader                           | Import items into your DMP.               |
+
+The site http://www.guardiansofjustice.com/diablo/index2.htm contains sub-pages for a variety of _Diablo_ tools and utilities with full descriptions. A page previously existed at `geocities.com/SiliconValley/Hardware/4902/Cheats.html` which contained a variety of tools but the site is not safely archived at this time. Additionally, the site https://mgpat-gm.github.io/links.html contains links to current and former sites hosting various _Diablo_ mods and tools too numerous to list here.
+
+In summary, the above resources demonstrate there were numerous tools available at the time provided ample capabilities to modify the behavior of _Diablo_ in ways displayed in the video.
 
 # Footnotes
 
