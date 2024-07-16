@@ -420,6 +420,8 @@ A notable set of tools were distributed by BoBaFeTT as archived on the Wayback M
 - BoBaFeTT Trainer version 6.8, compatible with _Diablo_ version 1.09
 - BoBaFeTT MINI Trainer and source code, compatible with _Diablo_ version 1.08
 
+Another notable tool was Doom-Gaze's Diablo Trainer, submitted to https://www.ghoztcraft.net/forums/files/file/976-doom-gazes-diablo-trainer/ in 2008.
+
 The site https://ultimatestuff.tripod.com/ultimatediablo/cheats.htm includes a list of several relevant tools along with brief descriptions:
 
 | **Name as shown on site**        | **Description as shown on site**          |
@@ -444,9 +446,9 @@ The site https://ultimatestuff.tripod.com/ultimatediablo/cheats.htm includes a l
 | Stu's Diablo Trainer             | Diablo Trainer for most versions.         |
 | Trader                           | Import items into your DMP.               |
 
-The site http://www.guardiansofjustice.com/diablo/index2.htm contains sub-pages for a variety of _Diablo_ tools and utilities with full descriptions. A page previously existed at `geocities.com/SiliconValley/Hardware/4902/Cheats.html` which contained a variety of tools but the site is not safely archived at this time. Additionally, the site https://mgpat-gm.github.io/links.html contains links to current and former sites hosting various _Diablo_ mods and tools too numerous to list here.
+The site http://www.guardiansofjustice.com/diablo/index2.htm contains sub-pages for a variety of self-hosted _Diablo_ tools and utilities with full descriptions, specifically including a tool named Diablo Hack which is referenced on several other sites and used by other modification tools. A page previously existed at `geocities.com/SiliconValley/Hardware/4902/Cheats.html` which contained a variety of tools but the site is not safely archived at this time. The site https://www.angelfire.com/la/DipStick/files.html lists modification tools categorized by function and was also available at the time. Additionally, the site https://mgpat-gm.github.io/links.html contains current information and links to current and former sites hosting various _Diablo_ mods and tools too numerous to list here.
 
-In summary, the above resources demonstrate there were numerous tools available at the time provided ample capabilities to modify the behavior of _Diablo_ in ways displayed in the video.
+In summary, the above resources demonstrate there were numerous tools available at the time which provided ample capabilities to modify the behavior of _Diablo_ in ways displayed in the video.
 
 # Footnotes
 
