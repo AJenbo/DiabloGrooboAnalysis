@@ -402,7 +402,9 @@ Andrew James (ephphatha) graduated with a game dev degree then spent the next 15
 
 Eric Robinson (kphoenix) is a self-taught C++ programmer with a great passion for retro games, including _Diablo_. He has been playing _Diablo_ since the early 2000s, and found notoriety in the _Diablo_ PvP community over the years. Around 2021, he began learning C++ in order to mod _Diablo_ via Devilution and DevilutionX, and began to make numerous contributions to the DevilutionX project while learning with the help of many notable project contributors. He has been involved with the implementation of features in DevilutionX, such as the improved automap, stash, and colored item backgrounds.
 
-The authors would like to additionally credit Funkmastermp and kevans for their valuable contributions to the analysis.
+Kyle Evans (kevans) is a system software engineer who primarily works on FreeBSD for both fun and profit.  His involvement with the Diablo speedrunning community is virtually nonexistent outside of this analysis, but his career and hobbies have provided him with experience and access to hardware used to accelerate the search efforts.
+
+The authors would like to additionally credit Funkmastermp for valuable contributions to the analysis.
 
 # Appendix A: Diablo Level Generation
 
