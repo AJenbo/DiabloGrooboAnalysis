@@ -230,21 +230,21 @@ The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the 
 
 Ultimately, the team observed the following conflicts between what was visually present in Groobo's video and what was present in the identified game seeds:
 
-| Quest                     | In video            | In seed                |
-| ------------------------- | ------------------- | ---------------------- |
-| The Curse of King Leoric  |                     |                        |
-| **Poisoned Water Supply** | **Visibly absent**  | **Apparently present** |
-| The Butcher               | Visibly present     | Apparently present     |
-| Gharbad the Weak          |                     | Apparently present     |
-| **Ogden’s Sign**          | **Visibly present** | **Apparently absent**  |
-| The Magic Rock            |                     | Apparently absent      |
-| Arkaine’s Valor           |                     | Apparently present     |
-| Halls of the Blind        |                     | Apparently absent      |
-| Zhar the Mad              |                     | Apparently present     |
-| Black Mushroom            |                     |                        |
-| Anvil of Fury             |                     | Apparently present     |
-| Warlord of Blood          | Visibly absent      | Apparently absent      |
-| Lachdanan                 |                     | Apparently present     |
+| Quest                     | In video           | In seed                |
+| ------------------------- | ------------------ | ---------------------- |
+| The Curse of King Leoric  |                    |                        |
+| **Poisoned Water Supply** | **Visibly absent** | **Apparently present** |
+| The Butcher               | Visibly present    | Apparently present     |
+| Gharbad the Weak          |                    | Apparently present     |
+| Ogden’s Sign              | Visibly absent     | Apparently absent      |
+| The Magic Rock            |                    | Apparently absent      |
+| Arkaine’s Valor           |                    | Apparently present     |
+| Halls of the Blind        |                    | Apparently absent      |
+| Zhar the Mad              |                    | Apparently present     |
+| Black Mushroom            |                    |                        |
+| Anvil of Fury             |                    | Apparently present     |
+| Warlord of Blood          | Visibly absent     | Apparently absent      |
+| Lachdanan                 |                    | Apparently present     |
 
 ##### _Figure 16: Combined visibility of quests in video and in identified seeds_
 
