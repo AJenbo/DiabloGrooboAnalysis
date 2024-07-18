@@ -107,7 +107,7 @@ The character select screen has no music playing. _Diablo_ 1.05 and later lack m
 ## Invalid Dungeon Level Sequence
 Starting at 0:48 in dungeon level 1 (dlvl hereafter) through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 tiles for dlvl 1-4, 5 tiles for dlvl 5-8, and 3 tiles for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
 
-As Groobo notes in his earlier [17:38 submission](https://archive.org/details/Diablo_Sorcerer_1738) on October 12th, 2006, "...The maps, mosters \[sic\], drops, chests etc are generated while you create your character, and stay the same every time you play with the same \[character\]…". _Diablo_ save files include the seed information used to generate dungeon levels.[^1] Specifically, the initial game seed based on the game launch time is used to generate 16 dungeon seeds, one for each dungeon level, which are stored in the save file.[^2] Because dungeon seeds form part of the save file for a given game, "luck manipulation" of dungeon layouts is not possible. The only way to change the layout for a level is to start a new game or directly modify the game code or save file.
+As Groobo notes himself in his earlier [17:38 submission](https://archive.org/details/Diablo_Sorcerer_1738) on October 12th, 2006, "...The maps, mosters \[sic\], drops, chests etc are generated while you create your character, and stay the same every time you play with the same \[character\]…". _Diablo_ save files include the seed information used to generate dungeon levels.[^1] Specifically, the initial game seed based on the game launch time is used to generate 16 dungeon seeds, one for each dungeon level, which are stored in the save file.[^2] Because dungeon seeds form part of the save file for a given game, "luck manipulation" of dungeon layouts is not possible. The only way to change the layout for a level is to start a new game or directly modify the game code or save file.
 
 Over the course of several weeks and scan iterations, the team reviewed every possible game seed, including invalid seeds occurring after the year 2038, using `diablo-mapgen --scanner stairs --start 0 --count 4294967295` (with additional scripting to split the search among multiple processor cores). No set of levels matched the results displayed in the run in either the valid or invalid date ranges. This indicates the run was either created by using levels from multiple incongruent playthroughs of the game beyond what would ordinarily be allowed for a segmented speedrun or the run contained directly manipulated dungeon seeds.
 
@@ -136,7 +136,7 @@ _Figure 5: Dungeon seeds and game seeds present in Groobo's run_
 
 The identified games were all started between December 22, 2008 and January 1, 2009 in the weeks directly prior to his January 16, 2009 submission. Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
 
-Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist which could have been used to set a combination of dungeon seeds that wouldn't normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]].
+Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist as described in [[#Appendix B Diablo Modification Tools|Appendix B]] which could have been used to set a combination of dungeon seeds that wouldn't normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]].
 
 ## Inconsistent Inventory
 
@@ -161,13 +161,13 @@ The ring was initially collected, disappeared, and reappeared which indicates mo
 
 Multiple quests from multiple groups of possible quests are active in ways that are impossible in a single playthrough. _Diablo_ separates quests into groups, with a certain number of quests randomly selected to be active from each group:[^4]
 
-| Quests in each group                            | Number Chosen |
-| ----------------------------------------------- | ------------- |
-| The Curse of King Leoric, Poisoned Water Supply | 1             |
-| The Butcher, Gharbad the Weak, Ogden’s Sign     | 2             |
-| The Magic Rock, Valor, Halls of the Blind       | 2             |
-| Zhar the Mad, The Black Mushroom, Anvil of Fury | 2             |
-| Warlord of Blood, Lachdanan                     | 1             |
+| Quests in each group                                | Number Chosen |
+| --------------------------------------------------- | ------------- |
+| The Curse of King Leoric, Poisoned Water Supply     | 1             |
+| The Butcher, Gharbad the Weak, Ogden’s Sign         | 2             |
+| The Magic Rock, Arkaine’s Valor, Halls of the Blind | 2             |
+| Zhar the Mad, The Black Mushroom, Anvil of Fury     | 2             |
+| Warlord of Blood, Lachdanan                         | 1             |
 
 _Figure AA: Active quests per group_
 
@@ -185,53 +185,70 @@ _Figure 10 - Unobstructed stairs leading down to dlvl 5_
 
 This indicates the quest "Ogden's Sign" is not active; if "Ogden's Sign" were active, the stairs would be encased behind walls.
 
-As shown in _Figure AA_, "The Butcher", "Ogden's Sign", and "Gharbad the Weak" are part of a group where two of the three quests will be active. Therefore, if "The Butcher" was active but "Ogden's Quest" was not, the quest "Gharbad the Weak" should have been active. Because the available quests are set when the game is started, all three quests should have stayed consistent throughout the run.
+As shown in _Figure AA_, "The Butcher", "Gharbad the Weak", and "Ogden's Sign" are part of a group where two of the three quests will be active. If "The Butcher" was active but "Ogden's Quest" was not, the quest "Gharbad the Weak" should have been active. Active quests are set when the game is started and do not change. Therefore, the availability of each quest should be consistent throughout the playthrough.
 
-The team compared the levels that could be identified as shown in [[#Invalid Dungeon Level Sequence]] _Figure 5_ and matched the quests available in each level:
+The team reviewed the available quests in the levels that could be identified as shown in [[#Invalid Dungeon Level Sequence]] _Figure 5_:
 
-| Dlvl | Dungeon Seed   | The Butcher | Ogden's Sign | Gharbad the Weak |
-| ---- | -------------- | ----------- | ------------ | ---------------- |
-| 1    | 1342003104     | Yes         | No           | Yes              |
-| 2    | 755133500      | Yes         | No           | Yes              |
-| 3    |                |             |              |                  |
-| 4    |                |             | No           |                  |
-| 5    | 1293295771     | No          | Yes          | Yes              |
-| 6    | 2062861350     | Yes         | Yes          | No               |
-| 7    | 894816128      | Yes         | Yes          | No               |
-| 8    | 1560480383     | Yes         | Yes          | No               |
-| 9    | 764458097 [^3] | No          | Yes          | Yes              |
-| 10   | 1375523899     | Yes         | No           | Yes              |
-| 11   | 651290160      | Yes         | Yes          | No               |
-| 12   | 2134483070     | No          | Yes          | Yes              |
-| 13   | 723487375      | Yes         | No           | Yes              |
-| 14   | 2144005606     | No          | Yes          | Yes              |
-| 15   | 1342549707     | Yes         | Yes          | No               |
-| 16   | 118068228      | Yes         | Yes          | No               |
+| Dlvl/Quest               | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  |
+| ------------------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| The Curse of King Leoric | ✔   |     | ?   | ?   | ✔   | ✔   | ✔   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   |     | ✔   |
+| Poisoned Water Supply    |     | ✔   | ?   | ?   |     |     |     |     |     | ✔   | ✔   |     |     |     | ✔   |     |
+| The Butcher              | ✔   | ✔   | ?   | ?   |     | ✔   | ✔   | ✔   |     | ✔   | ✔   |     | ✔   |     | ✔   | ✔   |
+| Gharbad the Weak         | ✔   | ✔   | ?   | ?   | ✔   |     |     |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |     |     |
+| Ogden’s Sign             |     |     | ?   |     | ✔   | ✔   | ✔   | ✔   | ✔   |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |
+| The Magic Rock           | ✔   | ✔   | ?   | ?   |     | ✔   | ✔   | ✔   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   | ✔   |
+| Arkaine’s Valor          | ✔   |     | ?   | ?   | ✔   |     | ✔   | ✔   |     | ✔   | ✔   | ✔   | ✔   |     |     |     |
+| Halls of the Blind       |     | ✔   | ?   | ?   | ✔   | ✔   |     |     | ✔   |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |
+| Zhar the Mad             |     |     | ?   | ?   | ✔   | ✔   | ✔   | ✔   | ✔   |     | ✔   | ✔   | ✔   | ✔   | ✔   | ✔   |
+| Black Mushroom           | ✔   | ✔   | ?   | ?   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   |     |     |     | ✔   | ✔   |
+| Anvil of Fury            | ✔   | ✔   | ?   | ?   |     |     | ✔   | ✔   |     | ✔   |     | ✔   | ✔   | ✔   |     |     |
+| Warlord of Blood         | ✔   |     | ?   | ?   |     | ✔   |     |     | ✔   | ✔   |     | ✔   |     |     |     |     |
+| Lachdanan                |     | ✔   | ?   | ?   | ✔   |     | ✔   | ✔   |     |     | ✔   |     | ✔   | ✔   | ✔   | ✔   |
 
 _Figure AA: Active quests in dungeon seeds present in Groobo's run_
 
-Of the dungeon levels the team was able to conclusively identify, 9 of them come from games which have "Ogden's Sign" active and would not be able to proceed past dlvl 4 as shown.
-  
-Additional quest groups also contain irregularities. At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
+ While "Gharbad the Weak" was active in some dungeon levels such as dlvl 5, it was not active in others such as dlvl 6. To better understand these inconsistencies, the team looked for additional visual indicators of the quests available in Groobo's run. At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
 
 ![](Attachments/CleanWell.png)
 _Figure 11 - The return trip to town showing a clean well_
 
-However, the game seed that leads to the version of dlvl 2 shown in the video has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room, as shown in Figure 12:
+The team then used the command `diablo-mapgen --start 1229972777 --count 1 --export` to view the maps of the game seed that produces the dlvl 2 shown in the video. The resulting level has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room, as shown in _Figure 12_:
 
 ![](Attachments/dlvl2Layout.png)
 _Figure 12 - Dungeon level 2 level layout_
 
-These levels cannot exist in the same game even if the dungeon seeds were forced. This indicates multiple runs were spliced together using video editing methods.
-
 The team was also able to identify that the dungeon seeds that lead to dlvl 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of dlvl 5 shown in the video has a quest called "The Magic Rock" marked not available; if this is marked as available then the objects present in the level change. Dlvl 7 and dlvl 8 are the only two levels that come from the same playthrough. However, the "Halls of the Blind" quest is unavailable. Both these quests are part of the same quest group and having two quests in the same group unavailable in a single playthrough is not normally possible.
 
-At 1:44 there are no visible monsters around the stairs down on dlvl 13 (see **Figure 13**), showing that the "Warlord of Blood" quest is not available. Four of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown. This is another indicator that the video was spliced together from separate playthroughs.
+At 1:44 there are no visible monsters around the stairs down on dlvl 13:
 
 ![](Attachments/dlvl13MonstersMissing.png)
 _Figure 13 - No monsters near the stairs down on level 13 due to the Warlord of Blood quest being marked unavailable_
 
-The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again the position of objects changes from what is visible in the video. This is another indicator that the video uses splices from different playthroughs.
+ This indicates that the "Warlord of Blood" quest is not available. Four of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown.
+ 
+The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again the position of objects changes from what is visible in the video. 
+
+Ultimately, the team observed the following conflicts between what was visually present in Groobo's video and what was present in the identified game seeds:
+
+| Quest                     | In video            | In seed                |
+| ------------------------- | ------------------- | ---------------------- |
+| The Curse of King Leoric  |                     |                        |
+| **Poisoned Water Supply** | **Visibly absent**  | **Apparently present** |
+| The Butcher               | Visibly present     | Apparently present     |
+| Gharbad the Weak          |                     | Apparently present     |
+| **Ogden’s Sign**          | **Visibly present** | **Apparently absent**  |
+| The Magic Rock            |                     | Apparently absent      |
+| Arkaine’s Valor           |                     | Apparently present     |
+| Halls of the Blind        |                     | Apparently absent      |
+| Zhar the Mad              |                     | Apparently present     |
+| Black Mushroom            |                     |                        |
+| Anvil of Fury             |                     | Apparently present     |
+| Warlord of Blood          | Visibly absent      | Apparently absent      |
+| Lachdanan                 |                     | Apparently present     |
+
+_Figure BB: Combined visibility of quests in video and in identified seeds_
+
+The combination of quests is impossible based on the conflicts between what is visibly present and what is present in the dungeon levels from the identified game seeds. This indicates tools were used to artificially change the values in each dungeon level in a way that would not be allowed in a segmented run.
 
 ## Inaccessible Dungeon Level
 
@@ -494,7 +511,7 @@ In summary, the above resources demonstrate there were numerous tools available 
 
 [^2]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
 
-[^3]: No game generates monsters in a starting position that would lead to the gameplay shown in the video, and none of the games that generate the dungeon layout shown have the item drop anywhere in the level, let alone from the first monster.
+[^3]: Dlvls 3 and 4 could not be matched to dungeon levels from any naturally generated games. Partial matches exist for Dlvl 9, but no game seed generates dungeon levels with the combination of monsters and items visible in Groobo's video.
 
 [^4]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in the [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [are handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153).
 
