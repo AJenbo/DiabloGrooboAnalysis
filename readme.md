@@ -31,12 +31,12 @@ The speedrun includes the following disqualifying elements:
 	- [[#Runtime Discrepancies|Runtime Discrepancies]]
 - [[#Conclusion|Conclusion]]
 - [[#Credits from the Authors|Credits from the Authors]]
-- [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]]
+- [[#Appendix A - Diablo Level Generation|Appendix A - Diablo Level Generation]]
 	- [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]]
 	- [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]]
 	- [[#Generating a Level|Generating a Level]]
 	- [[#Level Identification Process|Level Identification Process]]
-- [[#Appendix B Diablo Modification Tools|Appendix B: Diablo Modification Tools]]
+- [[#Appendix B - Diablo Modification Tools|Appendix B - Diablo Modification Tools]]
 - [[#Footnotes|Footnotes]]
 
 # Authors
@@ -64,7 +64,7 @@ The title screen in the video indicates _Diablo_ version 1.09 was used but the r
 ![](Attachments/DiabloTitleScreen.png)
 ###### _Figure 1 - Diablo v1.09 title screen showing 1996-2001 copyright date_
 
-Figure 2 shows the following patch release details:
+_Figure 2_ shows the following patch release details:
  - The release date of each version of _Diablo_, including the patch date exactly as written by Blizzard in the `Update.txt` file included with each patch release
 - The date the patch was first reported on in the news by [Patches-Scrolls.com](https://www.patches-scrolls.com/)
 - The file version and product version included in the metadata of the patched `Diablo.exe` executable
@@ -80,7 +80,6 @@ Figure 2 shows the following patch release details:
 | 1.07      | 08/25/98       | 1998-09-24   | 1.0.0.0         | 98,5,6,1        | 1998-09-17       |
 | 1.08      | 05/23/2000     | 2000-06-16   | 2000.2.2.1      | 1,0,8,1         | 2000-05-23       |
 | 1.09      | 05/11/2001     | 2001-06-23   | 2001.5.11.1     | 1,0,9,1         | 2001-05-11       |
-
 ###### _Figure 2 - Table of patch versions and release dates_
 
 The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 display a copyright date of 1996, version 1.08 displays a copyright date of 1996-2000, and 1.09 displays a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
@@ -105,13 +104,13 @@ The character menu version is inconsistent with the main menu screen. At 0:13, t
 The character select screen has no music playing. _Diablo_ 1.05 and later lack music when on the character select screen. This indicates that this portion of the run was performed on a later version of the game, indicating the presence of a video splice between the main menu and the character select menu.
 
 ## Invalid Dungeon Level Sequence
-Starting at 0:48 in dungeon level 1 (dlvl hereafter) through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 tiles for dlvl 1-4, 5 tiles for dlvl 5-8, and 3 tiles for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A Diablo Level Generation|Appendix A: Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
+Starting at 0:48 in dungeon level 1 (dlvl hereafter) through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 tiles for dlvl 1-4, 5 tiles for dlvl 5-8, and 3 tiles for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A - Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
 
 As Groobo notes himself in his earlier [17:38 submission](https://archive.org/details/Diablo_Sorcerer_1738) on October 12th, 2006, "...The maps, mosters \[sic\], drops, chests etc are generated while you create your character, and stay the same every time you play with the same \[character\]…". _Diablo_ save files include the seed information used to generate dungeon levels.[^1] Specifically, the initial game seed based on the game launch time is used to generate 16 dungeon seeds, one for each dungeon level, which are stored in the save file.[^2] Because dungeon seeds form part of the save file for a given game, "luck manipulation" of dungeon layouts is not possible. The only way to change the layout for a level is to start a new game or directly modify the game code or save file.
 
 Over the course of several weeks and scan iterations, the team reviewed every possible game seed, including invalid seeds occurring after the year 2038, using `diablo-mapgen --scanner stairs --start 0 --count 4294967295` (with additional scripting to split the search among multiple processor cores). No set of levels matched the results displayed in the run in either the valid or invalid date ranges. This indicates the run was either created by using levels from multiple incongruent playthroughs of the game beyond what would ordinarily be allowed for a segmented speedrun or the run contained directly manipulated dungeon seeds.
 
-Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. **Figure 5** shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns for those two dungeon levels.
+Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. _Figure 5_ shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns for those two dungeon levels.
 
 | Dlvl | Dungeon Seed   | Game Seed  | Game Start Time     |
 | ---- | -------------- | ---------- | ------------------- |
@@ -131,12 +130,11 @@ Through the search process, the team was able to identify the exact dungeon seed
 | 14   | 2144005606     | 1229976755 | 2008-12-22 20:12:35 |
 | 15   | 1342549707     | 1230053637 | 2008-12-23 17:33:57 |
 | 16   | 118068228      | 1230830247 | 2009-01-01 17:17:27 |
-
-###### _Figure 5: Dungeon seeds and game seeds present in Groobo's run_
+###### _Figure 5 - Dungeon seeds and game seeds present in Groobo's run_
 
 The identified games were all started between December 22, 2008 and January 1, 2009 in the weeks directly prior to his January 16, 2009 submission. Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
 
-Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist as described in [[#Appendix B Diablo Modification Tools|Appendix B]] which could have been used to set a combination of dungeon seeds that wouldn't normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]].
+Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist as described in [[#Appendix B - Diablo Modification Tools]] which could have been used to set a combination of dungeon seeds that wouldn't normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]].
 
 ## Inconsistent Inventory
 
@@ -168,12 +166,11 @@ Multiple quests from multiple groups of possible quests are active in ways that 
 | The Magic Rock, Arkaine’s Valor, Halls of the Blind | 2             |
 | Zhar the Mad, The Black Mushroom, Anvil of Fury     | 2             |
 | Warlord of Blood, Lachdanan                         | 1             |
-
-###### _Figure 9: Active quests per group_
+###### _Figure 9 - Active quests per group_
 
 For example, one quest will be selected out of the first group for the duration of each playthrough, meaning either "The Curse of King Leoric" or "Poisoned Water Supply" will be active while the other quest will be inactive and unavailable. However, some quests are active that could not be or are inactive in earlier parts of the run but appear to be active in later sections.
 
-At 0:43, a wounded townsman is visible: 
+At 0:43, a wounded townsman is visible:
 
 ![](Attachments/ButcherAvailable.png)
 ###### _Figure 10 - Wounded townsman present near the entrance to the dungeon_
@@ -185,9 +182,9 @@ The presence of the wounded townsman indicates the quest "The Butcher" is active
 
 This indicates the quest "Ogden's Sign" is not active; if "Ogden's Sign" were active, the stairs would be encased behind walls.
 
-As shown in [[#_Figure 9 Active quests per group_|Figure 9]], "The Butcher", "Gharbad the Weak", and "Ogden's Sign" are part of a group where two of the three quests will be active. If "The Butcher" was active but "Ogden's Quest" was not, the quest "Gharbad the Weak" should have been active. Active quests are set when the game is started and do not change. Therefore, the availability of each quest should be consistent throughout the playthrough.
+As shown in [[#_Figure 9 - Active quests per group_|Figure 9]], "The Butcher", "Gharbad the Weak", and "Ogden's Sign" are part of a group where two of the three quests will be active. If "The Butcher" was active but "Ogden's Quest" was not, the quest "Gharbad the Weak" should have been active. Active quests are set when the game is started and do not change. Therefore, the availability of each quest should be consistent throughout the playthrough.
 
-The team reviewed the available quests in the levels that could be identified as shown in  [[#_Figure 5 Dungeon seeds and game seeds present in Groobo's run_|Figure 5]]:
+The team reviewed the available quests in the levels that could be identified as shown in  [[#_Figure 5 - Dungeon seeds and game seeds present in Groobo's run_|Figure 5]]:
 
 | Dlvl/Quest               | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  |
 | ------------------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -204,8 +201,7 @@ The team reviewed the available quests in the levels that could be identified as
 | Anvil of Fury            | ✔   | ✔   | ?   | ?   |     |     | ✔   | ✔   |     | ✔   |     | ✔   | ✔   | ✔   |     |     |
 | Warlord of Blood         | ✔   |     | ?   | ?   |     | ✔   |     |     | ✔   | ✔   |     | ✔   |     |     |     |     |
 | Lachdanan                |     | ✔   | ?   | ?   | ✔   |     | ✔   | ✔   |     |     | ✔   |     | ✔   | ✔   | ✔   | ✔   |
-
-###### _Figure 12: Active quests in dungeon seeds present in Groobo's run_
+###### _Figure 12 - Active quests in dungeon seeds present in Groobo's run_
 
  While "Gharbad the Weak" was active in some dungeon levels such as dlvl 5, it was not active in others such as dlvl 6. To better understand these inconsistencies, the team looked for additional visual indicators of the quests available in Groobo's run. At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
 
@@ -245,8 +241,7 @@ Ultimately, the team observed the following conflicts between what was visually 
 | Anvil of Fury             |                    | Apparently present     |
 | Warlord of Blood          | Visibly absent     | Apparently absent      |
 | Lachdanan                 |                    | Apparently present     |
-
-###### _Figure 16: Combined visibility of quests in video and in identified seeds_
+###### _Figure 16 - Combined visibility of quests in video and in identified seeds_
 
 The combination of quests is impossible based on the conflicts between what is visibly present and what is present in the dungeon levels from the identified game seeds. This indicates tools were used to artificially change the values in each dungeon level in a way that would not be allowed in a segmented run.
 
@@ -273,7 +268,7 @@ Although dlvl 9 is the first level where Naj's Puzzler can drop, there were no g
 
 The team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
-While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used. However, the team did not discover any legitimate methods to do so from within the game itself. For additional details, see [[#Appendix B Diablo Modification Tools|Appendix B: Diablo Modification Tools]].
+While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used. However, the team did not discover any legitimate methods to do so from within the game itself. For additional details, see [[#Appendix B - Diablo Modification Tools]].
 ## Missing Gameplay
 
 Portions of gameplay are missing in multiple locations, although the encoder used may have introduced missing or duplicate frames, complicating analysis. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking "down" (toward the bottom of the screen) and then turning to walk "up" (toward the top of the screen):
@@ -281,7 +276,7 @@ Portions of gameplay are missing in multiple locations, although the encoder use
 ![](Attachments/dlvl9DemoFrame1.png)
 ###### _Figure 19 - First frame of demonstration down to up animation_
 
-In the first frame shown in [[#_Figure 9 Active quests per group_|Figure 19]], the character is still moving down and has not yet faced away. The second frame shows the beginning of the animation:
+In the first frame shown in _Figure 19_, the character is still moving down and has not yet faced away. The second frame shows the beginning of the animation:
 
 ![](Attachments/dlvl9DemoFrame2.png)
 ###### _Figure 20 - Second frame of demonstration down to up animation_
@@ -406,7 +401,7 @@ Kyle Evans (kevans) is a system software engineer who primarily works on FreeBSD
 
 The authors would like to additionally credit Funkmastermp for valuable contributions to the analysis.
 
-# Appendix A: Diablo Level Generation
+# Appendix A - Diablo Level Generation
 
 The team reverse-engineered the _Diablo_ executable and determined exactly how the game generates levels for a single playthrough. At a high level, the process involves the following elements:
 
@@ -432,10 +427,9 @@ uint yearsSince1900 = year - 1900;
 **if** (((int)yearsSince1900 < 70) || (138 < (int)yearsSince1900)) {
 **return** -1;
 ```
-
 ###### _Figure 33 - Game seed date handling code in C_
 
-All versions of _Diablo_ contain the date handling code shown in [[#_Figure 33 - Game seed date handling code in C_|Figure 33]], which explicitly limits the date range between 1970[^7] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 33_, which explicitly limits the date range between 1970[^7] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
 
 It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^8] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
 
@@ -467,7 +461,7 @@ After that the tiles are visually identified and placed in the same pattern as s
 
 This tile pattern is then exported from the level editor and fed to the _Diablo_ map generator which then matches each generated level with the given pattern. Usually this is enough to identify a level uniquely. To then locate the specific game seed, object and monster positions are mapped out and an additional search is done to locate the game seed where everything lines up.
 
-# Appendix B: Diablo Modification Tools
+# Appendix B - Diablo Modification Tools
 
 The team observed multiple instances of game behaviors in Groobo's run that were inconsistent with the normal behavior of the game. Although it is possible to modify the behavior of an application internally using Arbitrary Code Execution (ACE) exploits, such an exploit would typically be classified as a different speedrunning category and would need to be declared. Groobo did not indicate he used any ACE exploits in his submission notes. Therefore, the evidence appears to indicate Groobo used external tools to change the behavior of the game as described in [[#Inaccessible Dungeon Level]] and other findings.
 
@@ -511,7 +505,7 @@ In summary, the above resources demonstrate there were numerous tools available 
 
 # Footnotes
 
-[^1]: Refer to [[#Appendix A Diablo Level Generation|Appendix A]] for specifics on how dungeon layouts and objects/monsters/items are generated.
+[^1]: Refer to [[#Appendix A - Diablo Level Generation]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 
 [^2]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
 
