@@ -168,7 +168,7 @@ Multiple quests from multiple groups of possible quests are active in ways that 
 | Warlord of Blood, Lachdanan                         | 1             |
 ###### _Figure 9 - Active quests per group_
 
-For example, one quest will be selected out of the first group for the duration of each playthrough, meaning either "The Curse of King Leoric" or "Poisoned Water Supply" will be active while the other quest will be inactive and unavailable. However, some quests are active that could not be or are inactive in earlier parts of the run but appear to be active in later sections.
+For example, one quest will be selected out of the first group for the duration of each playthrough, meaning either "The Curse of King Leoric" or "Poisoned Water Supply" will be active while the other quest will be inactive and unavailable. However, some quests are active that could not be or are inactive in earlier parts of the run but appear to be active in later sections based on analysis of identified dungeon seeds.
 
 At 0:43, a wounded townsman is visible:
 
@@ -182,43 +182,44 @@ The presence of the wounded townsman indicates the quest "The Butcher" is active
 
 This indicates the quest "Ogden's Sign" is not active; if "Ogden's Sign" were active, the stairs would be encased behind walls.
 
-As shown in [[#_Figure 9 - Active quests per group_|Figure 9]], "The Butcher", "Gharbad the Weak", and "Ogden's Sign" are part of a group where two of the three quests will be active. If "The Butcher" was active but "Ogden's Quest" was not, the quest "Gharbad the Weak" should have been active. Active quests are set when the game is started and do not change. Therefore, the availability of each quest should be consistent throughout the playthrough.
+As shown in [[#_Figure 9 - Active quests per group_|Figure 9]], "The Butcher", "Gharbad the Weak", and "Ogden's Sign" are part of a group where two of the three quests will be active. If "The Butcher" was active but "Ogden's Quest" was not, the quest "Gharbad the Weak" would remain unavailable for the duration of the game because active quests are set when the game is started and do not change. However, the quest availability was inconsistent in the levels that could be identified as shown in  [[#_Figure 5 - Dungeon seeds and game seeds present in Groobo's run_|Figure 5]]:
 
-The team reviewed the available quests in the levels that could be identified as shown in  [[#_Figure 5 - Dungeon seeds and game seeds present in Groobo's run_|Figure 5]]:
+| Dlvl | Dungeon Seed   | Game Seed  | Gharbad the Weak available |
+| ---- | -------------- | ---------- | -------------------------- |
+| 1    | 1342003104     | 1230144506 | ✔                          |
+| 2    | 755133500      | 1229972777 | ✔                          |
+| 3    |                |            | ?                          |
+| 4    |                |            | ?                          |
+| 5    | 1293295771     | 1229975451 | ✔                          |
+| 6    | 2062861350     | 1230145611 |                            |
+| 7    | 894816128      | 1230145480 |                            |
+| 8    | 1560480383     | 1230145480 |                            |
+| 9    | 764458097 [^3] | 1230001659 | ✔                          |
+| 10   | 1375523899     | 1229973508 | ✔                          |
+| 11   | 651290160      | 1229976092 |                            |
+| 12   | 2134483070     | 1230145177 | ✔                          |
+| 13   | 723487375      | 1229976431 | ✔                          |
+| 14   | 2144005606     | 1229976755 | ✔                          |
+| 15   | 1342549707     | 1230053637 |                            |
+| 16   | 118068228      | 1230830247 |                            |
+###### _Figure 12 - Inconsistent quest availability in identified dungeon seeds_
 
-| Dlvl/Quest               | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  |
-| ------------------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| The Butcher              | ✔   | ✔   | ?   | ?   |     | ✔   | ✔   | ✔   |     | ✔   | ✔   |     | ✔   |     | ✔   | ✔   |
-| Poisoned Water Supply    |     | ✔   | ?   | ?   |     |     |     |     |     | ✔   | ✔   |     |     |     | ✔   |     |
-| The Curse of King Leoric | ✔   |     | ?   | ?   | ✔   | ✔   | ✔   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   |     | ✔   |
-| Gharbad the Weak         | ✔   | ✔   | ?   | ?   | ✔   |     |     |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |     |     |
-| Ogden’s Sign             |     |     | ?   |     | ✔   | ✔   | ✔   | ✔   | ✔   |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |
-| The Magic Rock           | ✔   | ✔   | ?   | ?   |     | ✔   | ✔   | ✔   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   | ✔   |
-| Arkaine’s Valor          | ✔   |     | ?   | ?   | ✔   |     | ✔   | ✔   |     | ✔   | ✔   | ✔   | ✔   |     |     |     |
-| Halls of the Blind       |     | ✔   | ?   | ?   | ✔   | ✔   |     |     | ✔   |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |
-| Zhar the Mad             |     |     | ?   | ?   | ✔   | ✔   | ✔   | ✔   | ✔   |     | ✔   | ✔   | ✔   | ✔   | ✔   | ✔   |
-| Black Mushroom           | ✔   | ✔   | ?   | ?   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   |     |     |     | ✔   | ✔   |
-| Anvil of Fury            | ✔   | ✔   | ?   | ?   |     |     | ✔   | ✔   |     | ✔   |     | ✔   | ✔   | ✔   |     |     |
-| Warlord of Blood         | ✔   |     | ?   | ?   |     | ✔   |     |     | ✔   | ✔   |     | ✔   |     |     |     |     |
-| Lachdanan                |     | ✔   | ?   | ?   | ✔   |     | ✔   | ✔   |     |     | ✔   |     | ✔   | ✔   | ✔   | ✔   |
-###### _Figure 12 - Active quests in dungeon seeds present in Groobo's run_
-
- While "Gharbad the Weak" was active in some dungeon levels such as dlvl 5, it was not active in others such as dlvl 6. To better understand these inconsistencies, the team looked for additional visual indicators of the quests available in Groobo's run. At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
+ While "Gharbad the Weak" was active in some dungeon levels such as dlvl 5, it was not active in others such as dlvl 6. Additional visual evidence of quest availability showed further inconsistencies. At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
 
 ![](Attachments/CleanWell.png)
 ###### _Figure 13 - The return trip to town showing a clean well_
 
-The team then used the command `diablo-mapgen --start 1229972777 --count 1 --export` to view the maps of the game seed that produces the dlvl 2 shown in the video. The resulting level has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room:
+The team used the command `diablo-mapgen --start 1229972777 --count 1 --export` to view the maps of the game seed that produces the dlvl 2 dungeon layout shown in the video at 0:53:
 
 ![](Attachments/dlvl2Layout.png)
 ###### _Figure 14 - Dungeon level 2 level layout_
 
-The team was also able to identify that the dungeon seeds that lead to dlvl 5, 7, and 8 cannot coexist in the same game. The game seed that generates the version of dlvl 5 shown in the video has a quest called "The Magic Rock" marked not available; if this is marked as available then the objects present in the level change. Dlvl 7 and dlvl 8 are the only two levels that come from the same playthrough. However, the "Halls of the Blind" quest is unavailable. Both these quests are part of the same quest group and having two quests in the same group unavailable in a single playthrough is not normally possible.
+The level has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room.
 
 At 1:44 there are no visible monsters around the stairs down on dlvl 13:
 
 ![](Attachments/dlvl13MonstersMissing.png)
-###### _Figure 15 - No monsters near the stairs down on level 13 due to the Warlord of Blood quest being marked unavailable_
+###### _Figure 15 - No monsters near stairs down on level 13_
 
  This indicates that the "Warlord of Blood" quest is not available. Four of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown.
  
