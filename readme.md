@@ -143,7 +143,7 @@ Save files are encrypted, increasing the difficulty of modifying the dungeon see
 The contents of inventory change unexpectedly throughout the run, indicating splices from multiple playthroughs were used. The Ring of the Vulture is acquired at 1:08 on dlvl 4:
 
 ![](Attachments/dlvl4Ring.png)
-##### _Figure 6 - Ring of the Vulture acquired on dlvl 4_
+##### _Figure 6 - Ring of the Vulture acquired from upper cenotaph on dlvl 4_
 
 However, at 1:30 when the inventory is opened, the ring is not present:
 
