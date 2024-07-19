@@ -191,9 +191,9 @@ The team reviewed the available quests in the levels that could be identified as
 
 | Dlvl/Quest               | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  |
 | ------------------------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| The Curse of King Leoric | ✔   |     | ?   | ?   | ✔   | ✔   | ✔   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   |     | ✔   |
-| Poisoned Water Supply    |     | ✔   | ?   | ?   |     |     |     |     |     | ✔   | ✔   |     |     |     | ✔   |     |
 | The Butcher              | ✔   | ✔   | ?   | ?   |     | ✔   | ✔   | ✔   |     | ✔   | ✔   |     | ✔   |     | ✔   | ✔   |
+| Poisoned Water Supply    |     | ✔   | ?   | ?   |     |     |     |     |     | ✔   | ✔   |     |     |     | ✔   |     |
+| The Curse of King Leoric | ✔   |     | ?   | ?   | ✔   | ✔   | ✔   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   |     | ✔   |
 | Gharbad the Weak         | ✔   | ✔   | ?   | ?   | ✔   |     |     |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |     |     |
 | Ogden’s Sign             |     |     | ?   |     | ✔   | ✔   | ✔   | ✔   | ✔   |     | ✔   | ✔   |     | ✔   | ✔   | ✔   |
 | The Magic Rock           | ✔   | ✔   | ?   | ?   |     | ✔   | ✔   | ✔   | ✔   | ✔   |     |     | ✔   | ✔   | ✔   | ✔   |
@@ -232,14 +232,14 @@ Ultimately, the team observed the following conflicts between what was visually 
 
 | Quest                     | In video           | In seed                |
 | ------------------------- | ------------------ | ---------------------- |
-| The Curse of King Leoric  |                    |                        |
-| **Poisoned Water Supply** | **Visibly absent** | **Apparently present** |
 | The Butcher               | Visibly present    | Apparently present     |
-| Gharbad the Weak          |                    | Apparently present     |
-| Ogden’s Sign              | Visibly absent     | Apparently absent      |
-| The Magic Rock            |                    | Apparently absent      |
+| **Poisoned Water Supply** | **Visibly absent** | **Apparently present** |
+| The Curse of King Leoric  |                    |                        |
+| Gharbad the Weak          |                    |                        |
+| Ogden’s Sign              | Visibly absent     |                        |
+| The Magic Rock            |                    | **Apparently absent**  |
 | Arkaine’s Valor           |                    | Apparently present     |
-| Halls of the Blind        |                    | Apparently absent      |
+| Halls of the Blind        |                    | **Apparently absent**  |
 | Zhar the Mad              |                    | Apparently present     |
 | Black Mushroom            |                    |                        |
 | Anvil of Fury             |                    | Apparently present     |
