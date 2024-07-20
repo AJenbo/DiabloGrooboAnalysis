@@ -157,7 +157,7 @@ The ring was initially collected, disappeared, and reappeared which indicates mo
 
 ## Impossible Quest Combinations
 
-Multiple quests show inconsistencies with what is normally possible in a single playthrough. _Diablo_ The game splits quests into groups, with one quest from each group randomly selected to be inactive at the start of each playthrough:[^4]
+Multiple quests show inconsistencies with what is normally possible in a single playthrough. _Diablo_ splits quests into groups, with one quest from each group randomly selected to be inactive at the start of each playthrough:[^4]
 
 | Quests groups                                       |
 | --------------------------------------------------- |
