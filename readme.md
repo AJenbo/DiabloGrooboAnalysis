@@ -110,7 +110,7 @@ As Groobo notes himself in his earlier [17:38 submission](https://archive.org/de
 
 Over the course of several weeks and scan iterations, the team reviewed every possible game seed, including invalid seeds occurring after the year 2038, using `diablo-mapgen --scanner stairs --start 0 --count 4294967295` (with additional scripting to split the search among multiple processor cores). No set of levels matched the results displayed in the run in either the valid or invalid date ranges. This indicates the run was either created by using levels from multiple incongruent playthroughs of the game beyond what would ordinarily be allowed for a segmented speedrun or the run contained directly manipulated dungeon seeds.
 
-Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. _Figure 5_ shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns for those two dungeon levels.
+Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. _Figure 5_ shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4 with only a partial match for dlvl 9, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns for those two dungeon levels. [^3]
 
 | Dlvl | Dungeon Seed   | Game Seed  | Game Start Time     |
 | ---- | -------------- | ---------- | ------------------- |
@@ -122,7 +122,7 @@ Through the search process, the team was able to identify the exact dungeon seed
 | 6    | 2062861350     | 1230145611 | 2008-12-24 19:06:51 |
 | 7    | 894816128      | 1230145480 | 2008-12-24 19:04:40 |
 | 8    | 1560480383     | 1230145480 | 2008-12-24 19:04:40 |
-| 9    | 764458097 [^3] | 1230001659 | 2008-12-23 03:07:39 |
+| 9    | 764458097      | 1230001659 | 2008-12-23 03:07:39 |
 | 10   | 1375523899     | 1229973508 | 2008-12-22 19:18:28 |
 | 11   | 651290160      | 1229976092 | 2008-12-22 20:01:32 |
 | 12   | 2134483070     | 1230145177 | 2008-12-24 18:59:37 |
@@ -168,45 +168,47 @@ Multiple quests show inconsistencies with what is normally possible in a single 
 | Warlord of Blood, Lachdanan                         |
 ###### _Figure 9 - Active quests per group_
 
-For example, either 'Poisoned Water Supply' or 'The Curse of King Leoric' should be active, while the other quest would be inactive and unavailable. However, some quests break this pattern, and others may be inactive in earlier parts of the run but active in later sections, based on the analysis of identified dungeon seeds.
+For example, either 'Poisoned Water Supply' or 'The Curse of King Leoric' should be active, while the other quest would be inactive and unavailable. However, some quests break this pattern, and others appear to be inactive in earlier parts of the run but active in later sections, based on the analysis of identified dungeon seeds.
 
-### Poisoned Water is inactive but present
+### Poisoned Water Supply quest availability
 
 At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
 
 ![](Attachments/CleanWell.png)
-###### _Figure 13 - The return trip to town showing a clean well_
+###### _Figure 10 - The return trip to town showing a clean well_
 
 The team used the command `diablo-mapgen --start 1229972777 --target 2 --export` to view the maps of the game seed that produces the dlvl 2 dungeon layout shown in the video at 0:53:
 
 ![](Attachments/dlvl2Layout.png)
-###### _Figure 14 - Dungeon level 2 level layout_
+###### _Figure 11 - Dungeon level 2 level layout_
 
 The level has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room, contradicting what is seen in town.
 
-###
+### Ogden's Sign quest availability
 
 At 1:06, the stairs down to dlvl 5 are unobstructed. This indicates the quest "Ogden's Sign" is not active; if "Ogden's Sign" were active, the stairs would be encased behind walls.
 
 ![](Attachments/dlvl4OgdenMissing.png)
-###### _Figure 11 - Unobstructed stairs leading down to dlvl 5_
+###### _Figure 12 - Unobstructed stairs leading down to dlvl 5_
 
-When this quest is active it will lengthen a run as the player must either first complete the quest or find a scroll to teleport across the wall. Analasis of the levels showed that a majority actually came from sessions where this quest would have been active.
+When this quest is active it will lengthen a run as the player must either first complete the quest or find a scroll to teleport across the wall. The team found a majority of levels came from sessions where this quest would have been active.
+
+### Warlord of Blood quest availability
 
 Similarly at 1:44 the stairs down on dlvl 13 is not blocked by a monster:
 
 ![](Attachments/dlvl13MonstersMissing.png)
-###### _Figure 15 - No monsters near stairs down on level 13_
+###### _Figure 13 - No monsters near stairs down on level 13_
 
 This indicates that the "Warlord of Blood" quest is not available. Four of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown.
 
-### Incorrect number of active quest in group
+### Incorrect number of active quests in group
 
-The dungeon seeds matching the levels for "The Magic Rock" and "Halls of the Blind" quests show both quests as being absent. Since they are part of the same quest group only one of them should have been inactive, this is another indicator that video segments from unrelated playthroughs were spliced together to form the run.
+The dungeon seeds matching the levels for "The Magic Rock" and "Halls of the Blind" quests show both quests as being absent. Since they are part of the same quest group only one of them should have been inactive, which is another indicator that video segments from unrelated playthroughs were spliced together to form the run.
 
 The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again the position of objects changes from what is visible in the video.
 
-The combination of quests is impossible based on the conflicts between what is visibly present and what is present in the dungeon levels from the identified game seeds. This indicates discontinuations between each dungeon level in a way that would not be allowed in a segmented run.
+The combination of quests the team observed is impossible based on the conflicts between visible evidence and what is present in the dungeon levels from the identified game seeds. No viable explanation exists for these discrepancies even for a segmented run, indicating external modifications were used.
 
 ## Inaccessible Dungeon Level
 
@@ -215,10 +217,10 @@ A dungeon level that can only exist with an invalid date is used. When dlvl 9 wa
 At 1:27, dlvl 9 appears:
 
 ![](Attachments/dlvl9Stairs.png)
-###### _Figure 17 - Dungeon level 9 with nearby stairs and visible Lava Lord_
+###### _Figure 14 - Dungeon level 9 with nearby stairs and visible Lava Lord_
 
 ![](Attachments/dlvl9Layout.png)
-###### _Figure 18 - Dungeon level layout identified with map generation tools_
+###### _Figure 15 - Dungeon level layout identified with map generation tools_
 
 The team used the _Diablo_ map generation tools to conduct additional searches across all valid and invalid games to identify any levels matching what was shown. Only two invalid game seeds produced the starting monster positions seen in the run:
 
@@ -232,39 +234,40 @@ Although dlvl 9 is the first level where Naj's Puzzler can drop, there were no g
 The team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
 While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used. However, the team did not discover any legitimate methods to do so from within the game itself. For additional details, see [[#Appendix B - Diablo Modification Tools]].
+
 ## Missing Gameplay
 
 Portions of gameplay are missing in multiple locations, although the encoder used may have introduced missing or duplicate frames, complicating analysis. For instance, At 1:28, a single frame of animation is missing. To demonstrate the issue, the team recreated the same movement in the same dlvl 9 layout and took screenshots of each frame during the animation of walking "down" (toward the bottom of the screen) and then turning to walk "up" (toward the top of the screen):
 
 ![](Attachments/dlvl9DemoFrame1.png)
-###### _Figure 19 - First frame of demonstration down to up animation_
+###### _Figure 16 - First frame of demonstration down to up animation_
 
-In the first frame shown in _Figure 19_, the character is still moving down and has not yet faced away. The second frame shows the beginning of the animation:
+In the first frame shown in _Figure 16_, the character is still moving down and has not yet faced away. The second frame shows the beginning of the animation:
 
 ![](Attachments/dlvl9DemoFrame2.png)
-###### _Figure 20 - Second frame of demonstration down to up animation_
+###### _Figure 17 - Second frame of demonstration down to up animation_
 
 The second frame shows the character facing away with their right leg slightly behind their left leg. The third frame moves the character further:
 
 ![](Attachments/dlvl9DemoFrame3.png)
-###### _Figure 21 - Third frame of demonstration down to up animation_
+###### _Figure 18 - Third frame of demonstration down to up animation_
 
 In the third frame, the character's right leg is in front of their left leg after taking a step. Together, these screenshots demonstrate three frames are necessary to move from the starting position to the final position and level orientation. In comparison, Groobo's run shows the following frames:
 
 ![](Attachments/dlvl9VideoFrame1.png)
-###### _Figure 22 - First frame of down to up animation in run_
+###### _Figure 19 - First frame of down to up animation in run_
 
 This first frame from the run shows an identical character placement on-screen compared to the first frame of the demonstration. The second frame from the run shows the character facing away:
 
 ![](Attachments/dlvl9VideoFrame2.png)
-###### _Figure 23 - Second frame of down to up animation in run_
+###### _Figure 20 - Second frame of down to up animation in run_
 
 The second frame from the run shows the character's right leg in front of their left. The frame that should be present showing the character's right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. The team observed similar frames which appear to have been omitted or duplicated during the encoding process throughout the video, complicating frame-by-frame analysis.
 
 However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. For example, at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
-###### _Figure 24 - Red portal visible in lower-left_
+###### _Figure 21 - Red portal visible in lower-left_
 
 The same issue is also present at 3:28 where the teleport spell appears to have progressed a few frames when returning from the cutscene.
 
@@ -277,7 +280,7 @@ These various portions of missing video indicate video splices were used which r
 The item 'Naj's Puzzler' is dropped by an enemy in dlvl 9 but is not present in the dungeon seed. At 1:32, the first Lava Lord is killed and drops 'Naj's Puzzler':
 
 ![](Attachments/dlvl9PuzzlerPresent.png)
-###### _Figure 25 - Naj's Puzzler item dropped by Lava Lord_
+###### _Figure 22 - Naj's Puzzler item dropped by Lava Lord_
 
 'Naj's Puzzler' is not present in the game seeds outlined in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]]. This indicates the dungeon seed was artificially manipulated.
 
@@ -286,12 +289,12 @@ The item 'Naj's Puzzler' is dropped by an enemy in dlvl 9 but is not present in 
 Items are duplicated in ways that are unlikely in version 1.00 as shown on the main menu screen. At 2:09 and again at 2:11, 'Naj's Puzzler' is duplicated while walking:
 
 ![](Attachments/WalkingDuplication.png)
-###### _Figure 26 - Item duplication glitch execution_
+###### _Figure 23 - Item duplication glitch execution_
 
 The duplicated item is visible in the shop view at 2:32:
 
 ![](Attachments/DuplicateInShop.png)
-###### _Figure 27 - Duplicated item present in shop inventory_
+###### _Figure 24 - Duplicated item present in shop inventory_
 
 In the 1.00 release, network packets are processed in a tight loop with no timing mechanism. This significantly increases the difficulty of executing the item duplication glitch, which relies on frame perfect input. Item duplication is significantly more viable in versions 1.02 and later where network packets are processed in the main loop at a more consistent 20 FPS. The use of the item duplication glitch indicates the run was either performed on a later version or other tools were used to facilitate executing the glitch.
 
@@ -300,12 +303,12 @@ In the 1.00 release, network packets are processed in a tight loop with no timin
 The music skips at an improbable time in a way that implies the video was spliced. Starting at 2:31, Adria's shop appears on screen:
 
 ![](Attachments/MusicSkip.png)
-###### _Figure 28 - Shop screen where music audibly skips_
+###### _Figure 25 - Shop screen where music audibly skips_
 
 During this segment, the music skips audibly. The music does not skip at the shop under normal circumstances. Reviewing the audio in this section using a spectrogram view in Audacity demonstrates the sudden change in the background music:
 
 ![](Attachments/MusicSpectrogram.png)
-###### _Figure 29 - Spectrogram view of music skip_
+###### _Figure 26 - Spectrogram view of music skip_
 
 In the spectrogram view, the vertical lines at regular intervals on the left are the sound of the player's footsteps. The significant change to a more solid line directly before 2:31.60 is the point where the background music changes abruptly. The further change directly before 2:31.70 is the beginning of the word "I" spoken by the shopkeeper. The audible music skip immediately before the shopkeeper speaks implies video splicing was used at this location.
 
@@ -314,12 +317,12 @@ In the spectrogram view, the vertical lines at regular intervals on the left are
 The inventory of shops changes in ways that are not possible in version 1.00 as shown on the menu screen. At 2:35, the shop contains an initial set of items:
 
 ![](Attachments/InitialInventory.png)
-###### _Figure 30 - Initial shop inventory, page 2_
+###### _Figure 27 - Initial shop inventory, page 2_
 
 At 2:36, the shop shows different items after re-entering:
 
 ![](Attachments/ChangedInventory.png)
-###### _Figure 31 - Changed shop inventory, page 2_
+###### _Figure 28 - Changed shop inventory, page 2_
 
 Changing the store inventory as shown requires additional gameplay actions which are not present in the video. Changing the shop inventory in _Diablo_ versions 1.00-1.02 requires the player to walk into the dungeon then return to town. When using version 1.03 or later, the player can change the shop inventory by using the pause menu to reload the game from the latest save (saving first to keep bought items). This indicates video splicing was used during these segments.
 
@@ -330,7 +333,7 @@ Additionally, the background music skips near the start of the loop as described
 A negative health glitch is used which is not possible in version 1.09 as shown on the title screen. At 3:15 and again at 3:33, the ring is applied to trigger the glitch:
 
 ![](Attachments/NegativeHealth.png)
-###### _Figure 32 - Negative health caused by applying ring_
+###### _Figure 29 - Negative health caused by applying ring_
 
 The ring imparts negative health which causes the player to become invulnerable due to a Mana Shield bug. However, the negative health glitch was patched out prior to version 1.09. Specifically, the release notes for version 1.07 state "Fixed the Mana Shield bugs that could make a player invulnerable and/or invisible to other players.", indicating the bug was only present in versions 1.05 and earlier. The use of the glitch indicates an earlier version of the game was used during these segments.
 
@@ -390,9 +393,9 @@ uint yearsSince1900 = year - 1900;
 **if** (((int)yearsSince1900 < 70) || (138 < (int)yearsSince1900)) {
 **return** -1;
 ```
-###### _Figure 33 - Game seed date handling code in C_
+###### _Figure 30 - Game seed date handling code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 33_, which explicitly limits the date range between 1970[^7] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 30_, which explicitly limits the date range between 1970[^7] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
 
 It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^8] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
 
@@ -415,12 +418,12 @@ Objects, monsters, and items are only generated on the first visit to a level be
 The process for identifying a level involves first combining several stills from the video to get as best a view of the given level as possible:
 
 ![](Attachments/CombinedStills.png)
-###### _Figure 34 - Still image from original video_
+###### _Figure 31 - Still image from original video_
 
 After that the tiles are visually identified and placed in the same pattern as seen:
 
 ![](Attachments/TilePattern.png)
-###### _Figure 35 - Tiles matching image from original video_
+###### _Figure 32 - Tiles matching image from original video_
 
 This tile pattern is then exported from the level editor and fed to the _Diablo_ map generator which then matches each generated level with the given pattern. Usually this is enough to identify a level uniquely. To then locate the specific game seed, object and monster positions are mapped out and an additional search is done to locate the game seed where everything lines up.
 
