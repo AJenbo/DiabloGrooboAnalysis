@@ -157,94 +157,56 @@ The ring was initially collected, disappeared, and reappeared which indicates mo
 
 ## Impossible Quest Combinations
 
-Multiple quests from multiple groups of possible quests are active in ways that are impossible in a single playthrough. _Diablo_ separates quests into groups, with a certain number of quests randomly selected to be active from each group:[^4]
+Multiple quests show inconsistencies with what is normally possible in a single playthrough. _Diablo_ The game splits quests into groups, with one quest from each group randomly selected to be inactive at the start of each playthrough:[^4]
 
-| Quests in each group                                | Number Chosen |
-| --------------------------------------------------- | ------------- |
-| The Curse of King Leoric, Poisoned Water Supply     | 1             |
-| The Butcher, Gharbad the Weak, Ogden’s Sign         | 2             |
-| The Magic Rock, Arkaine’s Valor, Halls of the Blind | 2             |
-| Zhar the Mad, The Black Mushroom, Anvil of Fury     | 2             |
-| Warlord of Blood, Lachdanan                         | 1             |
+| Quests groups                                       |
+| --------------------------------------------------- |
+| Poisoned Water Supply, The Curse of King Leoric     |
+| The Butcher, Gharbad the Weak, Ogden’s Sign         |
+| The Magic Rock, Arkaine’s Valor, Halls of the Blind |
+| Zhar the Mad, The Black Mushroom, Anvil of Fury     |
+| Warlord of Blood, Lachdanan                         |
 ###### _Figure 9 - Active quests per group_
 
-For example, one quest will be selected out of the first group for the duration of each playthrough, meaning either "The Curse of King Leoric" or "Poisoned Water Supply" will be active while the other quest will be inactive and unavailable. However, some quests are active that could not be or are inactive in earlier parts of the run but appear to be active in later sections based on analysis of identified dungeon seeds.
+For example, either 'Poisoned Water Supply' or 'The Curse of King Leoric' should be active, while the other quest would be inactive and unavailable. However, some quests break this pattern, and others may be inactive in earlier parts of the run but active in later sections, based on the analysis of identified dungeon seeds.
 
-At 0:43, a wounded townsman is visible:
+### Poisoned Water is inactive but present
 
-![](Attachments/ButcherAvailable.png)
-###### _Figure 10 - Wounded townsman present near the entrance to the dungeon_
-
-The presence of the wounded townsman indicates the quest "The Butcher" is active. At 1:06, the stairs down to dlvl 5 are unobstructed:
-
-![](Attachments/dlvl4OgdenMissing.png)
-###### _Figure 11 - Unobstructed stairs leading down to dlvl 5_
-
-This indicates the quest "Ogden's Sign" is not active; if "Ogden's Sign" were active, the stairs would be encased behind walls.
-
-As shown in [[#_Figure 9 - Active quests per group_|Figure 9]], "The Butcher", "Gharbad the Weak", and "Ogden's Sign" are part of a group where two of the three quests will be active. If "The Butcher" was active but "Ogden's Quest" was not, the quest "Gharbad the Weak" would remain unavailable for the duration of the game because active quests are set when the game is started and do not change. However, the quest availability was inconsistent in the levels that could be identified as shown in  [[#_Figure 5 - Dungeon seeds and game seeds present in Groobo's run_|Figure 5]]:
-
-| Dlvl | Dungeon Seed   | Game Seed  | Gharbad the Weak available |
-| ---- | -------------- | ---------- | -------------------------- |
-| 1    | 1342003104     | 1230144506 | ✔                          |
-| 2    | 755133500      | 1229972777 | ✔                          |
-| 3    |                |            | ?                          |
-| 4    |                |            | ?                          |
-| 5    | 1293295771     | 1229975451 | ✔                          |
-| 6    | 2062861350     | 1230145611 |                            |
-| 7    | 894816128      | 1230145480 |                            |
-| 8    | 1560480383     | 1230145480 |                            |
-| 9    | 764458097 [^3] | 1230001659 | ✔                          |
-| 10   | 1375523899     | 1229973508 | ✔                          |
-| 11   | 651290160      | 1229976092 |                            |
-| 12   | 2134483070     | 1230145177 | ✔                          |
-| 13   | 723487375      | 1229976431 | ✔                          |
-| 14   | 2144005606     | 1229976755 | ✔                          |
-| 15   | 1342549707     | 1230053637 |                            |
-| 16   | 118068228      | 1230830247 |                            |
-###### _Figure 12 - Inconsistent quest availability in identified dungeon seeds_
-
- While "Gharbad the Weak" was active in some dungeon levels such as dlvl 5, it was not active in others such as dlvl 6. Additional visual evidence of quest availability showed further inconsistencies. At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
+At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest is not available:
 
 ![](Attachments/CleanWell.png)
 ###### _Figure 13 - The return trip to town showing a clean well_
 
-The team used the command `diablo-mapgen --start 1229972777 --count 1 --export` to view the maps of the game seed that produces the dlvl 2 dungeon layout shown in the video at 0:53:
+The team used the command `diablo-mapgen --start 1229972777 --target 2 --export` to view the maps of the game seed that produces the dlvl 2 dungeon layout shown in the video at 0:53:
 
 ![](Attachments/dlvl2Layout.png)
 ###### _Figure 14 - Dungeon level 2 level layout_
 
-The level has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room.
+The level has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room, contradicting what is seen in town.
 
-At 1:44 there are no visible monsters around the stairs down on dlvl 13:
+###
+
+At 1:06, the stairs down to dlvl 5 are unobstructed. This indicates the quest "Ogden's Sign" is not active; if "Ogden's Sign" were active, the stairs would be encased behind walls.
+
+![](Attachments/dlvl4OgdenMissing.png)
+###### _Figure 11 - Unobstructed stairs leading down to dlvl 5_
+
+When this quest is active it will lengthen a run as the player must either first complete the quest or find a scroll to teleport across the wall. Analasis of the levels showed that a majority actually came from sessions where this quest would have been active.
+
+Similarly at 1:44 the stairs down on dlvl 13 is not blocked by a monster:
 
 ![](Attachments/dlvl13MonstersMissing.png)
 ###### _Figure 15 - No monsters near stairs down on level 13_
 
- This indicates that the "Warlord of Blood" quest is not available. Four of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown.
- 
-The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again the position of objects changes from what is visible in the video. 
+This indicates that the "Warlord of Blood" quest is not available. Four of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown.
 
-Ultimately, the team observed the following conflicts between what was visually present in Groobo's video and what was present in the identified game seeds:
+### Incorrect number of active quest in group
 
-| Quest                     | In video           | In seed                |
-| ------------------------- | ------------------ | ---------------------- |
-| The Butcher               | Visibly present    | Apparently present     |
-| **Poisoned Water Supply** | **Visibly absent** | **Apparently present** |
-| The Curse of King Leoric  |                    |                        |
-| Gharbad the Weak          |                    |                        |
-| Ogden’s Sign              | Visibly absent     |                        |
-| The Magic Rock            |                    | **Apparently absent**  |
-| Arkaine’s Valor           |                    | Apparently present     |
-| Halls of the Blind        |                    | **Apparently absent**  |
-| Zhar the Mad              |                    | Apparently present     |
-| Black Mushroom            |                    |                        |
-| Anvil of Fury             |                    | Apparently present     |
-| Warlord of Blood          | Visibly absent     | Apparently absent      |
-| Lachdanan                 |                    | Apparently present     |
-###### _Figure 16 - Combined visibility of quests in video and in identified seeds_
+The dungeon seeds matching the levels for "The Magic Rock" and "Halls of the Blind" quests show both quests as being absent. Since they are part of the same quest group only one of them should have been inactive, this is another indicator that video segments from unrelated playthroughs were spliced together to form the run.
 
-The combination of quests is impossible based on the conflicts between what is visibly present and what is present in the dungeon levels from the identified game seeds. This indicates tools were used to artificially change the values in each dungeon level in a way that would not be allowed in a segmented run.
+The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again the position of objects changes from what is visible in the video.
+
+The combination of quests is impossible based on the conflicts between what is visibly present and what is present in the dungeon levels from the identified game seeds. This indicates discontinuations between each dungeon level in a way that would not be allowed in a segmented run.
 
 ## Inaccessible Dungeon Level
 
