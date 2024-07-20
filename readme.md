@@ -1,13 +1,13 @@
 # Analysis of Groobo's Diablo WR Speedrun
 # Abstract
 
-The current world record _Diablo_ speedrun by Groobo (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis details discoveries quantifying ways the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
+The current world record _Diablo_ speedrun by Groobo (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis demonstrates the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
 
 The speedrun includes the following disqualifying elements:
 - Mutually exclusive gameplay behaviors, indicating the run was spliced from multiple playthroughs using at least versions 1.00 and 1.09 of the game
 - Segments from unrelated runs that cannot naturally coexist in a single playthrough
 - Levels which could only exist through external modifications to the game's mechanics
-- Graphical and audio artifacts suggesting video splicing, with some segments notably omitting portions which affect the recorded completion time
+- Graphical and audio artifacts suggesting video splicing, including gameplay omissions which affect the recorded completion time
 
 **Table of Contents**
 
@@ -101,7 +101,7 @@ The character menu version is inconsistent with the main menu screen. At 0:13, t
 ![](Attachments/DiabloCharacterScreen.png)
 ###### _Figure 4 - Character select screen where no music is playing_
 
-The character select screen has no music playing. _Diablo_ 1.05 and later lack music when on the character select screen. This indicates that this portion of the run was performed on a later version of the game, indicating the presence of a video splice between the main menu and the character select menu.
+The character select screen has no music playing. _Diablo_ 1.05 and later lack music when on the character select screen. This indicates the segment was performed on a later version of the game and is evidence of a likely video splice between the main menu and the character select menu.
 
 ## Invalid Dungeon Level Sequence
 Starting at 0:48 in dungeon level 1 (dlvl hereafter) through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 tiles for dlvl 1-4, 5 tiles for dlvl 5-8, and 3 tiles for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A - Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
@@ -112,29 +112,29 @@ Over the course of several weeks and scan iterations, the team reviewed every po
 
 Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. _Figure 5_ shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4 with only a partial match for dlvl 9, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns for those two dungeon levels. [^3]
 
-| Dlvl | Dungeon Seed   | Game Seed  | Game Start Time     |
-| ---- | -------------- | ---------- | ------------------- |
-| 1    | 1342003104     | 1230144506 | 2008-12-24 18:48:26 |
-| 2    | 755133500      | 1229972777 | 2008-12-22 19:06:17 |
-| 3    |                |            |                     |
-| 4    |                |            |                     |
-| 5    | 1293295771     | 1229975451 | 2008-12-22 19:50:51 |
-| 6    | 2062861350     | 1230145611 | 2008-12-24 19:06:51 |
-| 7    | 894816128      | 1230145480 | 2008-12-24 19:04:40 |
-| 8    | 1560480383     | 1230145480 | 2008-12-24 19:04:40 |
-| 9    | 764458097      | 1230001659 | 2008-12-23 03:07:39 |
-| 10   | 1375523899     | 1229973508 | 2008-12-22 19:18:28 |
-| 11   | 651290160      | 1229976092 | 2008-12-22 20:01:32 |
-| 12   | 2134483070     | 1230145177 | 2008-12-24 18:59:37 |
-| 13   | 723487375      | 1229976431 | 2008-12-22 20:07:11 |
-| 14   | 2144005606     | 1229976755 | 2008-12-22 20:12:35 |
-| 15   | 1342549707     | 1230053637 | 2008-12-23 17:33:57 |
-| 16   | 118068228      | 1230830247 | 2009-01-01 17:17:27 |
+| Dlvl | Dungeon Seed | Game Seed  | Game Start Time     |
+| ---- | ------------ | ---------- | ------------------- |
+| 1    | 1342003104   | 1230144506 | 2008-12-24 18:48:26 |
+| 2    | 755133500    | 1229972777 | 2008-12-22 19:06:17 |
+| 3    |              |            |                     |
+| 4    |              |            |                     |
+| 5    | 1293295771   | 1229975451 | 2008-12-22 19:50:51 |
+| 6    | 2062861350   | 1230145611 | 2008-12-24 19:06:51 |
+| 7    | 894816128    | 1230145480 | 2008-12-24 19:04:40 |
+| 8    | 1560480383   | 1230145480 | 2008-12-24 19:04:40 |
+| 9    | 764458097    | 1230001659 | 2008-12-23 03:07:39 |
+| 10   | 1375523899   | 1229973508 | 2008-12-22 19:18:28 |
+| 11   | 651290160    | 1229976092 | 2008-12-22 20:01:32 |
+| 12   | 2134483070   | 1230145177 | 2008-12-24 18:59:37 |
+| 13   | 723487375    | 1229976431 | 2008-12-22 20:07:11 |
+| 14   | 2144005606   | 1229976755 | 2008-12-22 20:12:35 |
+| 15   | 1342549707   | 1230053637 | 2008-12-23 17:33:57 |
+| 16   | 118068228    | 1230830247 | 2009-01-01 17:17:27 |
 ###### _Figure 5 - Dungeon seeds and game seeds present in Groobo's run_
 
 The identified games were all started between December 22, 2008 and January 1, 2009 in the weeks directly prior to his January 16, 2009 submission. Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
 
-Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist as described in [[#Appendix B - Diablo Modification Tools]] which could have been used to set a combination of dungeon seeds that wouldn't normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]].
+Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist as described in [[#Appendix B - Diablo Modification Tools]] which could have been used to induce a combination of dungeon seeds that wouldn't normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]] and additional level inconsistencies are discussed in [[#Impossible Quest Combinations|Impossible Quest Combinations]].
 
 ## Inconsistent Inventory
 
@@ -153,11 +153,11 @@ At 1:55, the ring is present in inventory again:
 ![](Attachments/TownRingPresentAgain.png)
 ###### _Figure 8 - Ring of the Vulture present in inventory_
 
-The ring was initially collected, disappeared, and reappeared which indicates more than one playthrough was used in the run or the run was manipulated in some other way.
+The ring is initially collected, disappears, and reappears which indicates more than one playthrough was used in the run or the run was manipulated in some other way.
 
 ## Impossible Quest Combinations
 
-Multiple quests show inconsistencies with what is normally possible in a single playthrough. _Diablo_ splits quests into groups, with one quest from each group randomly selected to be inactive at the start of each playthrough:[^4]
+Multiple quests show inconsistencies compared to what is normally possible in a single playthrough. _Diablo_ splits quests into groups, with one quest from each group randomly selected to be inactive at the start of each playthrough:[^4]
 
 | Quests groups                                       |
 | --------------------------------------------------- |
@@ -166,9 +166,9 @@ Multiple quests show inconsistencies with what is normally possible in a single 
 | The Magic Rock, Arkaine’s Valor, Halls of the Blind |
 | Zhar the Mad, The Black Mushroom, Anvil of Fury     |
 | Warlord of Blood, Lachdanan                         |
-###### _Figure 9 - Active quests per group_
+###### _Figure 9 - Groups of quests where one quest will always be unavailable_
 
-For example, either 'Poisoned Water Supply' or 'The Curse of King Leoric' should be active, while the other quest would be inactive and unavailable. However, some quests break this pattern, and others appear to be inactive in earlier parts of the run but active in later sections, based on the analysis of identified dungeon seeds.
+For example, either 'Poisoned Water Supply' or 'The Curse of King Leoric' would be active, while the other quest would be inactive and unavailable. However, based on analysis of identified dungeon seeds, some quests break this pattern while others appear to be inactive in earlier parts of the run but active in later sections.
 
 ### Poisoned Water Supply quest availability
 
@@ -177,12 +177,12 @@ At 2:04, the town well is clean, which indicates the "Poison Water Supply" quest
 ![](Attachments/CleanWell.png)
 ###### _Figure 10 - The return trip to town showing a clean well_
 
-The team used the command `diablo-mapgen --start 1229972777 --target 2 --export` to view the maps of the game seed that produces the dlvl 2 dungeon layout shown in the video at 0:53:
+However, the quest was active in dlvl 2 in the game seed Groobo used. The team used the command `diablo-mapgen --start 1229972777 --target 2 --export` to view the maps of the game seed that produces the dlvl 2 dungeon layout shown in the video at 0:53:
 
 ![](Attachments/dlvl2Layout.png)
-###### _Figure 11 - Dungeon level 2 level layout_
+###### _Figure 11 - Stairs and surrounding area of dlvl 2_
 
-The level has the "Poison Water Supply" quest available. This can be identified by the specific structure (The Dark Passage) to the left of the stairs, slightly outside the view in the video, next to the Butcher's red room, contradicting what is seen in town.
+A structure, The Dark Passage, is present to the left of the stairs next to the Butcher's red room. The presence of the structure just out of view at 0:53 indicates the "Poison Water Supply" quest is available, contradicting the presence of the clean well seen at 2:03.
 
 ### Ogden's Sign quest availability
 
@@ -191,22 +191,22 @@ At 1:06, the stairs down to dlvl 5 are unobstructed. This indicates the quest "O
 ![](Attachments/dlvl4OgdenMissing.png)
 ###### _Figure 12 - Unobstructed stairs leading down to dlvl 5_
 
-When this quest is active it will lengthen a run as the player must either first complete the quest or find a scroll to teleport across the wall. The team found a majority of levels came from sessions where this quest would have been active.
+However, the team found a majority of levels including dlvl 5 itself came from sessions where this quest would have been active. The quest lengthens runs as the player must either complete the quest or find a scroll to teleport across the wall to proceed, indicating a probable motive for ensuring it was unavailable.
 
 ### Warlord of Blood quest availability
 
-Similarly at 1:44 the stairs down on dlvl 13 is not blocked by a monster:
+Similarly, at 1:44 the stairs down on dlvl 13 is not blocked by a monster:
 
 ![](Attachments/dlvl13MonstersMissing.png)
 ###### _Figure 13 - No monsters near stairs down on level 13_
 
-This indicates that the "Warlord of Blood" quest is not available. Four of the games the team was able to identify would have this quest available, meaning the player would not be able to progress through this level as fast as shown.
+This indicates that the "Warlord of Blood" quest is not available. The quest was available in four of the games the team was able to identify, meaning the player would not be able to progress through this level as fast as shown.
 
 ### Incorrect number of active quests in group
 
-The dungeon seeds matching the levels for "The Magic Rock" and "Halls of the Blind" quests show both quests as being absent. Since they are part of the same quest group only one of them should have been inactive, which is another indicator that video segments from unrelated playthroughs were spliced together to form the run.
+The dungeon seeds matching the levels for "The Magic Rock" and "Halls of the Blind" quests show both quests as being absent. Since they are part of the same quest group, only one of the quests should have been inactive, which is another indicator that video segments from unrelated playthroughs were spliced together to form the run.
 
-The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again the position of objects changes from what is visible in the video.
+The dungeon seed for dlvl 16 also has an impact on dlvl 4, 8, and 12 due to the game using it to determine where to place a tome on those levels (part of the lore leading up to the fight with Diablo). By setting up the dungeon generation code to use the seed identified for dlvl 16 with the seed identified for dlvl 12 and running through the initial creation of dlvl 12 again, the team found the position of objects changed from what is visible in the video.
 
 The combination of quests the team observed is impossible based on the conflicts between visible evidence and what is present in the dungeon levels from the identified game seeds. No viable explanation exists for these discrepancies even for a segmented run, indicating external modifications were used.
 
@@ -231,9 +231,9 @@ Both game seed dates are after the year 2038 and cannot be reached without modif
 
 Although dlvl 9 is the first level where Naj's Puzzler can drop, there were no games with this level layout where the item would drop without some form of game manipulation.
 
-The team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
+As noted in [[#Invalid Dungeon Level Sequence|Invalid Dungeon Level Sequence]], the team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
-While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used. However, the team did not discover any legitimate methods to do so from within the game itself. For additional details, see [[#Appendix B - Diablo Modification Tools]].
+While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used, although the team did not discover any legitimate methods to do so from within the game itself. For additional details, see [[#Appendix B - Diablo Modification Tools]].
 
 ## Missing Gameplay
 
@@ -252,7 +252,7 @@ The second frame shows the character facing away with their right leg slightly b
 ![](Attachments/dlvl9DemoFrame3.png)
 ###### _Figure 18 - Third frame of demonstration down to up animation_
 
-In the third frame, the character's right leg is in front of their left leg after taking a step. Together, these screenshots demonstrate three frames are necessary to move from the starting position to the final position and level orientation. In comparison, Groobo's run shows the following frames:
+In the third frame, the character's right leg is in front of their left leg after taking a step. Together, these screenshots demonstrate three frames are necessary to move from the starting position to the final position and level orientation. In comparison, Groobo's run shows the following frames at 1:28:
 
 ![](Attachments/dlvl9VideoFrame1.png)
 ###### _Figure 19 - First frame of down to up animation in run_
@@ -296,7 +296,7 @@ The duplicated item is visible in the shop view at 2:32:
 ![](Attachments/DuplicateInShop.png)
 ###### _Figure 24 - Duplicated item present in shop inventory_
 
-In the 1.00 release, network packets are processed in a tight loop with no timing mechanism. This significantly increases the difficulty of executing the item duplication glitch, which relies on frame perfect input. Item duplication is significantly more viable in versions 1.02 and later where network packets are processed in the main loop at a more consistent 20 FPS. The use of the item duplication glitch indicates the run was either performed on a later version or other tools were used to facilitate executing the glitch.
+In the 1.00 release, the game logic for item handling operates in a tight loop with no timing mechanism. This significantly increases the difficulty of executing the item duplication glitch, which relies on frame perfect input. Item duplication is significantly more viable in versions 1.02 and later where item handling logic occurs the main loop at a more consistent 20 FPS. The use of the item duplication glitch indicates the run was either performed on a later version or other tools were used to facilitate executing the glitch.
 
 ## Inconsistent Music Playback
 
@@ -305,7 +305,7 @@ The music skips at an improbable time in a way that implies the video was splice
 ![](Attachments/MusicSkip.png)
 ###### _Figure 25 - Shop screen where music audibly skips_
 
-During this segment, the music skips audibly. The music does not skip at the shop under normal circumstances. Reviewing the audio in this section using a spectrogram view in Audacity demonstrates the sudden change in the background music:
+During this segment, the music skips audibly in a manner which does not occur under normal circumstances. Reviewing the audio in this section using a spectrogram view in Audacity demonstrates the sudden change in the background music:
 
 ![](Attachments/MusicSpectrogram.png)
 ###### _Figure 26 - Spectrogram view of music skip_
@@ -326,7 +326,7 @@ At 2:36, the shop shows different items after re-entering:
 
 Changing the store inventory as shown requires additional gameplay actions which are not present in the video. Changing the shop inventory in _Diablo_ versions 1.00-1.02 requires the player to walk into the dungeon then return to town. When using version 1.03 or later, the player can change the shop inventory by using the pause menu to reload the game from the latest save (saving first to keep bought items). This indicates video splicing was used during these segments.
 
-Additionally, the background music skips near the start of the loop as described in [[#Inconsistent Music Playback|Inconsistent Music Playback]], which indicates version 1.03 or later was used here to allow saving and reloading to change the shop but no saving or loading was included in the video, impacting the integrity of the run length as described in [[#Runtime Discrepancies|Runtime Discrepancies]].
+Additionally, the background music skips near the start of the loop as described in [[#Inconsistent Music Playback|Inconsistent Music Playback]], which indicates version 1.03 or later was used here to allow saving and reloading to change the shop. No saving or loading was included in the video, impacting the integrity of the run length as described in [[#Runtime Discrepancies|Runtime Discrepancies]].
 
 ## Inconsistent Glitch Use
 
@@ -345,9 +345,11 @@ Despite the stated game time of 3 minutes and 12 seconds, the recording shows th
 
 The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, combining gameplay from different runs, and using gameplay-removing video splices.
 
-Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but could not have been used for the entire run given the conflicting versions displayed. Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs using at least two different versions of the game. Similarly, the game seed and dungeon seed cannot be generated in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing small portions of gameplay in ways that would impact the recorded completion time.
+Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but crucially could not have been used for the entire run given the conflicting versions displayed.
 
-Overall, the team's analysis reveals the run was not possible as Groobo described without disqualifying modifications. The run should therefore be immediately retracted from all leaderboards.
+Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs. Similarly, the game seed and dungeon seed combinations present cannot exist in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing portions of gameplay in ways that would impact the recorded completion time.
+
+Overall, the team's analysis conclusively reveals the run was not possible as Groobo described without disqualifying modifications. The run should therefore be immediately retracted from all leaderboards.
 
 # Credits from the Authors
 
@@ -365,7 +367,7 @@ Eric Robinson (kphoenix) is a self-taught C++ programmer with a great passion fo
 
 Kyle Evans (kevans) is a system software engineer who primarily works on FreeBSD for both fun and profit.  His involvement with the Diablo speedrunning community is virtually nonexistent outside of this analysis, but his career and hobbies have provided him with experience and access to hardware used to accelerate the search efforts.
 
-The authors would like to additionally credit Funkmastermp for valuable contributions to the analysis.
+The authors would like to additionally credit Funkmastermp for valuable contributions to the analysis and _Diablo_ speedrunning in general.
 
 # Appendix A - Diablo Level Generation
 
@@ -431,7 +433,7 @@ This tile pattern is then exported from the level editor and fed to the _Diablo_
 
 The team observed multiple instances of game behaviors in Groobo's run that were inconsistent with the normal behavior of the game. Although it is possible to modify the behavior of an application internally using Arbitrary Code Execution (ACE) exploits, such an exploit would typically be classified as a different speedrunning category and would need to be declared. Groobo did not indicate he used any ACE exploits in his submission notes. Therefore, the evidence appears to indicate Groobo used external tools to change the behavior of the game as described in [[#Inaccessible Dungeon Level]] and other findings.
 
-A number of tools designed to externally modify the behavior of _Diablo_ existed by 2009 when Groobo published his run. The team cannot conclusively determine which tools Groobo may or may not have used based on the evidence available. However, Groobo may have used some of these tools or employed similar techniques to modify the behavior of the game.
+A number of tools designed to externally modify the behavior of _Diablo_ existed by 2009 when Groobo published his run. The team cannot conclusively determine which tools Groobo may or may not have used based on the evidence available. However, Groobo could have used one or more of these tools or employed similar techniques to modify the behavior of the game.
 
 Inclusion in this list does not indicate an endorsement by the team of the usefulness, safety, or continued availability of any particular tool and is included as an aid only. For safety, links are only provided to meta or reference sites that list tools for modifying the behavior of _Diablo_ rather than linking directly to tools themselves that might violate copyright or other regulations, may be harmful, or are otherwise located on domains that no longer host the original content.
 
@@ -441,7 +443,7 @@ A notable set of tools were distributed by BoBaFeTT as archived on the Wayback M
 
 Another notable tool was Doom-Gaze's Diablo Trainer, submitted to https://www.ghoztcraft.net/forums/files/file/976-doom-gazes-diablo-trainer/ in 2008.
 
-The site https://ultimatestuff.tripod.com/ultimatediablo/cheats.htm includes a list of several relevant tools along with brief descriptions:
+The site https://ultimatestuff.tripod.com/ultimatediablo/cheats.htm includes a list of several relevant tools available by 2009 along with brief descriptions:
 
 | **Name as shown on site**        | **Description as shown on site**          |
 | -------------------------------- | ----------------------------------------- |
@@ -465,9 +467,9 @@ The site https://ultimatestuff.tripod.com/ultimatediablo/cheats.htm includes a l
 | Stu's Diablo Trainer             | Diablo Trainer for most versions.         |
 | Trader                           | Import items into your DMP.               |
 
-The site http://www.guardiansofjustice.com/diablo/index2.htm contains sub-pages for a variety of self-hosted _Diablo_ tools and utilities with full descriptions, specifically including a tool named Diablo Hack which is referenced on several other sites and used by other modification tools. A page previously existed at `geocities.com/SiliconValley/Hardware/4902/Cheats.html` which contained a variety of tools but the site is not safely archived at this time. The site https://www.angelfire.com/la/DipStick/files.html lists modification tools categorized by function and was also available at the time. Additionally, the site https://mgpat-gm.github.io/links.html contains current information and links to current and former sites hosting various _Diablo_ mods and tools too numerous to list here.
+The site http://www.guardiansofjustice.com/diablo/index2.htm contains sub-pages for a variety of self-hosted _Diablo_ tools and utilities with full descriptions, specifically including a tool named Diablo Hack which is referenced on several other sites and used by other modification tools. A page previously existed at `geocities.com/SiliconValley/Hardware/4902/Cheats.html` which contained a variety of tools but is not safely archived at this time. The site https://www.angelfire.com/la/DipStick/files.html lists modification tools categorized by function. Additionally, the site https://mgpat-gm.github.io/links.html contains current information and links to current and former sites hosting various _Diablo_ mods and tools too numerous to list here.
 
-In summary, the above resources demonstrate there were numerous tools available at the time which provided ample capabilities to modify the behavior of _Diablo_ in ways displayed in the video.
+In summary, the above resources demonstrate there were numerous tools available at the time Groobo performed the run which provided ample capabilities to modify the behavior of _Diablo_ in ways displayed in the video.
 
 # Footnotes
 
