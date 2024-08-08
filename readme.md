@@ -351,11 +351,6 @@ The ring imparts negative health which causes the player to become invulnerable 
 
 Despite the stated game time of 3 minutes and 12 seconds, the recording shows the run starting at 00:16 and ending with the killing of Diablo at 03:38 for a total run time of 3 minutes and 22 seconds. This indicates 10 seconds of gametime was not accounted for in addition to the gametime that should have been included as described in [[#Missing Gameplay|Missing Gameplay]]. The time taken to manipulate luck at shops, including time used to save the game to retain already purchased items, was also not included in the video, further compromising the runtime calculation.
 
-## Groobo's Response
-Late in the compiling process of this article, a professional within the gaming journalist community reached Groobo, causing Groobo to contact the team leader on the Discord platform. Groobo denied the run was in violation of any SDA rules at the time. However, the most substantive comment from the conversation by Groobo was: “My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright.”
-
-SDA has also been contacted as part of this investigation and reaffirmed their rules as they relate to this run.
-
 ## Conclusion
 
 The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, combining gameplay from different runs, and using gameplay-removing video splices.
