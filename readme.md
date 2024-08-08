@@ -37,6 +37,7 @@ The speedrun includes the following disqualifying elements:
 	- [[#Generating a Level|Generating a Level]]
 	- [[#Level Identification Process|Level Identification Process]]
 - [[#Appendix B - Diablo Modification Tools|Appendix B - Diablo Modification Tools]]
+- [[#Appendix C - SDA Rules|Appendix C - SDA Rules]]
 - [[#Footnotes|Footnotes]]
 
 # Authors
@@ -484,6 +485,29 @@ The site https://ultimatestuff.tripod.com/ultimatediablo/cheats.htm includes a l
 The site http://www.guardiansofjustice.com/diablo/index2.htm contains sub-pages for a variety of self-hosted _Diablo_ tools and utilities with full descriptions, specifically including a tool named Diablo Hack which is referenced on several other sites and used by other modification tools. A page previously existed at `geocities.com/SiliconValley/Hardware/4902/Cheats.html` which contained a variety of tools but is not safely archived at this time. The site https://www.angelfire.com/la/DipStick/files.html lists modification tools categorized by function. Additionally, the site https://mgpat-gm.github.io/links.html contains current information and links to current and former sites hosting various _Diablo_ mods and tools too numerous to list here.
 
 In summary, the above resources demonstrate there were numerous tools available at the time Groobo performed the run which provided ample capabilities to modify the behavior of _Diablo_ in ways displayed in the video.
+
+# Appendix C - SDA Rules
+
+The SDA rules in force at the time of Groobo's submission can be found on the Internet Archive Wayback Machine on the page [speeddemosarchive.com/rules.html as of 2008-12-17](https://web.archive.org/web/20081217105101/http://speeddemosarchive.com/rules.html).
+
+The team identified several rules applicable to Groobo's run, starting with the initial premise of the rules:
+> First, and most obviously, NO CHEATING.
+
+In his submission notes, Groobo stated "The most important thing is that I manipulated Naj's Puzzler to drop from the earliest monster possible.". However, the analysis in [[#Inaccessible Dungeon Level]] suggests that his dlvl 9 seed does not have Naj's Puzzler and that no version of the level naturally exists with Naj's Puzzler dropping in that location. This indicates a situation that could fall under the definition of cheating as further discussed in the section [[#On Cheating]], regardless of whether Groobo intended to cheat.
+
+The rules also note the following background on the purpose of segments:
+> Games that allow you to save your progress and continue later can be done using segments. You can retry segments as much as you want, in order to optimize them.
+
+The background context in the rules implies Groobo should have used a single run broken into segments rather than splicing footage from many different runs consisting of entirely different dungeon layouts. His segments are not retries from the same run, but are instead taken from separate game sessions. This was confirmed by Groobo, who stated on the record to a member of the team that "The run used separate save files for each floor/segment" which aligns with the analysis in [[#Invalid Dungeon Level Sequence]].
+
+The following passage suggests that Groobo should not have used segments to reduce the amount of time he would need to create a single cohesive run by splicing multiple different runs together:
+> Keep in mind that the purpose of segmentation is not to make life easier for you or to reduce the amount of time it takes you to produce a run.
+
+
+The rules note runs may be reviewed in the future:
+> We reserve the right to take down any published speedrun whenever we see fit. For example, if inconsistencies in health are later discovered (although we will give you the opportunity to explain), or if a later run (perhaps even in a different category or on another system) is considered far superior in play quality.
+
+The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Rules to further define the requirements around consistency, policies on external tools, and expectations around exceptions requests. The team leaves the final interpretation and enforcement of SDA's rules to SDA staff and provides these rules sections as an aid only.
 
 # Footnotes
 
