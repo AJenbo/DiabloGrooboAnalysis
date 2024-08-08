@@ -28,7 +28,6 @@ The speedrun includes the following disqualifying elements:
 	- [[#Inconsistent Music Playback|Inconsistent Music Playback]]
 	- [[#Inconsistent Shop Inventory Rerolling|Inconsistent Shop Inventory Rerolling]]
 	- [[#Inconsistent Glitch Use|Inconsistent Glitch Use]]
-	- [[#Runtime Discrepancies|Runtime Discrepancies]]
 - [[#Conclusion|Conclusion]]
 - [[#Response|Response]]
 - [[#Credits from the Authors|Credits from the Authors]]
@@ -346,10 +345,6 @@ A negative health glitch is used which is not possible in version 1.09 as shown 
 ###### _Figure 29 - Negative health caused by applying ring_
 
 The ring imparts negative health which causes the player to become invulnerable due to a Mana Shield bug. However, the negative health glitch was patched out prior to version 1.09. Specifically, the release notes for version 1.07 state "Fixed the Mana Shield bugs that could make a player invulnerable and/or invisible to other players.", indicating the bug was only present in versions 1.05 and earlier. The use of the glitch indicates an earlier version of the game was used during these segments.
-
-## Runtime Discrepancies
-
-Despite the stated game time of 3 minutes and 12 seconds, the recording shows the run starting at 00:16 and ending with the killing of Diablo at 03:38 for a total run time of 3 minutes and 22 seconds. This indicates 10 seconds of gametime was not accounted for in addition to the gametime that should have been included as described in [[#Missing Gameplay|Missing Gameplay]]. The time taken to manipulate luck at shops, including time used to save the game to retain already purchased items, was also not included in the video, further compromising the runtime calculation.
 
 ## Conclusion
 
