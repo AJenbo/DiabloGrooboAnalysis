@@ -30,6 +30,7 @@ The speedrun includes the following disqualifying elements:
 	- [[#Inconsistent Glitch Use|Inconsistent Glitch Use]]
 	- [[#Runtime Discrepancies|Runtime Discrepancies]]
 - [[#Conclusion|Conclusion]]
+- [[#Response|Response]]
 - [[#Credits from the Authors|Credits from the Authors]]
 - [[#Appendix A - Diablo Level Generation|Appendix A - Diablo Level Generation]]
 	- [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]]
@@ -45,17 +46,26 @@ This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown,
 
 # Background
 
-_Diablo_ was released by Blizzard Entertainment in January, 1997. On January 16, 2009, Maciej 'Groobo' Maselewski ("Groobo" hereafter) completed an 'any% segmented' category Real-Time Attack (RTA) speedrunning attempt consisting of 27 segments with a completion time of 3 minutes and 12 seconds, listed as a 'Sorcerer run' to differentiate the character class used in the run. The run was submitted by the author to [Speed Demos Archive](https://speeddemosarchive.com/Diablo.html) (SDA) and [Guinness World Records](https://www.guinnessworldrecords.com/world-records/110580-fastest-completion-of-an-rpg-videogame). SDA [reviewed the run](https://forum.speeddemosarchive.com/post/diablo__february_8th_2009.html) and published the submission after completing the verification process. SDA did not identify any concerns, with the discussion primarily focusing on video quality aspects.
+_Diablo_ was released by Blizzard Entertainment in January, 1997. On January 16, 2009, Maciej 'Groobo' Maselewski ("Groobo" hereafter) completed an 'any% segmented' category Real-Time Attack (RTA) speedrunning attempt consisting of 27 segments with a completion time of 3 minutes and 12 seconds, listed as a 'Sorcerer run' to differentiate the character class used in the run. (An Any% runs means the runner is not required to perform additional tasks outside completing the game. A segmented run means the game may be completed by completing on segment such as a single level in a single sitting but may use multiple segments. A Real-Time Attack (RTA) means the gameplay was performed in real time.) The run was submitted by the author to [Speed Demos Archive](https://speeddemosarchive.com/Diablo.html) (SDA) and [Guinness World Records](https://www.guinnessworldrecords.com/world-records/110580-fastest-completion-of-an-rpg-videogame). SDA [reviewed the run](https://forum.speeddemosarchive.com/post/diablo__february_8th_2009.html) and published the submission after completing the verification process. SDA did not identify any concerns, including any concerns around the segmented status of the run. The discussion with SDA primarily focused on video quality aspects.
 
 _Diablo_ speedrun attempts declined following Groobo's run due to the difficulty of replicating or beating the time Groobo reported. The _Diablo_ speedrunning community did not initially question the validity of the run, although some speedrunners such as Funkmastermp eventually expressed doubt about the probability of certain aspects of the run after not encountering similar results despite many years of attempts.
 
 In January 2024, Funkmastermp approached dwangoAC (of the TASbot and TASVideos communities) to create a Tool-Assisted Speedrun (TAS) of _Diablo_. Initial investigations by dwangoAC on Twitch proved a TAS of _Diablo_ was viable by combining the PCem emulator with the libTAS rerecording framework. dwangoAC and Funkmastermp consulted the DevilutionX community to clarify the level generation code behaviors in different versions of _Diablo_. A cross-community team formed to discuss strategies and Groobo's 2009 speedrun was used as a basis of the route for the TAS. The team observed inconsistencies that raised concerns about the viability of Groobo's speedrun and prompted a more detailed analysis.
 
-The team reached out to an SDA spokesperson to determine if any additional documentation existed about the speedrun. Records from that timeframe were limited and provided no additional historical notes from SDA staff member mikwuyama who performed the verification. The team additionally attempted to contact Groobo via multiple means but received no reply. Lacking additional information, the team shifted focus to assessing the viability of the speedrun based on [Groobo's submitted run video](https://speeddemosarchive.com/demo.pl?Diablo_Sorcerer_312). The team studied the video and cross-referenced the results by consulting the code in the [Devilution decompilation project](https://github.com/diasurgical/devilution) repository.
+The team reached out to an SDA spokesperson to determine if any additional documentation existed about the speedrun. Records from that timeframe were limited and provided no additional historical notes from SDA staff member mikwuyama who performed the verification. The team additionally attempted to contact Groobo via multiple channels but received no reply. Lacking additional information, the team shifted focus to assessing the viability of the speedrun based on [Groobo's submitted run video](https://speeddemosarchive.com/demo.pl?Diablo_Sorcerer_312). The team studied the video and cross-referenced the results by consulting the code in the [Devilution decompilation project](https://github.com/diasurgical/devilution) repository.
+
+## On Cheating
+
+Speedrunning and tool-assisted speedrunning are often considered a form of e-sport, complete with expectations of fair play and honest competition. Archives and leaderboards have been created during the hobby's history with the specific intention of keeping real records and reflecting honest runs for the sake of truthful competition. Checking and verifying runs, even after the fact, as a means of identifying cheating is an important part of the speedrunning community fair play standards. Cheating has never been an accepted part of the hobby and attempts to keep the hobby free of cheating is an essential part of the health and wellbeing of the hobby itself. 
+
+Splicing, or the act of editing together videos from multiple runs, has been considered cheating since the inception of the hobby. Completing a run but not adhering to the category has also always been considered cheating. Run videos from SDA, including Groobo's run, included the banner "Verified: No Cheating", reflecting the community values in 2009.
+
+The site further included this verbiage in the rules:
+“Once a speedrun has been published on SDA, it will be hosted until it's obsoleted by another run or if there are doubts about the validity of the speedrun (for example cheating, inconsistencies in segmentation or not sticking to the category rules). The obsoleted run will still be available on archive.org, though.”
 
 # Analysis
 
-The team isolated several significant inconsistencies while reviewing the run video frame-by-frame and compiled the findings in order of first appearance. All times referenced below are shown in m:ss format and were taken from the video file `Diablo_Sorcerer_312_HQ.mp4` (hosted by SDA at [http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4](http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4)).
+The team isolated significant inconsistencies while reviewing the run video frame-by-frame and compiled the findings in order of first appearance. All times referenced below are shown in m:ss format and were taken from the video file `Diablo_Sorcerer_312_HQ.mp4` (hosted by SDA at [http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4](http://dl.speeddemosarchive.com/Diablo_Sorcerer_312_HQ.mp4)).
 
 ## Inconsistent Title Screen Version
 
@@ -84,7 +94,7 @@ _Figure 2_ shows the following patch release details:
 
 The copyright date displayed on the splash screen is embedded within the application. _Diablo_ versions 1.00 through 1.07 display a copyright date of 1996, version 1.08 displays a copyright date of 1996-2000, and 1.09 displays a copyright date of 1996-2001. The title screen copyright date of 1996-2001 indicates this part of the video was recorded using version 1.09 (or the nearly identical sub-version 1.09b).
 
- However, Groobo's description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses "…the negative health glitch (note that this was fixed with the 1.07 patch)." Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent Glitch Use|Inconsistent Glitch Use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game.
+ However, Groobo's description on the [SDA Diablo page](https://speeddemosarchive.com/Diablo.html) mentions an earlier version, stating the run uses "…the negative health glitch (note that this was fixed with the 1.07 patch)." Groobo's statement indicates he used a version of _Diablo_ prior to 1.07. Earlier versions were released in 1998 and prior and would not have displayed a copyright date of 2001. The team confirmed the negative health glitch, discussed further in [[#Inconsistent Glitch Use|Inconsistent Glitch Use]], is not possible in 1.07 or later. This indicates the run was performed using multiple versions of the game, inconsistent with the run's description when read by other speedrunners.
 
 ## Inconsistent Main Menu Version
 
@@ -341,6 +351,11 @@ The ring imparts negative health which causes the player to become invulnerable 
 
 Despite the stated game time of 3 minutes and 12 seconds, the recording shows the run starting at 00:16 and ending with the killing of Diablo at 03:38 for a total run time of 3 minutes and 22 seconds. This indicates 10 seconds of gametime was not accounted for in addition to the gametime that should have been included as described in [[#Missing Gameplay|Missing Gameplay]]. The time taken to manipulate luck at shops, including time used to save the game to retain already purchased items, was also not included in the video, further compromising the runtime calculation.
 
+## Groobo's Response
+Late in the compiling process of this article, a professional within the gaming journalist community reached Groobo, causing Groobo to contact the team leader on the Discord platform. Groobo denied the run was in violation of any SDA rules at the time. However, the most substantive comment from the conversation by Groobo was: “My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright.”
+
+SDA has also been contacted as part of this investigation and reaffirmed their rules as they relate to this run.
+
 ## Conclusion
 
 The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, combining gameplay from different runs, and using gameplay-removing video splices.
@@ -350,6 +365,14 @@ Throughout the run, a number of artifacts and game behaviors indicate that _Diab
 Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs. Similarly, the game seed and dungeon seed combinations present cannot exist in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing portions of gameplay in ways that would impact the recorded completion time.
 
 Overall, the team's analysis conclusively reveals the run was not possible as Groobo described without disqualifying modifications. The run should therefore be immediately retracted from all leaderboards.
+
+## Response
+
+In August, 20204 late in the process of finalizing this analysis, a professional within the gaming journalist community was able to contact Groobo who subsequently contacted the team. Groobo denied the run was in violation of any SDA rules at the time of the 2009 submission, stating in part "My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright."\[sic\]
+
+The team presented this analysis document to SDA prior to Groobo's contact. The team immediately provided Groobo's contact information to SDA when contacted to allow them to review the circumstances. SDA opted to remove Groobo's segmented run of *Diablo* from their site.
+
+The team repeatedly attempted to contact Guinness World Records through multiple means including a press inquiry placed on behalf of the team by a professional journalist without response as of the publication of this document. The team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo due to the timing of the contact. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
 
 # Credits from the Authors
 
