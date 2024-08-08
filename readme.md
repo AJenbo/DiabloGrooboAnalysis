@@ -367,7 +367,9 @@ Eric Robinson (kphoenix) is a self-taught C++ programmer with a great passion fo
 
 Kyle Evans (kevans) is a system software engineer who primarily works on FreeBSD for both fun and profit.  His involvement with the Diablo speedrunning community is virtually nonexistent outside of this analysis, but his career and hobbies have provided him with experience and access to hardware used to accelerate the search efforts.
 
-The authors would like to additionally credit Funkmastermp for valuable contributions to the analysis and _Diablo_ speedrunning in general.
+Matthew Petroff (Funkmastermp) is a Canadian Electrical Engineer-In-Training (EIT) with nearly half a decade of experience in automation, design, & programming. Much of his experience is specialized in the design & optimization of IOT, field level controller equipment, & process controls. Funkmastermp started playing *Diablo* at a very young age when it first released in 1996 and has been passionately playing it annually since. Around late 2013, he became involved at the resurgence of modern *Diablo* speedrunning, eventually obtaining the *Diablo* RTA Any% world record. Funkmastermp has since been involved in many charity showcases at events such as Games Done Quick (GDQ) and currently still holds the *Diablo* RTA Any% world record of 12min 55sec.
+
+The team would like to additionally credit the valuable contributions of past and present _Diablo_ speedrunners whose notes aided this analysis effort.
 
 # Appendix A - Diablo Level Generation
 
