@@ -55,12 +55,11 @@ The team reached out to an SDA spokesperson to determine if any additional docum
 
 ## On Cheating
 
-Speedrunning and tool-assisted speedrunning are often considered a form of e-sport, complete with expectations of fair play and honest competition. Archives and leaderboards have been created during the hobby's history with the specific intention of keeping real records and reflecting honest runs for the sake of truthful competition. Checking and verifying runs, even after the fact, as a means of identifying cheating is an important part of the speedrunning community fair play standards. Cheating has never been an accepted part of the hobby and attempts to keep the hobby free of cheating is an essential part of the health and wellbeing of the hobby itself. 
+Speedrunning and Tool-Assisted Speedrunning are often considered a form of e-sport, complete with expectations of fair play and honest competition. Archives and leaderboards have been created during the hobby's history with the specific intention of keeping real records and reflecting honest runs for the sake of truthful competition. Checking and verifying runs, even after the fact, as a means of identifying cheating is an important part of the speedrunning community fair play standards. Cheating has never been an accepted part of the hobby and attempts to keep the hobby free of cheating is an essential part of the health and wellbeing of the hobby itself. 
 
 Splicing, or the act of editing together videos from multiple runs, has been considered cheating since the inception of the hobby. Completing a run but not adhering to the category has also always been considered cheating. Run videos from SDA, including Groobo's run, included the banner "Verified: No Cheating", reflecting the community values in 2009.
 
-The site further included this verbiage in the rules:
-“Once a speedrun has been published on SDA, it will be hosted until it's obsoleted by another run or if there are doubts about the validity of the speedrun (for example cheating, inconsistencies in segmentation or not sticking to the category rules). The obsoleted run will still be available on archive.org, though.”
+The site further included this verbiage in the rules: "Once a speedrun has been published on SDA, it will be hosted until it's obsoleted by another run or if there are doubts about the validity of the speedrun (for example cheating, inconsistencies in segmentation or not sticking to the category rules). The obsoleted run will still be available on archive.org, though."
 
 # Analysis
 
