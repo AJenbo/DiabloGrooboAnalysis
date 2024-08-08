@@ -4,10 +4,10 @@
 The current world record _Diablo_ speedrun by Groobo (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis demonstrates the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
 
 The speedrun includes the following disqualifying elements:
-- Mutually exclusive gameplay behaviors, indicating the run was spliced from multiple playthroughs using at least versions 1.00 and 1.09 of the game
+- Visual evidence of both versions 1.00 and 1.09,  indicating the run video was spliced from multiple playthroughs
 - Segments from unrelated runs that cannot naturally coexist in a single playthrough
 - Levels which could only exist through external modifications to the game's mechanics
-- Graphical and audio artifacts suggesting video splicing, including gameplay omissions which affect the recorded completion time
+- Graphical and audio artifacts suggesting unusual video splicing, including gameplay omissions which affect the recorded completion time
 
 **Table of Contents**
 
@@ -41,7 +41,7 @@ The speedrun includes the following disqualifying elements:
 
 # Authors
 
-This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown, based on analysis investigations and input from members of the DevilutionX, _Diablo_ speedrunning, TASBot, and TASVideos communities including Anders Jenbo (AJenbo), Stephen Wills (staphen), Andrew James (ephphatha), Eric Robinson (kphoenix), Funkmastermp, kevans, and other subject matter experts consulted during the investigation.
+This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown, based on analysis investigations and input from members of the DevilutionX, _Diablo_ speedrunning, TASBot, and TASVideos communities including Anders Jenbo (AJenbo), Stephen Wills (staphen), Andrew James (ephphatha), Eric Robinson (kphoenix), Matthew Petroff (Funkmastermp), Kyle Evans (kevans), and other subject matter experts consulted during the investigation.
 
 # Background
 
@@ -377,9 +377,9 @@ Andrew James (ephphatha) graduated with a game dev degree then spent the next 15
 
 Eric Robinson (kphoenix) is a self-taught C++ programmer with a great passion for retro games, including _Diablo_. He has been playing _Diablo_ since the early 2000s, and found notoriety in the _Diablo_ PvP community over the years. Around 2021, he began learning C++ in order to mod _Diablo_ via Devilution and DevilutionX, and began to make numerous contributions to the DevilutionX project while learning with the help of many notable project contributors. He has been involved with the implementation of features in DevilutionX, such as the improved automap, stash, and colored item backgrounds.
 
-Kyle Evans (kevans) is a system software engineer who primarily works on FreeBSD for both fun and profit.  His involvement with the Diablo speedrunning community is virtually nonexistent outside of this analysis, but his career and hobbies have provided him with experience and access to hardware used to accelerate the search efforts.
-
 Matthew Petroff (Funkmastermp) is a Canadian Electrical Engineer-In-Training (EIT) with nearly half a decade of experience in automation, design, & programming. Much of his experience is specialized in the design & optimization of IOT, field level controller equipment, & process controls. Funkmastermp started playing *Diablo* at a very young age when it first released in 1996 and has been passionately playing it annually since. Around late 2013, he became involved at the resurgence of modern *Diablo* speedrunning, eventually obtaining the *Diablo* RTA Any% world record. Funkmastermp has since been involved in many charity showcases at events such as Games Done Quick (GDQ) and currently still holds the *Diablo* RTA Any% world record of 12min 55sec.
+
+Kyle Evans (kevans) is a system software engineer who primarily works on FreeBSD for both fun and profit.  His involvement with the Diablo speedrunning community is virtually nonexistent outside of this analysis, but his career and hobbies have provided him with experience and access to hardware used to accelerate the search efforts.
 
 The team would like to additionally credit the valuable contributions of past and present _Diablo_ speedrunners whose notes aided this analysis effort.
 
@@ -487,7 +487,7 @@ In summary, the above resources demonstrate there were numerous tools available 
 
 # Footnotes
 
-[^1]: An Any% runs means the runner is not required to perform additional tasks outside completing the game. A segmented run means the game may be completed by completing a segment of the game such as a single level in a single sitting but may use multiple segments. A Real-Time Attack (RTA) means the gameplay was performed in real time as fast as possible.
+[^1]: An Any% run means the runner is not required to perform additional tasks outside completing the game. A segmented run means the game may be completed by completing a segment of the game such as a single level in a single sitting but may use multiple segments. A Real-Time Attack (RTA) means the gameplay was performed in real time as fast as possible.
 [^2]: Refer to [[#Appendix A - Diablo Level Generation]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 [^3]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
 [^4]: Dlvls 3 and 4 could not be matched to dungeon levels from any naturally generated games. Partial matches exist for Dlvl 9, but no game seed generates dungeon levels with the combination of monsters and items visible in Groobo's video.
