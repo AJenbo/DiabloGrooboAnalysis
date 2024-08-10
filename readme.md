@@ -242,6 +242,8 @@ Although dlvl 9 is the first level where Naj's Puzzler can drop, there were no g
 
 As noted in [[#Invalid Dungeon Level Sequence|Invalid Dungeon Level Sequence]], the team was able to find several candidates for dlvl 3 and 4 with a similar general layout but could not find an exact match for the pattern of tiles seen in the run. It is notable that dlvl 3, 4, and 9 are the only generated levels where Groobo is seen picking up any equipment. This observation suggests a potential correlation between item manipulation and level generation.
 
+In a [previous run](https://archive.org/details/Diablo_Sorcerer_607) Groobo states "you can't manipulate drops though, because they're generated upon character creation", yet in the SDA upload he states "The most important thing is that I manipulated Naj's Puzzler to drop from the earliest monster possible" which seems to contradict the previous statment. The team was not able to find any method that would have made this possible either.
+
 While the team identified several potential methods for manipulating the game to achieve the observed outcome of dlvl 9, it was not possible to establish which specific method was used, although the team did not discover any legitimate methods to do so from within the game itself. For additional details, see [[#Appendix B - Diablo Modification Tools]].
 
 ## Missing Gameplay
