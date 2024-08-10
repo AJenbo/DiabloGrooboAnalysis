@@ -362,7 +362,7 @@ In August, 2024 late in the process of finalizing this analysis, a professional 
 
 The team presented this analysis document to SDA prior to Groobo's contact. The team immediately provided Groobo's contact information to SDA when contacted to allow them to review the circumstances. SDA opted to remove Groobo's segmented run of *Diablo* from their site.
 
-The team repeatedly attempted to contact Guinness World Records through multiple means including a press inquiry placed on behalf of the team by a professional journalist without response as of the publication of this document. The team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo due to the timing of the contact. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
+The team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo due to the timing of the contact. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
 
 # Credits from the Authors
 
