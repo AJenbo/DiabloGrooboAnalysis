@@ -138,10 +138,10 @@ Through the search process, the team was able to identify the exact dungeon seed
 | 13   | 723487375    | 1229976431 | 2008-12-22 20:07:11 |
 | 14   | 2144005606   | 1229976755 | 2008-12-22 20:12:35 |
 | 15   | 1342549707   | 1230053637 | 2008-12-23 17:33:57 |
-| 16   | 118068228    | 1230830247 | 2009-01-01 17:17:27 |
+| 16   | 1993034597   | 1230059906 | 2008-12-23 19:18:26 |
 ###### _Figure 5 - Dungeon Seeds and Game Seeds Present in Groobo's run_
 
-The identified games were all started between December 22, 2008 and January 1, 2009 in the weeks directly prior to his January 16, 2009 submission. Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
+The identified games were all started between December 22, 2008 and December 24, 2008 in the weeks directly prior to his January 16, 2009 submission. Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
 
 Save files are encrypted, increasing the difficulty of modifying the dungeon seeds after generation. However, various methods of hooking into the game code are known to exist as described in [[#Appendix B - Diablo Modification Tools]] which could have been used to induce a combination of dungeon seeds that wouldn't normally appear together. Modification of specific dungeon seeds is discussed further in [[#Inaccessible Dungeon Level|Inaccessible Dungeon Level]] and additional level inconsistencies are discussed in [[#Impossible Quest Combinations|Impossible Quest Combinations]].
 
