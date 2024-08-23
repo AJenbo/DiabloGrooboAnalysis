@@ -363,6 +363,8 @@ Next the team used the seed for dungeon level 16 to recreate Groobo's fight with
 
 Through analysis of the monster AI and the Fireball damage equation, the team used trial and error to manipulate the TAS in an attempt to produce an exact match with Groobo's video. Only after increasing the Sorcerer's damage from 38-91 to 78-129 did the TAS match the video exactly. This is the amount of damage that a level 26 Sorcerer would deal using a level 3 Fireball spell.
 
+Reaching level 26 would require defeating most of the monsters in the game prior to the fight, which would result in noticeable differences in the amount of mana consumed by the Fireball spell. This strongly suggests that the Fireball's damage was manipulated by external means.
+
 ## Conclusion
 
 The combination of conflicting factors demonstrate Groobo used illegitimate means to produce the results shown in the run, including using more than one release of _Diablo_, modifying memory directly to create otherwise impossible dungeon level layouts and item drops, combining gameplay from different runs, and using gameplay-removing video splices.
