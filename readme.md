@@ -284,7 +284,7 @@ The same issue is also present at 3:28 where the teleport spell appears to have 
 
 Gameplay is entirely missing at other points in the run. This issue becomes evident during interactions with vendors, where simply reentering the shop inventory would not trigger item rerolls. This indicates that the required gameplay to generate a new shop seed was omitted as described in [[#Inconsistent Shop Inventory Rerolling|Inconsistent Shop Inventory Rerolling]].
 
-These various portions of missing video indicate video splices were used which removed portions of gameplay instead of just removing portions of loading screens. The removed gameplay shortened the calculated run length using the timing method described in [[#Runtime Discrepancies|Runtime Discrepancies]] and served to further misrepresent the length of the run.
+These various portions of missing video indicate video splices were used which removed portions of gameplay instead of just removing portions of loading screens. The removed gameplay shortened the calculated run length using the SDA timing method and served to further misrepresent the length of the run.
 
 ## Inconsistent Item Drop
 
@@ -337,7 +337,7 @@ At 2:36, the shop shows different items after re-entering:
 
 Changing the store inventory as shown requires additional gameplay actions which are not present in the video. Changing the shop inventory in _Diablo_ versions 1.00-1.02 requires the player to walk into the dungeon then return to town. When using version 1.03 or later, the player can change the shop inventory by using the pause menu to reload the game from the latest save (saving first to keep bought items). This indicates video splicing was used during these segments.
 
-Additionally, the background music skips near the start of the loop as described in [[#Inconsistent Music Playback|Inconsistent Music Playback]], which indicates version 1.03 or later was used here to allow saving and reloading to change the shop. No saving or loading was included in the video, impacting the integrity of the run length as described in [[#Runtime Discrepancies|Runtime Discrepancies]].
+Additionally, the background music skips near the start of the loop as described in [[#Inconsistent Music Playback|Inconsistent Music Playback]], which indicates version 1.03 or later was used here to allow saving and reloading to change the shop. No saving or loading was included in the video, impacting the integrity of the run length as described in [[#Missing Gameplay|Missing Gameplay]].
 
 ## Inconsistent Glitch Use
 
