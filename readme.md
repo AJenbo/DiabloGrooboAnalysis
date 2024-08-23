@@ -28,6 +28,7 @@ The speedrun includes the following disqualifying elements:
 	- [[#Inconsistent Music Playback|Inconsistent Music Playback]]
 	- [[#Inconsistent Shop Inventory Rerolling|Inconsistent Shop Inventory Rerolling]]
 	- [[#Inconsistent Glitch Use|Inconsistent Glitch Use]]
+	- [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]]
 - [[#Conclusion|Conclusion]]
 - [[#Response|Response]]
 - [[#Credits from the Authors|Credits from the Authors]]
@@ -349,6 +350,18 @@ A negative health glitch is used which is not possible in version 1.09 as shown 
 ###### _Figure 29 - Negative Health Caused by Applying ring_
 
 The ring imparts negative health which causes the player to become invulnerable due to a Mana Shield bug. However, the negative health glitch was patched out prior to version 1.09. Specifically, the release notes for version 1.07 state "Fixed the Mana Shield bugs that could make a player invulnerable and/or invisible to other players.", indicating the bug was only present in versions 1.05 and earlier. The use of the glitch indicates an earlier version of the game was used during these segments.
+
+## Artificially Enhanced Fireball Damage
+
+In his comments to dwangoAC, Groobo stated that he "did notice some weird behavior after [using a hero editor] in the diablo fight itself, where diablo would die after taking way less fireballs than what my research indicated was possible." When asked about what exceptions he received from SDA administrators that allowed the use of the hero editor, he explained that he didn't need to be allowed because "The methodology I described was used for reaserch purposes only and is not present in any of the recorded segments."
+
+These comments prompted the team to perform a deeper analysis on the fight with Diablo. The team poured over the footage of Groobo's fight with Lazarus to determine how much experience he could have gained from killing monsters off-screen. From there, the team compared the changes in Groobo's mana globe with self-made footage of Fireballs cast using the same gear at various character levels and concluded that Groobo had the same amount of mana as a level 12 Sorcerer.
+
+From there, the team determined the damage range for a level 12 Sorcerer with a level 3 Fireball spell would come out to 38-91 damage. The spell's damage would be reduced to 25% of that amount because of Diablo's fire resistance, resulting in a damage range of 9.5-22.75. However, the Fireball also deals the same amount of splash damage, doubling the amount to 19-45.5 damage if every Fireball hits Diablo directly. In a Single Player game on Normal difficulty, Diablo has 833 hitpoints, meaning the minimum number of Fireballs required to kill Diablo would have been 19. This assumes that none of the attacks miss, all attacks do the maximum possible damage, and Diablo does not regenerate any health. This is exactly the number of Fireballs used by Groobo to defeat Diablo.
+
+Next the team used the seed for dungeon level 16 to recreate Groobo's fight with Diablo using a TAS. By using the same dungeon seed, the TAS would also perfectly match the sequence of random numbers produced by the game's engine, meaning the monsters should behave in exactly the same way as they did in Groobo's video. This held true until 1.5 seconds into the fight when the monsters' AI began making different decisions that suggested the TAS was not doing as much damage as Groobo did in his speedrun. Furthermore, the TAS was not able to defeat Diablo using 19 Fireballs, and the character in the TAS died shortly thereafter due to running out of mana.
+
+Through analysis of the monster AI and the Fireball damage equation, the team used trial and error to manipulate the TAS in an attempt to produce an exact match with Groobo's video. Only after increasing the Sorcerer's damage from 38-91 to 78-129 did the TAS match the video exactly. This is the amount of damage that a level 26 Sorcerer would deal using a level 3 Fireball spell.
 
 ## Conclusion
 
