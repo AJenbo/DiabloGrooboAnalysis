@@ -275,7 +275,9 @@ This first frame from the run shows an identical character placement on-screen c
 
 The second frame from the run shows the character's right leg in front of their left. The frame that should be present showing the character's right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. The team observed similar frames which appear to have been omitted or duplicated during the encoding process throughout the video, complicating frame-by-frame analysis.
 
-However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. For example, at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
+However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. The team clipped the shopping section out of Groobo's speedrun recording and recreated the clipped section in a TAS, then had SDA evaluate the two in comparison. Based on the results, the team concluded that at least 1.7s of footage was unjustly removed. In discussions with dwangoAC, Groobo had written that "Save/load was used to refresh the shop. The menu isn't included because it was a 1 frame input that wasn't supposed to be included in the timing, and for a smoother watching experience". Assuming the game's 20 fps framerate, a 1-frame input would have amounted to only 50 ms of footage. Three such cuts in this location of the video should have only amounted to 0.15 seconds of footage.
+
+Another example, at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
 ###### _Figure 21 - Red Portal Visible in lower-left_
