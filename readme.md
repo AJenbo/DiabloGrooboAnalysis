@@ -276,9 +276,9 @@ This first frame from the run shows an identical character placement on-screen c
 
 The second frame from the run shows the character's right leg in front of their left. The frame that should be present showing the character's right leg behind their left leg is missing. The game runs at 20 fps which means a single missing frame represents 30 ms of missing gameplay. The team observed similar frames which appear to have been omitted or duplicated during the encoding process throughout the video, complicating frame-by-frame analysis.
 
-However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. The team clipped the shopping section out of Groobo's speedrun recording and recreated the clipped section in a TAS, then had SDA evaluate the two in comparison. Based on the results, the team concluded that at least 1.7s of footage was unjustly removed. In discussions with dwangoAC, Groobo had written that "Save/load was used to refresh the shop. The menu isn't included because it was a 1 frame input that wasn't supposed to be included in the timing, and for a smoother watching experience". Assuming the game's 20 fps framerate, a 1-frame input would have amounted to only 50 ms of footage. Three such cuts in this location of the video should have only amounted to 0.15 seconds of footage.
+However, gameplay is entirely missing at other points in the run in ways that cannot be explained by this encoder behavior. The team clipped the shopping section out of Groobo's speedrun recording and recreated the clipped section in a TAS, then had SDA evaluate the two in comparison. Based on the results, the team concluded that at least 1.7s of video was unjustly removed. In discussions with dwangoAC, Groobo had written that "Save/load was used to refresh the shop. The menu isn't included because it was a 1 frame input that wasn't supposed to be included in the timing, and for a smoother watching experience". Assuming the game's 20 fps framerate, a 1-frame input would have amounted to only 50 ms of video. Three such cuts in this location of the video should have only amounted to 0.15 seconds of video.
 
-Another example, at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
+In another occurance at 2:58, the red portal is already visible in the first frame upon entering dlvl 15, indicating roughly five frames of missing gameplay:
 
 ![](Attachments/dlvl15RedPortalMissingFrames.png)
 ###### _Figure 21 - Red Portal Visible in lower-left_
@@ -353,15 +353,23 @@ The ring imparts negative health which causes the player to become invulnerable 
 
 ## Artificially Enhanced Fireball Damage
 
-In his comments to dwangoAC, Groobo stated that he "did notice some weird behavior after [using a hero editor] in the diablo fight itself, where diablo would die after taking way less fireballs than what my research indicated was possible." When asked about what exceptions he received from SDA administrators that allowed the use of the hero editor, he explained that he didn't need to be allowed because "The methodology I described was used for reaserch purposes only and is not present in any of the recorded segments."
+In his comments to dwangoAC, Groobo stated that he "did notice some weird behavior after \[using a hero editor\] in the diablo fight itself, where diablo would die after taking way less fireballs than what my research indicated was possible." When asked about what exceptions he received from SDA administrators that allowed the use of the hero editor, he explained that he didn't need to be allowed because "The methodology I described was used for reaserch purposes only and is not present in any of the recorded segments."\[sic\]
 
-These comments prompted the team to perform a deeper analysis on the fight with Diablo. The team poured over the footage of Groobo's fight with Lazarus to determine how much experience he could have gained from killing monsters off-screen. From there, the team compared the changes in Groobo's mana globe with self-made footage of Fireballs cast using the same gear at various character levels and concluded that Groobo had the same amount of mana as a level 12 Sorcerer.
+These comments prompted the team to perform a deeper analysis on the fight with Diablo. The team closely examined the video of Groobo's fight with Lazarus to determine how much experience he could have gained from killing monsters off-screen. From there, the team compared the changes in Groobo's mana globe with video made by the team of Fireballs cast using the same gear at various character levels and concluded that Groobo had the same amount of mana as a level 12 Sorcerer.
 
-With that information, the team computed the damage range for a level 12 Sorcerer with a level 3 Fireball spell would come out to 38-91 damage. The spell's damage would be reduced to 25% of that amount because of Diablo's fire resistance, resulting in a damage range of 9.5-22.75. However, the Fireball also deals the same amount of splash damage, doubling the amount to 19-45.5 damage if every Fireball hits Diablo directly. In a Single Player game on Normal difficulty, Diablo has 833 hitpoints, meaning the minimum number of Fireballs required to kill Diablo would have been 19. This assumes that none of the attacks miss, all attacks do the maximum possible damage, and Diablo does not regenerate any health. This is exactly the number of Fireballs used by Groobo to defeat Diablo.
+The team then computed the damage range for a level 12 Sorcerer with a level 3 Fireball spell at 38-91 points of damage. The spell's damage would be reduced to 25% of that amount because of Diablo's fire resistance, resulting in a damage range of 9.5-22.75. However, the Fireball also deals the same amount of splash damage, doubling the amount to 19-45.5 damage if every Fireball hits Diablo directly. In a single player game on normal difficulty, Diablo has 833 hitpoints, meaning the minimum number of Fireballs required to kill Diablo would have been 19. This assumes that none of the attacks miss, all attacks do the maximum possible damage, and Diablo does not regenerate any health. This is exactly the number of Fireballs used by Groobo to defeat Diablo.
 
-Next the team used the seed for dungeon level 16 to recreate Groobo's fight with Diablo using a TAS. By using the same dungeon seed, the TAS would also perfectly match the sequence of random numbers produced by the game's engine, meaning the monsters should behave in exactly the same way as they did in Groobo's video. This held true until 1.5 seconds into the fight when the monsters' AI began making different decisions that suggested the TAS was not doing as much damage as Groobo did in his speedrun. Furthermore, the TAS was not able to defeat Diablo using 19 Fireballs, and the character in the TAS died shortly thereafter due to running out of mana.
+Next the team used the seed for dungeon level 16 to recreate Groobo's fight with Diablo using PCem in libTAS to create a TAS. By using the same dungeon seed, the TAS would also perfectly match the sequence of random numbers produced by the game's engine, meaning the monsters should behave in exactly the same way as they did in Groobo's video. This held true until 1.5 seconds into the fight when the monsters' AI began making different decisions that suggested the TAS was not doing as much damage as Groobo did in his speedrun. Furthermore, the TAS was not able to defeat Diablo using 19 Fireballs, and the character in the TAS died shortly thereafter due to running out of mana:
 
-Through analysis of the monster AI and the Fireball damage equation, the team used trial and error to manipulate the game in an attempt to produce an exact match with Groobo's video. Only after increasing the Sorcerer's damage from 38-91 to 78-129 did the TAS match the video exactly. This is the amount of damage that a level 26 Sorcerer would deal using a level 3 Fireball spell.
+![](Attachments/groobo-fight-normal.mp4)
+###### _Figure 30 - Groobo (left) vs identical character in TAS (right)_
+
+Through analysis of the monster AI and the Fireball damage equation, the team used trial and error to manipulate the game in an attempt to produce an exact match with Groobo's video. Only after increasing the Sorcerer's damage from 38-91 to 78-129 did the TAS match the video exactly:
+
+![](Attachments/hacked-damage-32.mp4)
+###### _Figure 31 - Groobo (left) vs level 26 character in TAS (right)_
+
+This is the amount of damage that a level 26 Sorcerer would deal using a level 3 Fireball spell.
 
 Reaching level 26 would require defeating most of the monsters in the game prior to the fight, which would result in noticeable differences in the amount of mana consumed by the Fireball spell. This strongly suggests that the Fireball's damage was manipulated by external means.
 
@@ -377,7 +385,7 @@ Overall, the team's analysis conclusively reveals the run was not possible as Gr
 
 ## Response
 
-In August, 2024 late in the process of finalizing this analysis, a professional within the gaming journalist community was able to contact Groobo who subsequently contacted the team. Groobo denied the run was in violation of any SDA rules at the time of the 2009 submission, stating in part "My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright."\[sic\]
+In August, 2024 late in the process of finalizing this analysis, a professional within the gaming journalist community was able to contact Groobo who subsequently contacted the team. Groobo denied the run was in violation of any SDA rules at the time of the 2009 submission, stating in part "My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright."
 
 The team presented this analysis document to SDA prior to Groobo's contact. The team immediately provided Groobo's contact information to SDA when contacted to allow them to review the circumstances. SDA to determine if Groobo's segmented run of *Diablo* will be removed from their site. Although the evidence in this document raises concerns about the validity of the run, the team acknowledges that Groobo may not have had malicious intent given circumstances at the time he submitted the run to SDA.
 
@@ -431,9 +439,9 @@ uint yearsSince1900 = year - 1900;
 **if** (((int)yearsSince1900 < 70) || (138 < (int)yearsSince1900)) {
 **return** -1;
 ```
-###### _Figure 30 - Game Seed Date Handling Code in C_
+###### _Figure 32 - Game Seed Date Handling Code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 30_, which explicitly limits the date range between 1970[^9] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 32_, which explicitly limits the date range between 1970[^9] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
 
 It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^10] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
 
@@ -456,12 +464,12 @@ Objects, monsters, and items are only generated on the first visit to a level be
 The process for identifying a level involves first combining several stills from the video to get as best a view of the given level as possible:
 
 ![](Attachments/CombinedStills.png)
-###### _Figure 31 - Still Image from Original video_
+###### _Figure 33 - Still Image from Original video_
 
 After that the tiles are visually identified and placed in the same pattern as seen:
 
 ![](Attachments/TilePattern.png)
-###### _Figure 32 - Tiles Matching Image from Original video_
+###### _Figure 34 - Tiles Matching Image from Original video_
 
 This tile pattern is then exported from the level editor and fed to the _Diablo_ map generator which then matches each generated level with the given pattern. Usually this is enough to identify a level uniquely. To then locate the specific game seed, object and monster positions are mapped out and an additional search is done to locate the game seed where everything lines up.
 
@@ -519,7 +527,7 @@ In his submission notes, Groobo stated "The most important thing is that I manip
 The rules also note the following background on the purpose of segments:
 > Games that allow you to save your progress and continue later can be done using segments. You can retry segments as much as you want, in order to optimize them.
 
-The background context in the rules implies Groobo should have used a single run broken into segments rather than splicing footage from many different runs consisting of entirely different dungeon layouts. His segments are not retries from the same run, but are instead taken from separate game sessions. This was confirmed by Groobo, who stated on the record to a member of the team that "The run used separate save files for each floor/segment" which aligns with the analysis in [[#Invalid Dungeon Level Sequence]].
+The background context in the rules implies Groobo should have used a single run broken into segments rather than splicing video from many different runs consisting of entirely different dungeon layouts. His segments are not retries from the same run, but are instead taken from separate game sessions. This was confirmed by Groobo, who stated on the record to a member of the team that "The run used separate save files for each floor/segment" which aligns with the analysis in [[#Invalid Dungeon Level Sequence]].
 
 The following passage suggests that Groobo should not have used segments to reduce the amount of time he would need to create a single cohesive run by splicing multiple different runs together:
 > Keep in mind that the purpose of segmentation is not to make life easier for you or to reduce the amount of time it takes you to produce a run.
