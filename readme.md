@@ -122,24 +122,24 @@ Over the course of several weeks and scan iterations, the team reviewed every po
 
 Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. _Figure 5_ shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4 with only a partial match for dlvl 9, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns for those two dungeon levels. [^5]
 
-| Dlvl | Dungeon Seed | Game Seed  | Game Start Time     |
-| ---- | ------------ | ---------- | ------------------- |
-| 1    | 1342003104   | 1230144506 | 2008-12-24 18:48:26 |
-| 2    | 755133500    | 1229972777 | 2008-12-22 19:06:17 |
-| 3    |              |            |                     |
-| 4    |              |            |                     |
-| 5    | 1293295771   | 1229975451 | 2008-12-22 19:50:51 |
-| 6    | 2062861350   | 1230145611 | 2008-12-24 19:06:51 |
-| 7    | 894816128    | 1230145480 | 2008-12-24 19:04:40 |
-| 8    | 1560480383   | 1230145480 | 2008-12-24 19:04:40 |
-| 9    | 764458097    | 1230001659 | 2008-12-23 03:07:39 |
-| 10   | 1375523899   | 1229973508 | 2008-12-22 19:18:28 |
-| 11   | 651290160    | 1229976092 | 2008-12-22 20:01:32 |
-| 12   | 2134483070   | 1230145177 | 2008-12-24 18:59:37 |
-| 13   | 723487375    | 1229976431 | 2008-12-22 20:07:11 |
-| 14   | 2144005606   | 1229976755 | 2008-12-22 20:12:35 |
-| 15   | 1342549707   | 1230053637 | 2008-12-23 17:33:57 |
-| 16   | 1993034597   | 1230059906 | 2008-12-23 19:18:26 |
+| Dlvl   | Dungeon Seed | Game Seed  | Game Start Time     |
+| ------ | ------------ | ---------- | ------------------- |
+| 1      | 1342003104   | 1230144506 | 2008-12-24 18:48:26 |
+| 2      | 755133500    | 1229972777 | 2008-12-22 19:06:17 |
+| 3      |              |            |                     |
+| 4      |              |            |                     |
+| 5      | 1293295771   | 1229975451 | 2008-12-22 19:50:51 |
+| 6      | 2062861350   | 1230145611 | 2008-12-24 19:06:51 |
+| 7      | 894816128    | 1230145480 | 2008-12-24 19:04:40 |
+| 8      | 1560480383   | 1230145480 | 2008-12-24 19:04:40 |
+| 9      | 764458097    | 1230001659 | 2008-12-23 03:07:39 |
+| 10     | 1375523899   | 1229973508 | 2008-12-22 19:18:28 |
+| 11     | 651290160    | 1229976092 | 2008-12-22 20:01:32 |
+| 12     | 2134483070   | 1230145177 | 2008-12-24 18:59:37 |
+| 13     | 723487375    | 1229976431 | 2008-12-22 20:07:11 |
+| 14     | 2144005606   | 1229976755 | 2008-12-22 20:12:35 |
+| 15     | 1342549707   | 1230053637 | 2008-12-23 17:33:57 |
+| 16[^6] | 1993034597   | 1230059906 | 2008-12-23 19:18:26 |
 ###### _Figure 5 - Dungeon Seeds and Game Seeds Present in Groobo's run_
 
 The identified games were all started between December 22, 2008 and December 24, 2008 in the weeks directly prior to his January 16, 2009 submission. Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
@@ -167,7 +167,7 @@ The ring is initially collected, disappears, and reappears which indicates more 
 
 ## Impossible Quest Combinations
 
-Multiple quests show inconsistencies compared to what is normally possible in a single playthrough. _Diablo_ splits quests into groups, with one quest from each group randomly selected to be inactive at the start of each playthrough:[^6]
+Multiple quests show inconsistencies compared to what is normally possible in a single playthrough. _Diablo_ splits quests into groups, with one quest from each group randomly selected to be inactive at the start of each playthrough:[^7]
 
 | Quests groups                                       |
 | --------------------------------------------------- |
@@ -418,8 +418,8 @@ The team would like to additionally credit the valuable contributions of past an
 The team reverse-engineered the _Diablo_ executable and determined exactly how the game generates levels for a single playthrough. At a high level, the process involves the following elements:
 
 1. The player chooses to start a new game (either by creating a new character or starting a new playthrough with an existing character)
-2. The current date/time (down to the second)[^7] is used to seed the psuedo-random number generator (RNG)
-3. 16 consecutive values [^8] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level
+2. The current date/time (down to the second)[^8] is used to seed the psuedo-random number generator (RNG)
+3. 16 consecutive values [^9] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level
 4. The 15th dungeon seed is used to randomly deactivate 5 quests
 5. When the player visits a level for the first time:
     1. _Diablo_ uses the relevant dungeon seed to set the RNG state and generates the dungeon layout (advancing the RNG an indeterminate number of times)
@@ -441,15 +441,15 @@ uint yearsSince1900 = year - 1900;
 ```
 ###### _Figure 32 - Game Seed Date Handling Code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 32_, which explicitly limits the date range between 1970[^9] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 32_, which explicitly limits the date range between 1970[^10] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
 
-It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^10] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
+It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^11] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
 
 ## Generating the Set of Dungeon Seeds
 
-Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^11] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
+Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^12] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
 
-Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function `abs()` (yielding a 31 bit seed[^12]). The end result is a 16-value wide "window" of the sequence of numbers immediately after the initial RNG state.
+Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function `abs()` (yielding a 31 bit seed[^13]). The end result is a 16-value wide "window" of the sequence of numbers immediately after the initial RNG state.
 
 Because the dungeon seeds use all but one bit of the RNG state, it's possible to reverse the transformation and determine two possibilities of what the RNG state was given a single dungeon seed. With two dungeon seeds you can determine whether they can occur in the same game and if so exactly what the other dungeon seeds are and what the initial RNG seed (starting time) would have been for that game.
 
@@ -545,10 +545,11 @@ The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Ru
 [^3]: Refer to [[#Appendix A - Diablo Level Generation]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 [^4]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
 [^5]: Dlvls 3 and 4 could not be matched to dungeon levels from any naturally generated games. Partial matches exist for Dlvl 9, but no game seed generates dungeon levels with the combination of monsters and items visible in Groobo's video.
-[^6]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in the [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [are handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153).
-[^7]: The compiler used to build retail versions of _Diablo_ further restricts the possible values as described in [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]].
-[^8]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]].
-[^9]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
-[^10]: They ultimately ended up generating all levels, even for impossible dungeon seeds and quest combinations.
-[^11]: _Diablo_ uses the Borland C++ constants with a 2<sup>32</sup> modulus; the generator function is `int32_t state = 22695477 * state + 1`.
-[^12]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, _Diablo_ ends up using this value as-is.
+[^6]: Previous versions of this document listed 118068228 as the dlvl 16 dungeon seed. This seed was erroneously selected from two possible candidates that both match the tile pattern shown in Groobo's video and whose game seed falls near the submission date of Groobo's speedrun video. The team caught the error when creating the TAS to reproduce the fight with Diablo described in [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]].
+[^7]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in the [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [are handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153).
+[^8]: The compiler used to build retail versions of _Diablo_ further restricts the possible values as described in [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]].
+[^9]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]].
+[^10]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
+[^11]: They ultimately ended up generating all levels, even for impossible dungeon seeds and quest combinations.
+[^12]: _Diablo_ uses the Borland C++ constants with a 2<sup>32</sup> modulus; the generator function is `int32_t state = 22695477 * state + 1`.
+[^13]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, _Diablo_ ends up using this value as-is.
