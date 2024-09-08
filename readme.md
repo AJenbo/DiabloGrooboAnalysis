@@ -546,7 +546,7 @@ The following passage suggests that Groobo should not have used segments to redu
 The rules note runs may be reviewed in the future:
 > We reserve the right to take down any published speedrun whenever we see fit. For example, if inconsistencies in health are later discovered (although we will give you the opportunity to explain), or if a later run (perhaps even in a different category or on another system) is considered far superior in play quality.
 
-The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Rules to further define the requirements around consistency, policies on external tools, and expectations around exceptions requests. The team leaves the final interpretation and enforcement of SDA's rules to SDA staff and provides these rules sections as an aid only. [^14]
+The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Rules to further define the requirements around consistency, policies on external tools, and expectations around exceptions requests. The team leaves the final interpretation and enforcement of SDA's rules to SDA staff and provides these rules sections as an aid only.
 
 # Footnotes
 
