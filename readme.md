@@ -370,7 +370,7 @@ Next the team used the seed for dungeon level 16 to recreate Groobo's fight with
 Through analysis of the monster AI and the Fireball damage equation, the team used trial and error to manipulate the game in an attempt to produce an exact match with Groobo's video. Only after increasing the Sorcerer's damage from 38-91 to 78-129 did the TAS match the video exactly:
 
 ![](Attachments/hacked-damage-32.mp4)
-###### _Figure 31 - Groobo (left) vs level 26 character in TAS (right)_
+###### _Figure 31 - Groobo (left) vs level 26 character in TAS (right)_ [^8]
 
 This is the amount of damage that a level 26 Sorcerer would deal using a level 3 Fireball spell.
 
@@ -428,8 +428,8 @@ The team would like to additionally credit the valuable contributions of past an
 The team reverse-engineered the _Diablo_ executable and determined exactly how the game generates levels for a single playthrough. At a high level, the process involves the following elements:
 
 1. The player chooses to start a new game (either by creating a new character or starting a new playthrough with an existing character)
-2. The current date/time (down to the second)[^8] is used to seed the psuedo-random number generator (RNG)
-3. 16 consecutive values [^9] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level
+2. The current date/time (down to the second)[^9] is used to seed the psuedo-random number generator (RNG)
+3. 16 consecutive values [^10] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level
 4. The 15th dungeon seed is used to randomly deactivate 5 quests
 5. When the player visits a level for the first time:
     1. _Diablo_ uses the relevant dungeon seed to set the RNG state and generates the dungeon layout (advancing the RNG an indeterminate number of times)
@@ -451,15 +451,15 @@ uint yearsSince1900 = year - 1900;
 ```
 ###### _Figure 32 - Game Seed Date Handling Code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 32_, which explicitly limits the date range between 1970[^10] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 32_, which explicitly limits the date range between 1970[^11] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
 
-It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^11] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
+It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^12] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
 
 ## Generating the Set of Dungeon Seeds
 
-Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^12] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
+Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^13] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
 
-Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function `abs()` (yielding a 31 bit seed[^13]). The end result is a 16-value wide "window" of the sequence of numbers immediately after the initial RNG state.
+Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function `abs()` (yielding a 31 bit seed[^14]). The end result is a 16-value wide "window" of the sequence of numbers immediately after the initial RNG state.
 
 Because the dungeon seeds use all but one bit of the RNG state, it's possible to reverse the transformation and determine two possibilities of what the RNG state was given a single dungeon seed. With two dungeon seeds you can determine whether they can occur in the same game and if so exactly what the other dungeon seeds are and what the initial RNG seed (starting time) would have been for that game.
 
@@ -546,7 +546,7 @@ The following passage suggests that Groobo should not have used segments to redu
 The rules note runs may be reviewed in the future:
 > We reserve the right to take down any published speedrun whenever we see fit. For example, if inconsistencies in health are later discovered (although we will give you the opportunity to explain), or if a later run (perhaps even in a different category or on another system) is considered far superior in play quality.
 
-The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Rules to further define the requirements around consistency, policies on external tools, and expectations around exceptions requests. The team leaves the final interpretation and enforcement of SDA's rules to SDA staff and provides these rules sections as an aid only.
+The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Rules to further define the requirements around consistency, policies on external tools, and expectations around exceptions requests. The team leaves the final interpretation and enforcement of SDA's rules to SDA staff and provides these rules sections as an aid only. [^14]
 
 # Footnotes
 
@@ -557,9 +557,25 @@ The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Ru
 [^5]: Dlvls 3 and 4 could not be matched to dungeon levels from any naturally generated games. Partial matches exist for Dlvl 9, but no game seed generates dungeon levels with the combination of monsters and items visible in Groobo's video.
 [^6]: Previous versions of this document listed dlvl 16 as dungeon seed `118068228` with a date of  2009-01-01 17:17:27. This seed was erroneously selected from two possible candidates matching the tile pattern shown in Groobo's video and whose game seed falls near the submission date of Groobo's speedrun video. The team updated the table while creating the TAS reproducing the fight with Diablo described in [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]].
 [^7]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in the [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [are handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153).
-[^8]: The compiler used to build retail versions of _Diablo_ further restricts the possible values as described in [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]].
-[^9]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]].
-[^10]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
-[^11]: They ultimately ended up generating all levels, even for impossible dungeon seeds and quest combinations.
-[^12]: _Diablo_ uses the Borland C++ constants with a 2<sup>32</sup> modulus; the generator function is `int32_t state = 22695477 * state + 1`.
-[^13]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, _Diablo_ ends up using this value as-is.
+[^8]: The caption in the video reads "Base fireball damaged [sic] boosted to 32". According to Jarulf's Guide, the damage formula for Fireball is `Rec(slvl, 2·(Rnd[10]+Rnd[10]+clvl) + 4)`, where:
+      * `slvl` is the level of the spell
+      * `clvl` is the level of the character
+      * `Rnd[n]` is a function that produces a random result between 0 and n-1 inclusive
+      * `Rec()` is a recursive function, the details of which are beyond the scope of this explanation
+      
+      The "base fireball damage" that the video refers to is the part that gets computed before running the recursive function: `2·(Rnd[10]+Rnd[10]+clvl) + 4`. When reproducing the fight, the tools used by the team enabled them to manipulate the damage formula by modifying the game's memory, changing the `+4` adjustment at the end of the computation for base damage. The caption refers to how the team raised this value to `+32` for this particular recording. The text in the [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]] section indicates that this be would equivalent to raising the character's level from 12 to 26, a difference of 14, which can be shown using a bit of algebra:
+      
+      ```
+      2·(Rnd[10]+Rnd[10]+clvl) + 32
+        = 2·(Rnd[10]+Rnd[10]+clvl) + 28 + 4
+        = 2·(Rnd[10]+Rnd[10]+clvl) + 2·14 + 4
+        = 2·(Rnd[10]+Rnd[10]+clvl+14) + 4
+      ```
+      
+      In actuality, the TAS was able to sync with Groobo's video using `+31`, `+32`, or `+33`, but not using `+30` or `+34`. Because it is divisible by 2, the value of `+32` is the only one that can be achieved by modifying the character level, which would have been the most obvious way of manipulating the Fireball damage using a hero editor.
+[^9]: The compiler used to build retail versions of _Diablo_ further restricts the possible values as described in [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]].
+[^10]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]].
+[^11]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
+[^12]: They ultimately ended up generating all levels, even for impossible dungeon seeds and quest combinations.
+[^13]: _Diablo_ uses the Borland C++ constants with a 2<sup>32</sup> modulus; the generator function is `int32_t state = 22695477 * state + 1`.
+[^14]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, _Diablo_ ends up using this value as-is.
