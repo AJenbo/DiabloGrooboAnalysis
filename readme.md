@@ -31,6 +31,9 @@ The speedrun includes the following disqualifying elements:
 	- [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]]
 - [[#Conclusion|Conclusion]]
 - [[#Response|Response]]
+	- [[#Response from Groobo|Response from Groobo]]
+	- [[#Response from SDA|Response from SDA]]
+	- [[#Response from speedrunning community|Response from speedrunning community]]
 - [[#Credits from the Authors|Credits from the Authors]]
 - [[#Appendix A - Diablo Level Generation|Appendix A - Diablo Level Generation]]
 	- [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]]
@@ -383,15 +386,22 @@ Many of the game behaviors and available quests are mutually exclusive, indicati
 
 Overall, the team's analysis conclusively reveals the run was not possible as Groobo described without disqualifying modifications. The run should therefore be immediately retracted from all leaderboards.
 
-## Response
+# Response
 
+## Response from Groobo
 In August, 2024 late in the process of finalizing this analysis, a professional within the gaming journalist community was able to contact Groobo who subsequently contacted the team. Groobo denied the run was in violation of any SDA rules at the time of the 2009 submission, stating in part "My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright."
 
-The team presented this analysis document to SDA prior to Groobo's contact. The team immediately provided Groobo's contact information to SDA when contacted to allow them to review the circumstances. SDA to determine if Groobo's segmented run of *Diablo* will be removed from their site. Although the evidence in this document raises concerns about the validity of the run, the team acknowledges that Groobo may not have had malicious intent given circumstances at the time he submitted the run to SDA.
+In light of the timing of the contact from Groobo, the team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo (outside the addition of the late-breaking [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]] finding and this [[#Response|Response]] section).
 
-The team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo due to the late timing of the contact. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
+Although the evidence in this document raises concerns about the validity of the run, the team acknowledges that Groobo may not have had malicious intent given circumstances at the time he submitted the run to SDA. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
 
-Directly prior to releasing this analysis, members of the Diablo speedrunning community responded by engaging in a renewed effort to perform a set-seed, single segment run of *Diablo* using valid game seed `761519344`, with Funkmastermp achieving a total time of 5:57 and [xavier_sp ultimately achieving a time of 5:00.87](https://www.youtube.com/watch?v=bXG1vW6VEKA), or 04:36 as timed by an SDA verifier using modern SDA timing methodology. Additionally, the team created a preliminary [Tool-Assisted Speedrun of *Diablo* version 1.04](https://youtu.be/F9mn5CpQCFw) in 3:10.92 using 2009 SDA timing which demonstrates *Diablo* can theoretically be beaten faster than the timing applied to Groobo's run at the time it was submitted.
+## Response from SDA
+The team presented this analysis to SDA prior to Groobo's contact. The team immediately connected Groobo to SDA to allow them to discuss the analysis directly, independent of any influence from the team. SDA has indicated they will announce their response through an update on their website once their internal analysis concludes.
+
+## Response from speedrunning community
+Members of the *Diablo* speedrunning community independently responded to this analysis by engaging in a renewed effort to perform a set-seed, single segment run of *Diablo* using valid game seed `761519344`, with Funkmastermp achieving a total time of 5:57 and [xavier_sp ultimately achieving a time of 5:00.87](https://www.youtube.com/watch?v=bXG1vW6VEKA), or 04:36 as timed by an SDA verifier using modern SDA timing methodology.
+
+Additionally, the team created a preliminary [Tool-Assisted Speedrun of *Diablo* version 1.04](https://youtu.be/F9mn5CpQCFw) in 3:10.92 using 2009 SDA timing which demonstrates a single game seed of *Diablo* can theoretically be beaten faster than the timing applied to Groobo's run at the time it was submitted.
 
 # Credits from the Authors
 
