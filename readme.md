@@ -551,31 +551,52 @@ The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Ru
 # Footnotes
 
 [^1]: An Any% run means the runner is not required to perform additional tasks outside completing the game. A segmented run means the game may be completed by completing a segment of the game such as a single level in a single sitting but may use multiple segments. A Real-Time Attack (RTA) means the gameplay was performed in real time as fast as possible.
+
 [^2]: Current SDA staff was later able to locate a timing spreadsheet identifying 21 of the 27 segments Groobo used; SDA timing rules in 2009 added a 0.5 second timing penalty per segment but did not require a full accounting of the location of each segment.
+
 [^3]: Refer to [[#Appendix A - Diablo Level Generation]] for specifics on how dungeon layouts and objects/monsters/items are generated.
+
 [^4]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
+
 [^5]: Dlvls 3 and 4 could not be matched to dungeon levels from any naturally generated games. Partial matches exist for Dlvl 9, but no game seed generates dungeon levels with the combination of monsters and items visible in Groobo's video.
+
 [^6]: Previous versions of this document listed dlvl 16 as dungeon seed `118068228` with a date of  2009-01-01 17:17:27. This seed was erroneously selected from two possible candidates matching the tile pattern shown in Groobo's video and whose game seed falls near the submission date of Groobo's speedrun video. The team updated the table while creating the TAS reproducing the fight with Diablo described in [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]].
+
 [^7]: Quests are [logically organized in groups](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L73-L96), with either [one or two quests from each group](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L155-L158) chosen for each playthrough as shown in the [chart from Jarulf's Guide](http://www.bigd-online.com/JG/Body/JG8-1.html). The first group consisting of the quests "The Curse of King Leoric" and "Poisoned Water Supply" [are handled separately in the code](https://github.com/diasurgical/devilution/blob/bbda8dd586c65b03028ec75c52f8ea8627eb9ff5/Source/quests.cpp#L150-L153).
-[^8]: The caption in the video reads "Base fireball damaged [sic] boosted to 32". According to Jarulf's Guide, the damage formula for Fireball is `Rec(slvl, 2·(Rnd[10]+Rnd[10]+clvl) + 4)`, where:
-      * `slvl` is the level of the spell
-      * `clvl` is the level of the character
-      * `Rnd[n]` is a function that produces a random result between 0 and n-1 inclusive
-      * `Rec()` is a recursive function, the details of which are beyond the scope of this explanation
+
+[^8]: The caption in the video reads "Base fireball damaged \[sic\] boosted to 32". According to Jarulf's Guide, the [damage formula for Fireball](http://www.bigd-online.com/JG/Body/JG4-1.html#4.1.3) is:
+    ```c
+	Rec(slvl, 2·(Rnd[10]+Rnd[10]+clvl) + 4)
+	```
+	Where:
+    - `slvl` is the level of the spell
+    - `clvl` is the level of the character
+    - `Rnd[n]` is a function which produces a random result between 0 and n-1 inclusive
+    - `Rec()` is a recursive function, the details of which are beyond the scope of this explanation
       
-      The "base fireball damage" that the video refers to is the part that gets computed before running the recursive function: `2·(Rnd[10]+Rnd[10]+clvl) + 4`. When reproducing the fight, the tools used by the team enabled them to manipulate the damage formula by modifying the game's memory, changing the `+4` adjustment at the end of the computation for base damage. The caption refers to how the team raised this value to `+32` for this particular recording. The text in the [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]] section indicates that this be would equivalent to raising the character's level from 12 to 26, a difference of 14, which can be shown using a bit of algebra:
+      The "base fireball damage" the video refers to is the part which is computed before running the recursive function:
+    ```c
+	2·(Rnd[10]+Rnd[10]+clvl) + 4
+	```
+	When reproducing the fight, the team used TAS tools to manipulate the damage formula by modifying the game's memory, changing the `+4` adjustment at the end of the computation for base damage. The caption refers to how the team raised this value to `+32` for this particular recording. The description in [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]] indicates that this would be equivalent to raising the character's level from 12 to 26, a difference of 14, which can be seen in this algebraic equation:
       
-      ```
+    ```c
       2·(Rnd[10]+Rnd[10]+clvl) + 32
         = 2·(Rnd[10]+Rnd[10]+clvl) + 28 + 4
         = 2·(Rnd[10]+Rnd[10]+clvl) + 2·14 + 4
         = 2·(Rnd[10]+Rnd[10]+clvl+14) + 4
       ```
       
-      In actuality, the TAS was able to sync with Groobo's video using `+31`, `+32`, or `+33`, but not using `+30` or `+34`. Because it is divisible by 2, the value of `+32` is the only one that can be achieved by modifying the character level, which would have been the most obvious way of manipulating the Fireball damage using a hero editor.
+      The TAS was able to sync with Groobo's video using `+31`, `+32`, or `+33`, but not using `+30` or `+34`. Because it is divisible by 2, the value of `+32` is the only one that can be achieved by modifying the character level, which would have been the most obvious way of manipulating the Fireball damage using a hero editor.
+	  
 [^9]: The compiler used to build retail versions of _Diablo_ further restricts the possible values as described in [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]].
+
 [^10]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]].
+
 [^11]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
+
 [^12]: They ultimately ended up generating all levels, even for impossible dungeon seeds and quest combinations.
+
 [^13]: _Diablo_ uses the Borland C++ constants with a 2<sup>32</sup> modulus; the generator function is `int32_t state = 22695477 * state + 1`.
+
 [^14]: Plus an extra value; because the absolute value of -2<sup>31</sup> cannot be represented as a positive signed 32 bit integer, _Diablo_ ends up using this value as-is.
