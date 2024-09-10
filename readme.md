@@ -396,7 +396,7 @@ In light of the timing of the contact from Groobo, the team opted to preserve th
 Although the evidence in this document raises concerns about the validity of the run, the team acknowledges that Groobo may not have had malicious intent given circumstances at the time he submitted the run to SDA. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
 
 ## Response from SDA
-The team presented this analysis to SDA prior to Groobo's contact. The team immediately connected Groobo to SDA to allow them to discuss the analysis directly, independent of any influence from the team. SDA has indicated they will announce their response through an update on their website once their internal analysis concludes.
+The team presented this analysis to SDA prior to Groobo's contact. The team immediately connected Groobo to SDA to allow them to discuss the analysis directly, independent of any influence from the team. On September 10, 2024, SDA posted an update to the https://speeddemosarchive.com front page announcing the removal of all Diablo runs by Groobo, stating "If groobo can provide something concrete to help his case, we can revert this decision."
 
 ## Response from speedrunning community
 Members of the *Diablo* speedrunning community independently responded to this analysis by engaging in a renewed effort to perform a set-seed, single segment run of *Diablo* using valid game seed `761519344`, with Funkmastermp achieving a total time of 5:57 and [xavier_sp ultimately achieving a time of 5:00.87](https://www.youtube.com/watch?v=bXG1vW6VEKA), or 04:36 as timed by an SDA verifier using modern SDA timing methodology.
