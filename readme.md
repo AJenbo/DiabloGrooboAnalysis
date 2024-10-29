@@ -451,7 +451,7 @@ uint yearsSince1900 = year - 1900;
 ```
 ###### _Figure 32 - Game Seed Date Handling Code in C_
 
-All versions of _Diablo_ contain the date handling code shown in _Figure 32_, which explicitly limits the date range between 1970[^11] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32</sup>*16 as implied by Groobo and some other commentators.
+All versions of _Diablo_ contain the date handling code shown in _Figure 32_, which explicitly limits the date range between 1970[^11] (`year - 1900 < 70`) and 2038 (`138 < year - 1900`). This demonstrates that the valid date range where unique maps will be generated in _Diablo_ is from January 1, 1970 at 00:00:00 through December 31, 2038 at 23:59:59. There are ~2177452800 unique starting seeds, meaning only around 2<sup>31</sup> possible combinations of levels are possible and not 2<sup>32*16</sup> as implied by Groobo and some other commentators.
 
 It is now feasible to generate the full game state for all 16 levels in all 2177452800 games ,[^12] which allowed the contributors to identify the exact starting time for 13 of the 16 levels visible in Groobo's submission.
 
