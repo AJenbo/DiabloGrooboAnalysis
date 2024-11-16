@@ -1,7 +1,8 @@
 # Analysis of Groobo's Diablo WR Speedrun
+DEF CON talk video: https://youtu.be/3ajRxhARz3M TASBot Discord: https://Discord.gg/TASBot
 # Abstract
 
-The current world record _Diablo_ speedrun by Groobo (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis demonstrates the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
+Groobo's 2009 speedrun of _Diablo_ (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis demonstrates the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
 
 The speedrun includes the following disqualifying elements:
 - Visual evidence of both versions 1.00 and 1.09,  indicating the run video was spliced from multiple playthroughs
@@ -33,7 +34,9 @@ The speedrun includes the following disqualifying elements:
 - [[#Response|Response]]
 	- [[#Response from Groobo|Response from Groobo]]
 	- [[#Response from SDA|Response from SDA]]
+	- [[#Response from Guinness|Response from Guinness]]
 	- [[#Response from speedrunning community|Response from speedrunning community]]
+	- [[#Media coverage|Media coverage]]
 - [[#Credits from the Authors|Credits from the Authors]]
 - [[#Appendix A - Diablo Level Generation|Appendix A - Diablo Level Generation]]
 	- [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]]
@@ -125,24 +128,24 @@ Over the course of several weeks and scan iterations, the team reviewed every po
 
 Through the search process, the team was able to identify the exact dungeon seed that generated 13 of the 16 levels shown in the video. _Figure 5_ shows the dungeon seed for each identified dungeon level and the time and date each playthrough was started. No exact match could be found for dlvl 3 and dlvl 4 with only a partial match for dlvl 9, which indicates Groobo may have used a modified client or external tools to influence object and monster spawns for those two dungeon levels. [^5]
 
-| Dlvl   | Dungeon Seed | Game Seed  | Game Start Time     |
-| ------ | ------------ | ---------- | ------------------- |
-| 1      | 1342003104   | 1230144506 | 2008-12-24 18:48:26 |
-| 2      | 755133500    | 1229972777 | 2008-12-22 19:06:17 |
-| 3      |              |            |                     |
-| 4      |              |            |                     |
-| 5      | 1293295771   | 1229975451 | 2008-12-22 19:50:51 |
-| 6      | 2062861350   | 1230145611 | 2008-12-24 19:06:51 |
-| 7      | 894816128    | 1230145480 | 2008-12-24 19:04:40 |
-| 8      | 1560480383   | 1230145480 | 2008-12-24 19:04:40 |
-| 9      | 764458097    | 1230001659 | 2008-12-23 03:07:39 |
-| 10     | 1375523899   | 1229973508 | 2008-12-22 19:18:28 |
-| 11     | 651290160    | 1229976092 | 2008-12-22 20:01:32 |
-| 12     | 2134483070   | 1230145177 | 2008-12-24 18:59:37 |
-| 13     | 723487375    | 1229976431 | 2008-12-22 20:07:11 |
-| 14     | 2144005606   | 1229976755 | 2008-12-22 20:12:35 |
-| 15     | 1342549707   | 1230053637 | 2008-12-23 17:33:57 |
-| 16     | 1993034597   | 1230059906 | 2008-12-23 19:18:26 |
+| Dlvl | Dungeon Seed | Game Seed  | Game Start Time     |
+| ---- | ------------ | ---------- | ------------------- |
+| 1    | 1342003104   | 1230144506 | 2008-12-24 18:48:26 |
+| 2    | 755133500    | 1229972777 | 2008-12-22 19:06:17 |
+| 3    |              |            |                     |
+| 4    |              |            |                     |
+| 5    | 1293295771   | 1229975451 | 2008-12-22 19:50:51 |
+| 6    | 2062861350   | 1230145611 | 2008-12-24 19:06:51 |
+| 7    | 894816128    | 1230145480 | 2008-12-24 19:04:40 |
+| 8    | 1560480383   | 1230145480 | 2008-12-24 19:04:40 |
+| 9    | 764458097    | 1230001659 | 2008-12-23 03:07:39 |
+| 10   | 1375523899   | 1229973508 | 2008-12-22 19:18:28 |
+| 11   | 651290160    | 1229976092 | 2008-12-22 20:01:32 |
+| 12   | 2134483070   | 1230145177 | 2008-12-24 18:59:37 |
+| 13   | 723487375    | 1229976431 | 2008-12-22 20:07:11 |
+| 14   | 2144005606   | 1229976755 | 2008-12-22 20:12:35 |
+| 15   | 1342549707   | 1230053637 | 2008-12-23 17:33:57 |
+| 16   | 1993034597   | 1230059906 | 2008-12-23 19:18:26 |
 ###### _Figure 5 - Dungeon Seeds and Game Seeds Present in Groobo's run_
 
 The identified games were all started between December 22, 2008 and December 24, 2008 in the weeks directly prior to his January 16, 2009 submission.[^6] Only dlvl 7 and dlvl 8 appeared to be from the same game, indicating the segments were artificially combined from a minimum of 13 different playthroughs.
@@ -389,7 +392,7 @@ Overall, the team's analysis conclusively reveals the run was not possible as Gr
 # Response
 
 ## Response from Groobo
-In August, 2024 late in the process of finalizing this analysis, a professional within the gaming journalist community was able to contact Groobo who subsequently contacted the team. Groobo denied the run was in violation of any SDA rules at the time of the 2009 submission, stating in part "My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright."
+In August, 2024 late in the process of finalizing this analysis, Andy Greenberg of WIRED was able to contact Groobo who subsequently contacted the team. Groobo denied the run was in violation of any SDA rules at the time of the 2009 submission, stating in part "My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright."
 
 In light of the timing of the contact from Groobo, the team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo (outside the addition of the late-breaking [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]] finding and this [[#Response|Response]] section).
 
@@ -398,10 +401,17 @@ Although the evidence in this document raises concerns about the validity of the
 ## Response from SDA
 The team presented this analysis to SDA prior to Groobo's contact. The team immediately connected Groobo to SDA to allow them to discuss the analysis directly, independent of any influence from the team. On September 10, 2024, SDA posted an update to the https://speeddemosarchive.com front page announcing the removal of all _Diablo_ runs by Groobo, stating "If groobo can provide something concrete to help his case, we can revert this decision."
 
+## Response from Guinness
+Andy Greenberg of WIRED attempted to reach Guinness World Records as a member of the press. Guinness responded only with "We value any feedback on our record titles and are committed to maintaining the highest standards of accuracy." The team subsequently presented this analysis to Guinness directly. After an initial automated response, Guinness responded stating "We have passed your enquiry on to our Records Management Team for consideration. If an update is required on the record title, we will look to action it as soon as is possible."\[sic\]. No further response has been received from Guinness and the records remain on the site.
+
 ## Response from speedrunning community
 Members of the _Diablo_ speedrunning community independently responded to this analysis by engaging in a renewed effort to perform a set-seed, single segment run of _Diablo_ using valid game seed `761519344`, with Funkmastermp achieving a total time of 5:57 and [xavier_sp ultimately achieving a time of 5:00.87](https://www.youtube.com/watch?v=bXG1vW6VEKA), or 04:36 as timed by an SDA verifier using modern SDA timing methodology.
 
 Additionally, the team created a preliminary [Tool-Assisted Speedrun of _Diablo_ version 1.04](https://youtu.be/F9mn5CpQCFw) in 3:10.92 using 2009 SDA timing which demonstrates a single game seed of _Diablo_ can theoretically be beaten faster than the timing applied to Groobo's run at the time it was submitted.
+
+## Media coverage
+- [The Hacker Who Hunts Video Game Speedrunning Cheaters](https://www.wired.com/story/the-hacker-who-hunts-video-game-speedrunning-cheaters) - Andy Greenberg, WIRED
+- [The Biggest Cheating Scandal In Diablo Speedrunning History](https://www.youtube.com/watch?v=N_1su-dOUNw) - Abyssoft YouTube coverage
 
 # Credits from the Authors
 
