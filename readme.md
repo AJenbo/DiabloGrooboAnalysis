@@ -49,7 +49,7 @@ The speedrun includes the following disqualifying elements:
 
 # Authors
 
-This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown, based on analysis investigations and input from members of the DevilutionX, _Diablo_ speedrunning, TASBot, and TASVideos communities including Anders Jenbo (AJenbo), Stephen Wills (staphen), Andrew James (ephphatha), Eric Robinson (kphoenix), Matthew Petroff (Funkmastermp), Kyle Evans (kevans), and other subject matter experts consulted during the investigation.
+This document was compiled by dwangoAC (Allan Cecil) and edited by Conlan Brown, based on analysis investigations and input from members of the DevilutionX, _Diablo_ speedrunning, TASBot, and TASVideos communities including Anders Jenbo (AJenbo), Stephen Wills (staphen), Andrew James (ephphatha), Eric Robinson (kphoenix), Funkmastermp, Kyle Evans (kevans), and other subject matter experts consulted during the investigation.
 
 # Background
 
@@ -112,6 +112,7 @@ The main menu version is inconsistent with the title screen. At 0:12, the _Diabl
 The version shown on the main menu is also embedded in the application. As described in [[#Inconsistent Main Menu Version|Inconsistent Main Menu Version]], _Diablo_ 1.00 would have displayed a title screen with a copyright date of 1996, indicating a version difference between the title screen and the main menu screen. This is the first visual indication that additional video segments, or splices, were used.
 
 ## Inconsistent Character Menu Music
+
 The character menu version is inconsistent with the main menu screen. At 0:13, the _Diablo_ character select screen appears:
 
 ![](Attachments/DiabloCharacterScreen.png)
@@ -120,6 +121,7 @@ The character menu version is inconsistent with the main menu screen. At 0:13, t
 The character select screen has no music playing. _Diablo_ 1.05 and later lack music when on the character select screen. This indicates the segment was performed on a later version of the game and is evidence of a likely video splice between the main menu and the character select menu.
 
 ## Invalid Dungeon Level Sequence
+
 Starting at 0:48 in dungeon level 1 (dlvl hereafter) through 1:33 in dlvl 9, each dungeon level has a distance between the entrance stairs and the stairs to the next level consisting of 7 tiles for dlvl 1-4, 5 tiles for dlvl 5-8, and 3 tiles for dlvl 9. Such a favorable sequence does not naturally occur from the map generation in _Diablo_ in any version of the game. The team created [Diablo map generation](https://github.com/Matthew-petroff/diablo-mapgen) analysis tools and performed an exhaustive search of the entire space of all game seeds (which change based on the date and time a new game is started) to identify levels with the shortest walking distance. No date, including invalid dates before 1970 or after 2038 as described in [[#Appendix A - Diablo Level Generation]], creates a seed which produces the sequence of stairs shown in the run.
 
 As Groobo notes himself in his earlier [17:38 submission](https://archive.org/details/Diablo_Sorcerer_1738) on October 12th, 2006, "...The maps, mosters \[sic\], drops, chests etc are generated while you create your character, and stay the same every time you play with the same \[character\]…". _Diablo_ save files include the seed information used to generate dungeon levels.[^3] Specifically, the initial game seed based on the game launch time is used to generate 16 dungeon seeds, one for each dungeon level, which are stored in the save file.[^4] Because dungeon seeds form part of the save file for a given game, "luck manipulation" of dungeon layouts is not possible. The only way to change the layout for a level is to start a new game or directly modify the game code or save file.
@@ -392,6 +394,7 @@ Overall, the team's analysis conclusively reveals the run was not possible as Gr
 # Response
 
 ## Response from Groobo
+
 In August, 2024 late in the process of finalizing this analysis, Andy Greenberg of WIRED was able to contact Groobo who subsequently contacted the team. Groobo denied the run was in violation of any SDA rules at the time of the 2009 submission, stating in part "My run is a segmented/spliced run. It always has been and it was never passed off as anything else, nor was it part of any competition or leaderboards. The speeddemosarchive page states that outright."
 
 In light of the timing of the contact from Groobo, the team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo (outside the addition of the late-breaking [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]] finding and this [[#Response|Response]] section).
@@ -399,17 +402,21 @@ In light of the timing of the contact from Groobo, the team opted to preserve th
 Although the evidence in this document raises concerns about the validity of the run, the team acknowledges that Groobo may not have had malicious intent given circumstances at the time he submitted the run to SDA. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
 
 ## Response from SDA
+
 The team presented this analysis to SDA prior to Groobo's contact. The team immediately connected Groobo to SDA to allow them to discuss the analysis directly, independent of any influence from the team. On September 10, 2024, SDA posted an update to the https://speeddemosarchive.com front page announcing the removal of all _Diablo_ runs by Groobo, stating "If groobo can provide something concrete to help his case, we can revert this decision."
 
 ## Response from Guinness
+
 Andy Greenberg of WIRED attempted to reach Guinness World Records as a member of the press. Guinness responded only with "We value any feedback on our record titles and are committed to maintaining the highest standards of accuracy." The team subsequently presented this analysis to Guinness directly. After an initial automated response, Guinness responded stating "We have passed your enquiry on to our Records Management Team for consideration. If an update is required on the record title, we will look to action it as soon as is possible."\[sic\]. No further response has been received from Guinness and the records remain on the site.
 
 ## Response from speedrunning community
+
 Members of the _Diablo_ speedrunning community independently responded to this analysis by engaging in a renewed effort to perform a set-seed, single segment run of _Diablo_ using valid game seed `761519344`, with Funkmastermp achieving a total time of 5:57 and [xavier_sp ultimately achieving a time of 5:00.87](https://www.youtube.com/watch?v=bXG1vW6VEKA), or 04:36 as timed by an SDA verifier using modern SDA timing methodology.
 
 Additionally, the team created a preliminary [Tool-Assisted Speedrun of _Diablo_ version 1.04](https://youtu.be/F9mn5CpQCFw) in 3:10.92 using 2009 SDA timing which demonstrates a single game seed of _Diablo_ can theoretically be beaten faster than the timing applied to Groobo's run at the time it was submitted.
 
 ## Media coverage
+
 - [The Hacker Who Hunts Video Game Speedrunning Cheaters](https://www.wired.com/story/the-hacker-who-hunts-video-game-speedrunning-cheaters) - Andy Greenberg, WIRED
 - [The Biggest Cheating Scandal In Diablo Speedrunning History](https://www.youtube.com/watch?v=N_1su-dOUNw) - Abyssoft YouTube coverage
 
@@ -467,7 +474,7 @@ It is now feasible to generate the full game state for all 16 levels in all 2177
 
 ## Generating the Set of Dungeon Seeds
 
-Diablo uses a type of psuedo-random number generator called a [Linear Congruential](https://en.wikipedia.org/wiki/Linear_congruential_generator) [Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^13] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
+Diablo uses a type of psuedo-random number generator called a [Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^13] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
 
 Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function `abs()` (yielding a 31 bit seed[^14]). The end result is a 16-value wide "window" of the sequence of numbers immediately after the initial RNG state.
 
