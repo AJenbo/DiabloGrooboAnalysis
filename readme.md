@@ -1,7 +1,8 @@
 # Analysis of Groobo's Diablo WR Speedrun
-DEF CON talk video: https://youtu.be/3ajRxhARz3M TASBot Discord: https://Discord.gg/TASBot
-# Abstract
 
+[DEF CON talk video](https://youtu.be/3ajRxhARz3M)  | [Diablo TAS](https://tasvideos.org/9396S) | [TASBot Discord](https://Discord.gg/TASBot)
+
+**Abstract**
 Groobo's 2009 speedrun of _Diablo_ (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis demonstrates the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
 
 The speedrun includes the following disqualifying elements:
@@ -11,8 +12,6 @@ The speedrun includes the following disqualifying elements:
 - Graphical and audio artifacts suggesting unusual video splicing, including gameplay omissions which affect the recorded completion time
 
 **Table of Contents**
-
-- [[#Abstract|Abstract]]
 - [[#Authors|Authors]]
 - [[#Background|Background]]
 - [[#Analysis|Analysis]]
@@ -411,9 +410,9 @@ Andy Greenberg of WIRED attempted to reach Guinness World Records as a member of
 
 ## Response from speedrunning community
 
-Members of the _Diablo_ speedrunning community independently responded to this analysis by engaging in a renewed effort to perform a set-seed, single segment run of _Diablo_ using valid game seed `761519344`, with Funkmastermp achieving a total time of 5:57 and [xavier_sp ultimately achieving a time of 5:00.87](https://www.youtube.com/watch?v=bXG1vW6VEKA), or 04:36 as timed by an SDA verifier using modern SDA timing methodology.
+Members of the _Diablo_ speedrunning community independently responded to this analysis by engaging in a renewed effort to perform a set-seed, single segment run of _Diablo_ using valid game seed `761519344`, with Funkmastermp achieving a total time of 5:57 in early routing attempts and [xavier_sp ultimately achieving a time of 5:00.87](https://www.youtube.com/watch?v=bXG1vW6VEKA), or 04:36 as timed by an SDA verifier using modern SDA timing methodology.
 
-Additionally, the team created a preliminary [Tool-Assisted Speedrun of _Diablo_ version 1.04](https://youtu.be/F9mn5CpQCFw) in 3:10.92 using 2009 SDA timing which demonstrates a single game seed of _Diablo_ can theoretically be beaten faster than the timing applied to Groobo's run at the time it was submitted.
+Additionally, the team created a preliminary [Tool-Assisted Speedrun of _Diablo_ version 1.04](https://youtu.be/F9mn5CpQCFw) in 3:10.92 using 2009 SDA timing which demonstrates a single game seed of _Diablo_ can theoretically be beaten faster than the timing applied to Groobo's run at the time it was submitted in preparation for the [DEF CON](https://youtu.be/3ajRxhARz3M) talk. The team subsequently [submitted an optimized TAS to TASVideos](https://tasvideos.org/9396S) with an SDA timing of 1:46.
 
 ## Media coverage
 
@@ -445,7 +444,7 @@ The team would like to additionally credit the valuable contributions of past an
 The team reverse-engineered the _Diablo_ executable and determined exactly how the game generates levels for a single playthrough. At a high level, the process involves the following elements:
 
 1. The player chooses to start a new game (either by creating a new character or starting a new playthrough with an existing character)
-2. The current date/time (down to the second)[^9] is used to seed the psuedo-random number generator (RNG)
+2. The current date/time (down to the second)[^9] is used to seed the pseudo-random number generator (RNG)
 3. 16 consecutive values [^10] (dungeon seeds) are selected from the RNG and recorded in the save file to use when generating a level
 4. The 15th dungeon seed is used to randomly deactivate 5 quests
 5. When the player visits a level for the first time:
@@ -474,7 +473,7 @@ It is now feasible to generate the full game state for all 16 levels in all 2177
 
 ## Generating the Set of Dungeon Seeds
 
-Diablo uses a type of psuedo-random number generator called a [Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^13] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
+Diablo uses a type of pseudo-random number generator called a [Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator) (LCG). The constants [^13] used by the _Diablo_ application end up defining a sequence of numbers with period 2<sup>32</sup>. The RNG returns values between 0 and 2<sup>32</sup>-1 where every number appears exactly once in a shuffled order and the sequence of values repeats after 2<sup>32</sup> RNG calls.
 
 Each dungeon seed is picked by advancing the RNG state then treating the 32 bit state as a signed integer value and transforming it into a positive integer value between 0 and 2<sup>31</sup> using the C standard library function `abs()` (yielding a 31 bit seed[^14]). The end result is a 16-value wide "window" of the sequence of numbers immediately after the initial RNG state.
 
@@ -573,7 +572,7 @@ The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Ru
 
 [^3]: Refer to [[#Appendix A - Diablo Level Generation]] for specifics on how dungeon layouts and objects/monsters/items are generated.
 
-[^4]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of psuedo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
+[^4]: To save space, _Diablo_ save files only include the starting RNG state for each of the 16 dungeon seeds the dungeon levels are derived from. Although the game saves the position of items, objects, and monsters once a dungeon level is visited, it always recreates the dungeon layout itself based on the dungeon seed. As described further in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]], these values are derived from 16 consecutive outputs of the global RNG seeded with the current time, with additional restrictions on what date/times are valid when starting a new game (what we call the game seed). Due to the particular type of pseudo-random number generator used in _Diablo_, the possibilities for these 16 dungeon seeds are fairly limited.
 
 [^5]: Dlvls 3 and 4 could not be matched to dungeon levels from any naturally generated games. Partial matches exist for Dlvl 9, but no game seed generates dungeon levels with the combination of monsters and items visible in Groobo's video.
 
@@ -608,7 +607,7 @@ The SDA rules page has since been updated at https://kb.speeddemosarchive.com/Ru
 	  
 [^9]: The compiler used to build retail versions of _Diablo_ further restricts the possible values as described in [[#Choosing the Initial RNG Seed|Choosing the Initial RNG Seed]].
 
-[^10]: Due to the type of psuedo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]].
+[^10]: Due to the type of pseudo-random number generator used and the range of valid dungeon seeds available, the number of distinct combinations is far smaller than might be expected as described in [[#Generating the Set of Dungeon Seeds|Generating the Set of Dungeon Seeds]].
 
 [^11]: Windows itself does not allow setting the date earlier than 1980, although this can be worked around in NT-based versions of Windows by setting the clock in the BIOS prior to booting.
 
