@@ -1,6 +1,6 @@
 # Analysis of Groobo's Diablo WR Speedrun
 
-[DEF CON talk video](https://youtu.be/3ajRxhARz3M)  | [Diablo TAS](https://tasvideos.org/9396S) | [TASBot Discord](https://Discord.gg/TASBot)
+[DEF CON talk video](https://youtu.be/3ajRxhARz3M)  | [Diablo TAS](https://tasvideos.org/9396S) | Inquiries: Contact dwangoAC via [TASBot Discord](https://Discord.gg/TASBot)
 
 **Abstract**
 Groobo's 2009 speedrun of _Diablo_ (in the 'any% segmented' category) contains significant irregularities which compromise the integrity of the run. This analysis demonstrates the run is provably illegitimate and should be retracted from all records sites, including _Speed Demos Archive_ and _Guinness World Records_.
@@ -386,7 +386,7 @@ The combination of conflicting factors demonstrate Groobo used illegitimate mean
 
 Throughout the run, a number of artifacts and game behaviors indicate that _Diablo_ version 1.00 is in use as identified on the main menu screen while other portions indicate that _Diablo_ 1.09 is in use as identified on the title screen. Alternately, other versions of _Diablo_ such as 1.04 might have been used for some sections but crucially could not have been used for the entire run given the conflicting versions displayed.
 
-Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs. Similarly, the game seed and dungeon seed combinations present cannot exist in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing portions of gameplay in ways that would impact the recorded completion time.
+Many of the game behaviors and available quests are mutually exclusive, indicating the run was spliced together from multiple playthroughs. Similarly, the game seed and dungeon seed combinations present as well as damage shown in the fight against Diablo cannot exist in legitimate play under any circumstances and indicate external modifications. Finally, A number of graphical and audible artifacts indicate video splices in multiple places, in some cases removing portions of gameplay in ways that would impact the recorded completion time.
 
 Overall, the team's analysis conclusively reveals the run was not possible as Groobo described without disqualifying modifications. The run should therefore be immediately retracted from all leaderboards.
 
@@ -398,7 +398,7 @@ In August, 2024 late in the process of finalizing this analysis, Andy Greenberg 
 
 In light of the timing of the contact from Groobo, the team opted to preserve the remainder of this document as it existed directly prior to the contact with Groobo (outside the addition of the late-breaking [[#Artificially Enhanced Fireball Damage|Artificially Enhanced Fireball Damage]] finding and this [[#Response|Response]] section).
 
-Although the evidence in this document raises concerns about the validity of the run, the team acknowledges that Groobo may not have had malicious intent given circumstances at the time he submitted the run to SDA. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis.
+Although the evidence in this document raises concerns about the validity of the run, the team acknowledges that Groobo may not have had malicious intent given circumstances at the time he submitted the run to SDA. Elements of this document may not reflect the viewpoints of record holders or record sites and are only representative of the discoveries made by the team over the course of several months of analysis. However, in the opinion of the team, the collected evidence indicates Groobo's run was illegitimate.
 
 ## Response from SDA
 
@@ -421,7 +421,7 @@ Additionally, the team created a preliminary [Tool-Assisted Speedrun of _Diablo_
 
 # Credits from the Authors
 
-This analysis was made possible by contributions from members of multiple communities including Devilution / DevilutionX, TASVideos, TASBot, and others using tools including libTAS, PCem, Audacity, IDA, Ghidra + BSim, Binary Ninja, and many other specialized tools written by a number of groups and individuals over the course of nearly three decades. The contributors of this document thank the efforts of the people and projects that made this analysis possible.
+This analysis was made possible by contributions from members of multiple communities including [Devilution / DevilutionX](https://github.com/diasurgical/devilutionX), [TASVideos](https://TASVideos.org), [TASBot](https://TAS.Bot), and others using tools including [libTAS](https://clementgallet.github.io/libTAS), [PCem](https://pcem-emulator.co.uk), [Audacity](https://www.audacityteam.org), [IDA](https://hex-rays.com/ida-free), [Ghidra](https://github.com/NationalSecurityAgency/ghidra) + [BSim](https://github.com/NationalSecurityAgency/ghidra/tree/master/GhidraDocs/GhidraClass/BSim), [Binary Ninja](https://binary.ninja), and many other specialized tools written by a number of groups and individuals over the course of nearly three decades. The contributors of this document thank the efforts of the people and projects that made this analysis possible.
 
 Allan Cecil (dwangoAC) is the founder and leader of the TASBot online community and Senior Ambassador on staff of TASVideos.org. He is a published journal author, patent holder, and unflappable presenter with talks at DEF CON, GeekPwn, Thotcon, May Contain Hackers, and other hacker conferences. dwangoAC uses his combined hacking interests for good at charity events like Games Done Quick to entertain viewers with never-before-seen glitches in games, with event content he's led raising more than $1.5m for various charities.
 
