@@ -416,8 +416,9 @@ Additionally, the team created a preliminary [Tool-Assisted Speedrun of _Diablo_
 
 ## Media coverage
 
-- [The Hacker Who Hunts Video Game Speedrunning Cheaters](https://www.wired.com/story/the-hacker-who-hunts-video-game-speedrunning-cheaters) - Andy Greenberg, WIRED
+- [How Diablo hackers uncovered a speedrun scandal](https://arstechnica.com/gaming/2025/02/the-diablo-hackers-that-debunked-a-record-speedrun) - Kyle Orland, Ars Technica
 - [The Biggest Cheating Scandal In Diablo Speedrunning History](https://www.youtube.com/watch?v=N_1su-dOUNw) - Abyssoft YouTube coverage
+- [The Hacker Who Hunts Video Game Speedrunning Cheaters](https://www.wired.com/story/the-hacker-who-hunts-video-game-speedrunning-cheaters) - Andy Greenberg, WIRED
 
 # Credits from the Authors
 
